@@ -1,0 +1,276 @@
+\documentclass[french,12pt,a4paper]{book}
+\usepackage{gensymb} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[default, scale=.95]{opensans} % police Open Sans
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+\usepackage{xcolor} % où color selon l'installation
+\definecolor{Prune}{RGB}{99,0,60} % l14-33 : couleurs de la charte graphique upsaclay
+\definecolor{B1}{RGB}{49,62,72} 
+\definecolor{C1}{RGB}{124,135,143}
+\definecolor{D1}{RGB}{213,218,223}
+\definecolor{A2}{RGB}{198,11,70}
+\definecolor{B2}{RGB}{237,20,91}
+\definecolor{C2}{RGB}{238,52,35}
+\definecolor{D2}{RGB}{243,115,32}
+\definecolor{A3}{RGB}{124,42,144}
+\definecolor{B3}{RGB}{125,106,175}
+\definecolor{C3}{RGB}{198,103,29}
+\definecolor{D3}{RGB}{254,188,24}
+\definecolor{A4}{RGB}{0,78,125}
+\definecolor{B4}{RGB}{14,135,201}
+\definecolor{C4}{RGB}{0,148,181}
+\definecolor{D4}{RGB}{70,195,210}
+\definecolor{A5}{RGB}{0,128,122}
+\definecolor{B5}{RGB}{64,183,105}
+\definecolor{C5}{RGB}{140,198,62}
+\definecolor{D5}{RGB}{213,223,61}
+\usepackage{mdframed}
+\usepackage{multirow} %% Pour mettre un texte sur plusieurs rangées
+\usepackage{multicol} %% Pour mettre un texte sur plusieurs colonnes
+\usepackage{scrextend} %Forcer la 4ème  de couverture en page pair
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[absolute]{textpos} 
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\hypersetup{ % paramétrage couleur des liens hypertextes, toujours garder colorlinks=true
+	colorlinks=true,
+	linkcolor=black,
+	urlcolor=purple}
+ 
+\makeatletter
+\renewcommand{\numberline}[1]{%
+  \@cftbsnum #1\@cftasnum~\@cftasnumb%
+}
+\makeatother
+
+\pagestyle{plain} % pour ne garder que les n°de page en milieu-bas et supprimer les indications de chapitre en marge haute
+
+\usepackage{lipsum} % à retirer!!!
+\begin{document}
+	
+	\begin{titlepage}
+		
+		%\thispagestyle{empty}
+		
+		\newgeometry{left=6cm,bottom=2cm, top=1cm, right=1cm}
+		
+		\tikz[remember picture,overlay] \node[opacity=1,inner sep=0pt] at (-13mm,-135mm){\includegraphics{Logo/Frame-ups.pdf}};
+		
+		%*****************************************************
+		%******** NUMÉRO D'ORDRE DE LA THÈSE À COMPLÉTER *****
+		%******** POUR LE SECOND DÉPOT                   *****
+		%*****************************************************
+		
+		\color{white}
+		
+		\begin{picture}(0,0)
+			\put(-152,-743){\rotatebox{90}{\Large \textsc{THESE DE DOCTORAT}}} \\
+			\put(-120,-743){\rotatebox{90}{NNT : 2020UPASA001}}
+		\end{picture}
+		
+		%*****************************************************
+		%**  LOGO  ÉTABLISSEMENT PARTENAIRE SI COTUTELLE
+		%**  CHANGER L'IMAGE PAR DÉFAUT **
+		%*****************************************************
+		\vspace{-14mm} % à ajuster en fonction de la hauteur du logo
+		%\flushright \includegraphics[scale=1]{logo2.png}
+		
+		%*****************************************************
+		%******************** TITRE **************************
+		%*****************************************************
+		
+		\flushright
+		\vspace{30mm} % à régler éventuellement
+		\color{Prune}
+		\fontfamily{cmss}\fontseries{m}\fontsize{22}{26}\selectfont
+		\Huge Device-independent certification: from foundations to applications \\
+		
+		\normalsize
+		\color{black}
+		\Large{\textit{Device-independent certification: Fondations et Applications}}\\
+		%*****************************************************
+		
+		\fontfamily{fvs}\fontseries{m}\fontsize{8}{12}\selectfont
+		
+		\vspace{1.5cm}
+		
+		\normalsize
+		\textbf{Thèse de doctorat de l'université Paris-Saclay} \\
+		
+		\vspace{6mm}
+		
+		\small École doctorale n\degree564 : physique en Île-de-France (PIF)\\
+		\small Spécialité de doctorat: Physique\\
+		\small Graduate School : Physique, Référent : Faculté des sciences d'Orsay \\
+		\vspace{6mm}
+		
+		\footnotesize Thèse préparée à l’Institut de Physique Théorique (Université Paris-Saclay, CNRS, CEA) sous la direction de Nicolas Sangouard, directeur de recherche (CEA). \\
+		\vspace{15mm}
+		
+		\textbf{Thèse soutenue à Paris-Saclay, le JJ mois AAAA, par}\\
+		\bigskip
+		\Large {\color{Prune} \textbf{Xavier VALCARCE}}
+		
+		%************************************
+		\vspace{\fill} % ALIGNER LE TABLEAU EN BAS DE PAGE
+		%************************************
+		
+		\bigskip
+		
+		\flushleft
+		\small \textbf{Composition du jury}\\
+		\vspace{2mm}
+		\scriptsize
+		\begin{tabular}{|p{7cm}l}
+			\arrayrulecolor{Prune}
+			\textbf{Prénom Nom} &   Président ou Présidente\\ 
+			Titre, Affiliation & \\
+			\textbf{Prénom Nom} &  Rapporteur \& Examinateur / trice \\ 
+			Titre, Affiliation   &   \\ 
+			\textbf{Prénom Nom} &  Rapporteur \& Examinateur / trice \\ 
+			Titre, Affiliation  &   \\ 
+			\textbf{Prénom Nom} &  Examinateur ou Examinatrice \\ 
+			Titre, Affiliation   &   \\ 
+			\textbf{Prénom Nom} &  Examinateur ou Examinatrice \\ 
+			Titre, Affiliation   &   \\ 
+			\textbf{Nicolas Sangouard} &  Directeur ou Directrice de thèse \\ 
+			Titre, Affiliation   &   \\ 
+			
+		\end{tabular} 
+		
+	\end{titlepage}
+
+\Ifthispageodd{\newpage\thispagestyle{empty}\null\newpage}{}
+\thispagestyle{empty}
+\newgeometry{top=1.5cm, bottom=1.25cm, left=2cm, right=2cm}
+\fontfamily{rm}\selectfont
+
+\lhead{}
+\rhead{}
+\rfoot{}
+\cfoot{}
+\lfoot{}
+
+\noindent 
+%*****************************************************
+%***** LOGO DE L'ED À CHANGER IMPÉRATIVEMENT *********
+%*****************************************************
+\includegraphics[height=2.45cm]{Logo/logo_usp_PIF.png}
+\vspace{1cm}
+%*****************************************************
+\fontfamily{cmss}\fontseries{m}\selectfont
+
+\small
+
+\begin{mdframed}[linecolor=Prune,linewidth=1]
+	
+	\textbf{Titre:} titre (en français)..................................................................................................................
+	
+	\noindent \textbf{Mots clés:} 3 à 6 mots clefs (version en français)
+	
+	\vspace{-.5cm}
+	\begin{multicols}{2}
+		\noindent \textbf{Résumé:}\lipsum[1-2] 
+	\end{multicols}
+	
+\end{mdframed}
+
+\vspace{8mm}
+
+\begin{mdframed}[linecolor=Prune,linewidth=1]
+	
+	\textbf{Title:} titre (en anglais)..................................................................................................................
+	
+	\noindent \textbf{Keywords:} 3 à 6 mots clefs (version en anglais)
+	
+	\begin{multicols}{2}
+		\noindent \textbf{Abstract:} \lipsum[1-2]
+	\end{multicols}
+\end{mdframed}
+
+\titleformat{\part}[block]{\bfseries\Huge\color{Prune}\filright}{\thepart\ --\ }{.1ex}
+{\vspace{0.1ex}
+}
+[\vspace{1ex}]
+
+\titleformat{\chapter}[hang]{\bfseries\Large\color{Prune}}{\thechapter\ -}{.1ex}
+{\vspace{0.1ex}
+}
+[\vspace{1ex}]
+\titlespacing{\chapter}{0pc}{0ex}{0.5pc}
+
+\titleformat{\section}[hang]{\bfseries\normalsize}{\thesection\ .}{0.5pt}
+{\vspace{0.1ex}
+}
+[\vspace{0.1ex}]
+\titlespacing{\section}{1.5pc}{4ex plus .1ex minus .2ex}{.8pc}
+
+\titleformat{\subsection}[hang]{\bfseries\small}{\thesubsection\ .}{1pt}
+{\vspace{0.1ex}
+}
+[\vspace{0.1ex}]
+\titlespacing{\subsection}{3pc}{2ex plus .1ex minus .2ex}{.1pc}
+
+\newcounter{article}
+\newcommand{\article}[1]{%
+  \par\refstepcounter{article}% Increase section counter
+  \sectionmark{#1}% Add section mark (header)
+  \addcontentsline{toc}{chapter}{\protect\numberline{Article \thearticle}#1}% Add section to ToC
+  % Add more content here, if needed.
+}
+\frontmatter
+
+\newgeometry{top=4cm, bottom=4cm, left=2cm, right=2cm}
+
+\chapter{Acknowledgements}
+\newpage
+
+\tableofcontents
+
+\newgeometry{top=4cm, bottom=4cm, left=4cm, right=4cm}
+
+\chapter{Acronyms}
+
+\chapter{Thesis overview}
+
+\section{Motivation and background}
+
+\section{Summary of the contributions}
+
+\chapter{Synthèse en français}
+
+\section{Motivations et context}
+
+\section{Résumé des contributions}
+
+\chapter{Organisation of the manuscript}
+
+\chapter{Publications}
+
+\mainmatter
+
+\part{Self-testing for device-independent certification}
+
+\chapter{Overview and definitions}
+
+\chapter{Self-testing of bipartite states}
+
+\chapter{Robust self-testing}
+
+
+\article{What is the minimum CHSH score certifying that a state resembles the singlet?}
+\article{Self-testing two-qubit maximally entangled states from generalized Clauser-Horne-Shimony-Holt tests}
+
+\part{Device-independent communication}
+
+\end{document}
