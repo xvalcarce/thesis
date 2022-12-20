@@ -42,6 +42,7 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{hyperref}
+\usepackage[toc]{glossaries}
 \input{acronyms.tex}
 \hypersetup{ % paramétrage couleur des liens hypertextes, toujours garder colorlinks=true
 	colorlinks=true,
@@ -240,13 +241,11 @@
 
 \newgeometry{top=4cm, bottom=4cm, left=4cm, right=4cm}
 
-\chapter{Acronyms}
-
-\printglossary[type=\acronymtype]
+\printglossary[type=\acronymtype,title=Acronyms, toctitle=Acronyms]
 
 \chapter{Thesis overview}
 
-\section{Motivation and background}
+\section{Motivations and background}
 
 \section{Summary of the contributions}
 
@@ -270,10 +269,38 @@
 
 \chapter{Robust self-testing}
 
+\chapter{Self-testing as a device-independent certificate}
+
+\section{Device-independent randomness generation}
+
+\section{Device-independent quantum cryptography}
+
+\titleformat{\article}
+   {\normalfont\Large\bfseries}{\thearticle}{1em}{}
 
 \article{What is the minimum CHSH score certifying that a state resembles the singlet?}
 \article{Self-testing two-qubit maximally entangled states from generalized Clauser-Horne-Shimony-Holt tests}
 
-\part{Device-independent communication}
+\part{Device-independent communication and cryptography}
+
+\chapter{Device-independent quantum key distribution}
+
+\section{Protocols overview}
+
+\section{Entropy bound}
+
+\section{Finite-size analysis}
+
+\chapter{Implementing device independent quantum key distribution}
+
+\section{Plateform of choice: Photonic devices}
+
+\section{Automated design of photonic experiment}
+
+\article{Device-independent quantum key distribution from generalized CHSH inequalities}
+
+\article{Automated design of quantum optical experiments for device-independent quantum key distribution}
+
+\part{Conclusion and perspectives}
 
 \end{document}
