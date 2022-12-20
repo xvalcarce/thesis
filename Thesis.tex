@@ -42,6 +42,7 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{hyperref}
+\input{acronyms.tex}
 \hypersetup{ % paramétrage couleur des liens hypertextes, toujours garder colorlinks=true
 	colorlinks=true,
 	linkcolor=black,
@@ -240,6 +241,8 @@
 \newgeometry{top=4cm, bottom=4cm, left=4cm, right=4cm}
 
 \chapter{Acronyms}
+
+\printglossary[type=\acronymtype]
 
 \chapter{Thesis overview}
 
