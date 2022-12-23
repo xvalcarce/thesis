@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage[default, scale=.95]{opensans} % police Open Sans
+\usepackage{fontawesome}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{fancyhdr}
@@ -278,8 +279,8 @@
 \titleformat{\article}
    {\normalfont\Large\bfseries}{\thearticle}{1em}{}
 
-\article{What is the minimum CHSH score certifying that a state resembles the singlet?}
-\article{Self-testing two-qubit maximally entangled states from generalized Clauser-Horne-Shimony-Holt tests}
+\input{article/minimumCHSH.tex}
+\input{article/generalizedCHSH.tex}
 
 \part{Device-independent communication and cryptography}
 
@@ -297,9 +298,8 @@
 
 \section{Automated design of photonic experiment}
 
-\article{Device-independent quantum key distribution from generalized CHSH inequalities}
-
-\article{Automated design of quantum optical experiments for device-independent quantum key distribution}
+\input{article/diqkdgeneralizedCHSH.tex}
+\input{article/automatedDIQKD.tex}
 
 \part{Conclusion and perspectives}
 
