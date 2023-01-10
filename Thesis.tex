@@ -43,7 +43,11 @@
 \usepackage{titlesec}
 \usepackage{tocloft}
 \usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{references.bib}
 \usepackage[toc]{glossaries}
+\input{math.tex}
 \input{acronyms.tex}
 \hypersetup{ % paramétrage couleur des liens hypertextes, toujours garder colorlinks=true
 	colorlinks=true,
@@ -266,5 +270,7 @@
 \input{chapters/deviceindependent/di.tex}
 
 \part{Conclusion and perspectives}
+
+\printbibliography[heading=bibintoc]
 
 \end{document}
