@@ -44,11 +44,14 @@
 \usepackage{tocloft}
 \usepackage{hyperref}
 \usepackage{csquotes}
+\usepackage{physics}
+\usepackage{mathrsfs}
 \usepackage[backend=biber,style=alphabetic]{biblatex}
 \addbibresource{references.bib}
 \usepackage[toc]{glossaries}
 \input{math.tex}
 \input{acronyms.tex}
+\input{command.tex}
 \hypersetup{ % paramétrage couleur des liens hypertextes, toujours garder colorlinks=true
 	colorlinks=true,
 	linkcolor=black,
@@ -266,6 +269,7 @@
 
 \mainmatter
 
+\input{chapters/overview/overview.tex}
 \input{chapters/selftesting/selftesting.tex}
 \input{chapters/deviceindependent/di.tex}
 

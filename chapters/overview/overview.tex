@@ -1,0 +1,164 @@
+\part{Overview and definitions}
+
+%In this chapter, we review some key concepts that are used throughout this thesis. 
+%At the core of quantum information, the notions of quantum entanglement and non-locality are introduced in Sections \ref{section:entanglement} and \ref{section:nonlocality} respectively. 
+%Self-testing
+%Device-independent certification
+
+\chapter{Quantum Entanglement}
+\label{section:entanglement}
+
+Quantum entanglement is often thought has one of the most bizarre feature of quantum mechanics. 
+In 1935, it first puzzled \acrfull{epr} who described the phenomena in \cite{Einstein35}. 
+The same year, Schrödinger, in the seminal paper \cite{Schrödinger35},
+coined the term \textit{entanglement} and portrayed it as not \enquote{\textit{one} but rather \textit{the} characteristic trait of quantum mechanics, the one that enforces its entire departure from classical lines of thought.}
+
+An entangled system is described in opposition to a separable system, i.e. a system that can be fully described from the state of its individual components. 
+Such entangled system are allowed by the \textit{superposition} principle and the structure of the space of joint quantum systems. 
+
+A pure quantum state $\ket{\psi}$ is represented by a vector in a Hilbert space $\mathscr{H}$.
+Given two pure state $\ket{\psi^A}$ and $\ket{\psi^B}$ and their respective Hilbert space $\mathscr{H}^A$ and $\mathscr{H}^B$, a separable system composed of these state can be written as the tensor product of its components
+\begin{equation}
+	\ket{\psi} = \ket{\psi^A} \otimes \ket{\psi^B}
+	\label{eq:separable_state}
+\end{equation}
+associated with the Hilbert space $\mathscr{H}=\mathscr{H}^A\otimes\mathscr{H}^B$. 
+Conversely a state in $\mathscr{H}^{AB}$ that can not be written in the previous form is said to be entangled.
+The four Bell states 
+\begin{align}
+	\ket{\psi^+} &= \frac{1}{\sqrt{2}}\left(\ket{01}+\ket{10}\right) \\
+	\ket{\psi^-} &= \frac{1}{\sqrt{2}}\left(\ket{01}-\ket{10}\right) \\
+	\ket{\phi^+} &= \frac{1}{\sqrt{2}}\left(\ket{00}+\ket{11}\right) \\
+	\ket{\phi^-} &= \frac{1}{\sqrt{2}}\left(\ket{00}-\ket{11}\right)
+	\label{eq:bell_states}
+\end{align}
+are famous example of such entangled states.
+
+More generally, a convex sum of pure states, or \textit{mixed state}, described by the density matrix
+\begin{equation}
+	\rho_{AB} = \sum_i c_i \ket{\psi_i} \bra{\psi_i} \qquad \text{with} \quad \sum_i c_i = 1
+	\label{eq:mixed_state}
+\end{equation}
+is said to be entangled if it can not be decomposed as a convex sum of product states
+\begin{equation}
+	\rho_{AB} = \sum_i c_i \rho^A_i \otimes \rho^B_j.
+	\label{eq:product_state}
+\end{equation}
+
+\medbreak
+The phenomena of entanglement leads to counter intuitive predictions. 
+Most notably, the fact that a property measured on one part of an entangled system can determine the measurement outcomes on the other part of such system, even if both parties are far apart. 
+This was famously refer to as \enquote{spooky action at distance} by Einstein and leads to a paradox, the \acrshort{epr} paradox.
+
+Quantum mechanics imposes that the values of two non-commuting observables can not be known simultaneously. 
+For example, it is impossible to both exactly know the spin value in the $x$-direction and in the $z$-direction of system, since these two spin observables do not commute.
+The \acrshort{epr} paradox occurs when measuring non-commuting observables on an entangled system.
+Consider the entangled state $\ket{\psi^+}$ shared between Alice and Bob.
+If Alice where to measure the spin in the $z$-direction of a $\ket{\psi^+}$ state and obtain the value $s_z = 1/2$, she can assume that if Bob where to measure his system in the same manner he would obtain $s_z = 1/2$. 
+So it seems that if Bob measures his system in the $x$-direction and ask Alice for the outcome of her measurement in the $z$-direction, he would no precisely the values of two non-commuting observables.
+
+Believing in the complete local determination of the outcomes, \acrlong{epr} proposed the existence of \textit{hidden} variables to solve the paradox. Another solution to the paradox is that physics is not compatible with \textit{local realism}.
+
+\medbreak
+Entanglement was at first left by physicists as a purely fundamental and philosophical problem of quantum mechanics.
+In 1964, John Bell proved that quantum mechanics can not be explained by a physiscal theory of \textit{local hidden variable}, under the assumption of \textit{free will}. 
+Based on the work of John Bell, Clauser, Horne, Shimony and Holt (\acrshort{chsh}) porposed an experimental protocol to test Bell's proof. 
+This proposal was soon followed by a first experimental realisation showing evidence towards Bell's proof.
+In the early 80's, Alain Aspect and his colleagues performed a series of experiments, ensuring that the assumption of \textit{free will} is reasonnable.
+Finally, in 1998, an experiment performed in the group of Anton Zeilinger, closed the last loophole by ensuring local conditions.
+These works were utlimately recognized by the 2022 Nobel prize, awarded to John Clauser, Alain Aspect and Aton Zeilinger.
+
+\medbreak
+The work of Bell followed by experimental evidences brought back interest on entanglement.
+In particular, the capabality to generate entangled pair of particles led into thinking of entanglement as a quantum ressource.
+This allowed for a variety of new technologies and the creation of a subfiled of physics known today as \textit{quantum information}.
+Entanglement-based technologies include quantum key distribution, quantum computing, quantum random numbers generators, and much more. 
+
+
+\chapter{Non-locality}
+\label{section:nonlocality}
+
+
+\section{Bell game}
+
+In order to answer the \acrshort{epr} paradox, John Bell introduced a theoretical game, known today as a \textit{Bell game}.
+Such a game consists of two players, Alice and Bob, that may have been in contact in the past but that are spatially separated while the game is played.
+A spatial separation ensures that their is no communication between the two parties while the game is played.
+Alice and Bob each own a physical system as well as a finite number of measurement devices.
+
+Each round of the game, Alice chooses a measurement to perform and records the outcome of that measurement on her system.
+We label $x$ her \textit{measurement choice} or \textit{setting}, $A_x$ the corresponding measurement, and $a$ the outcome.
+Similarly Bob makes a measurement choice $y$ and obtains the outcome $b$ from the measurement $B_y$.
+This Bell game is depicted in Fig..
+
+The outcome $a,b$ are not necessarily deterministic function of the inputs $x,y$, we are thus interested in the  probability $p(ab|xy)$. 
+For a given game, one can arrange the probabilities for every possible outcomes and inputs in a vector $\mathbf{P}=\{ p(ab|xy)\}$ also refer to as \textit{correlations}.
+These correlations form a set whose boundaries depends on which assumptions are fulfilled by the Bell game and which resources are considered.
+
+
+\section{Non-signalling correlations}
+
+\textit{Non-signalling} correlations are correlations respecting a single assumption: the measurement choice of one party can not influence the outcome of the other party's measurement.
+When Alice and Bob are space-like separated, this assumption is enforced by special relativity, i.e. no information can be transmitted faster-than-light.
+
+Formally, non-signalling correlations are correlations for which the local marginals of a party are independent of the other party's measurements choice. 
+Mathematically, such correlations satisfy
+\begin{align}
+	\sum_b p(ab|xy) = \sum_b p(ab|xy') = p(a|x), \quad &\forall\,a,x,y,y' \\
+	\sum_a p(ab|xy) = \sum_a p(ab|x'y) = p(b|y), \quad &\forall\,b,x,x',y.
+	\label{eq:non-signalling}
+\end{align}
+
+
+\section{Local and non-local correlations}
+
+\textit{Local correlations} are fully characterised from the local system of Alice and Bob.
+This type of correlation accounts for some hypothetical shared hidden information between the two parties.
+Indeed, since Alice and Bob were in contact in the past, outcomes of their measurements can be influenced by some past factors, available locally to both parties' systems but possibly unobservable.
+These past factors are \textit{local-hidden variables} with arbitrary value that we represent using $\lambda$.
+Moreover, because these variables might not stay constant throughout the game, we denote $q(\lambda)$ the probability distribution governing their evolution. 
+From here, we can formally defined local correlations as any correlation that can be decomposed as
+\begin{equation}
+	p(ab|xy) = \int_\lambda \mathrm{d}\lambda \, q(\lambda) p(a|x,\lambda) p(b|y,\lambda).
+	\label{eq:local}
+\end{equation}
+One assumption we made in writing this decomposition is the \textit{freedom of choice} of both parties' measurements, as $x$ and $y$ are independent of $\lambda$.
+
+Interestingly, any local correlation can be written as a convex sum of deterministic local strategies, $p_i(ab|xy)=p(a|x,i)p(b|y,i)$, following
+\begin{equation}
+	p(ab|xy) = \sum_i c_i p_i(ab|xy)
+	\label{eq:polytope}
+\end{equation}
+where $c_i\geq 0$ and $\sum_i c_i = 1$.
+From the previous decomposition it follows that the convex sum of local strategies is also local. 
+Geometrically, the set of local correlations is the convex hull of deterministic strategies which is a convex polytope, the local polytope.
+
+\medbreak
+
+\textit{Non-local} correlations are defined as any correlation that can not admit be written in the form of \refeq{local}.
+Such correlations can thus not be explained by means of local-hidden variable. 
+Note that this is the case for some non-signalling correlations as correlations satisfying \refeq{non-signalling} do not necessarily admit a decomposition of the form \refeq{local}.
+Conversely, local correlations respect the non-signalling assumption.
+
+\section{Quantum correlations}
+
+\textit{Quantum correlations} occur when Alice and Bob each share a part of a quantum system, $\rho_{AB}$, that they prepared when they were in contact.
+Generally, this quantum state is a mixed state laying in the Hilbert space $\mathscr{H}^{AB} = \mathscr{H}^{A} \otimes \mathscr{H}^B$.
+For measurements choice $x,y$, quantum correlations are given by Born's rule
+\begin{equation}
+	p(ab|xy) = \trr{\rho_{AB} M^a_x \otimes M^b_y} \quad \forall\,a,b,x,y
+	\label{eq:Born}
+\end{equation}
+where $M^a_x$ is the \acrfull{povm} element of measurement $A_x$ associated with outcome $a$, and similarly for Bob with the \acrshort{povm} $M^b_y$ for measurement $B_y$ and outcome $b$.
+
+Quantum correlations satisfy the non-signalling assumption, but are not necessarily local.
+In order to obtain non-local quantum correlations, Alice and Bob must share an entangled state.
+Entanglement can thus be detected from the presence of a non-local correlation, given that the non-signalling assumption is enforced.
+
+\section{Bell inequalities}
+
+\section{Non-locality as a quantum ressource}
+
+\subsection{Self-testing}
+\subsection{Device-independent certification}
+
