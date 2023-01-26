@@ -9,6 +9,9 @@
    id="svg7936"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="belltest.svg"
+   inkscape:export-filename="belltest.pdf"
+   inkscape:export-xdpi="58.04"
+   inkscape:export-ydpi="58.04"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +31,7 @@
      inkscape:cx="538.97051"
      inkscape:cy="357.35174"
      inkscape:window-width="2520"
-     inkscape:window-height="1373"
+     inkscape:window-height="1375"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -708,12 +711,12 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,6.0206202,8.0163227)"
        id="text14092"
-       style="font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect14094)"><tspan
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect14094);display:inline"><tspan
          x="94.697266"
          y="53.132812"
-         id="tspan14840"><tspan
+         id="tspan15440"><tspan
            style="font-family:Hack;-inkscape-font-specification:'Hack, Normal'"
-           id="tspan14838">Alice</tspan></tspan></text>
+           id="tspan15438">Alice</tspan></tspan></text>
     <g
        id="g14193"
        transform="translate(135.86423)">
@@ -741,12 +744,12 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,147.92583,8.0163227)"
        id="text14211"
-       style="font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect14213)"><tspan
+       style="font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect14213);display:inline"><tspan
          x="94.697266"
          y="53.132812"
-         id="tspan14844"><tspan
+         id="tspan15444"><tspan
            style="font-family:Hack;-inkscape-font-specification:'Hack, Normal'"
-           id="tspan14842">Bob</tspan></tspan></text>
+           id="tspan15442">Bob</tspan></tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 121.00483,12.412205 c 0,59.663371 0,119.326485 0,178.989325"
@@ -757,9 +760,9 @@
        xml:space="preserve"
        transform="matrix(0,-0.26458333,0.26458333,0,70.707623,364.63157)"
        id="text14253"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect14255)"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect14255);display:inline"><tspan
          x="851.38672"
          y="173.55276"
-         id="tspan14846">space-like separation</tspan></text>
+         id="tspan15446">space-like separation</tspan></text>
   </g>
 </svg>
