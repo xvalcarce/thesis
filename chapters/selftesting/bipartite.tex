@@ -1,25 +1,27 @@
 \chapter{Self-testing of the two-qubit maximally entangled state}
 
 Two-qubit maximally entangled states are relevant to a few quantum information processing tasks.
-In this chapter we study the self-tests of such a state.
+In this chapter we study the self-test of such states in a fully device-independent scope, i.e. how to ensure that a two-qubit maximally entangled state is present in a system without making assumption on that state and on the measurements used to probe that state.
+Specifically, we here present a self-test protocol based on the \acrshort{chsh} criterion, where a maximal \acrshort{chsh} score is the only requirement for the validity of the proof. Note that this approach differs slightly from the original method introduce in \cite{Mayers2004}.
 
 \medbreak 
 
 We consider a variation of a Bell game where Alice and Bob receive copies of an unknown state $\rho_{AB} \in \mathcal{L}(\mathscr{H}^A \otimes \mathscr{H}^B)$ from an unknown source.
 Alice has access to the subsytem that lays in the Hilbert space $\mathscr{H}^A$ while Bob has access to the one in $\mathscr{H}^B$, both of unknown dimension.
 To ease calculations, we can purify this shared state, without loss of generalities. 
-Introducing the purification space $\Hil^C$, we have the pure state $\ket{\psi_{ABC}}\in \Hil^A \otimes \Hil^B \otimes \Hil^C$ which satisfies $\tr_C \left[\ket{\psi_{ABC}}\bra{\psi_{ABC}}\right] = \rho_{AB}$.
+Introducing the purification space $\Hil^C$, we have the pure shared state $\ket{\psi_{ABC}}\in \Hil^A \otimes \Hil^B \otimes \Hil^C$ which satisfies $\tr_C \left[\ket{\psi_{ABC}}\bra{\psi_{ABC}}\right] = \rho_{AB}$, where $\tr_C$ is the partial trace over the purification space.
 
 Each party has a measurement device with two inputs, $x,y=\{0,1\}$, respectively corresponding to observables $A_x$ acting on $\mathscr{H}^A$, for Alice, and $B_y$ on $\mathscr{H}^B$, for Bob.
 These measurements only have two possible outcomes $(a,b)=\pm1$.
-From this Bell game, Alice and Bob will construct the correlation $P$ from the individual probabilities $p(ab|xy)$, and from which we want to certify that $\rho_{AB}$ is a two-qubit maximally entangled state $\ket{\psi^{\text{target}}_{AB}}$.
+From this Bell game, Alice and Bob will construct the correlation $P$ from the individual probabilities $p(ab|xy)$. 
+It is solely from this correlation that we want to certify that $\rho_{AB}$ is a two-qubit maximally entangled state $\ket{\psi^{\text{target}}_{AB}}$.
 
 Formally, a self-testing statement can be derived if for all the \textit{quantum realization} $\{\psi_{ABC},A_x,B_y\}$ compatible with the observed correlation $P$, there exists a local isometry $\Lambda = \Lambda_A \otimes \Lambda_B \otimes \id_C$ satisfying
 \begin{equation}
 	\Lambda [ \ket{00}_{A'B'} \otimes \ket{\psi}_{ABC}] = \ket{\psi^\text{target}_{A'B'}} \otimes \ket{\text{junk}}_{ABC}
 	\label{eq:self-testing_statement}
 \end{equation}
-where $A'$ and $B'$ are ancilliary systems belonging respectively to Alice and Bob, that are used to \textit{extract} the target state.
+where $A'$ and $B'$ are ancilliary systems owned by Alice and Bob, respectively, and that are used to \textit{extract} the target state.
 The rest of this chapter explains how to obtain this statement for two-qubit maximally entangled states.
 
 \medbreak
@@ -36,8 +38,8 @@ Therefore, we can construct a formal self-testing statement from correlations yi
 
 Let us first derive some useful properties on the involved measurements.
 
-As written in the previous part, the probability to obtain outcomes $a,b$ from inputs $x,y$ is given by the Born rule, as in ~\refeq{Born}. 
-From the state obtained after purification, these probabilities are
+As written in the previous part, the probability to obtain outcomes $a,b$ from inputs $x,y$ is given by the Born rule, \refeq{Born}. 
+For the purified state, these probabilities are
 \begin{equation}
 	p(ab|xy) = \bra{\psi_{ABC}} M^a_x \otimes M^b_y \otimes \id_C \ket{\psi_{ABC}}
 \end{equation}
@@ -107,25 +109,25 @@ From the symmetric properties of the correlation, the same anti-commutation rela
 To construct a self-testing statement we now need to explicitly build the local isometry $\Lambda$. 
 Intuitively, from \refeq{self-testing_statement}, the isometry transfers the relevant degree of freedom of $\ket{\psi_{ABC}}$ into the parties ancilliary systems.
 This can be build from \textit{SWAP} operations, each transferring information from a register to another.
-If constructing local isometry from SWAP operations is mentioned in the original self-testing manuscript for the self-test of two-qubit maximally entangled states~\cite{Mayers2004}, it was then generalized to other states and to robust self-testing in \cite{McKague2012,Yang2014,Bancal15}. 
+If constructing local isometry from SWAP operations is mentioned in the original self-testing manuscript for the self-test of two-qubit maximally entangled states~\cite{Mayers2004}, it was then generalized to other states and to robust self-testing in \cite{McKague2012,Yang2013,Yang2014,Bancal15}. 
 
 To better grasp the construction of the SWAP isometry, we fix the target two-qubit maximally entangled state to be the singlet $\ket{\psi^-}=\frac{\ket{01}-\ket{10}}{\sqrt{2}}$.
 If the shared state is the target state, the local isometry should act as follow
 \begin{equation}
-	\Lambda[\ket{00}_{A'B'} \otimes \ket{\psi^-}_{AB}] = \ket{\psi^-}_{A'B'} \otimes \ket{junk}_{AB}.
+	\Lambda[\ket{00}_{A'B'} \otimes \ket{\psi^-}_{AB}] = \ket{\psi^-}_{A'B'} \otimes \ket{\text{junk}}_{AB}.
 \end{equation}
 This can be achieve with the circuit depicted in \reffig{swap} with the Hadamard gate $H=(\sigma_x+\sigma_z)/\sqrt{2}$ and where $Z_A=Z_B=\sigma_z$ and $X_A=X_B=\sigma_x$.
-As we are in a device-independent framework, this construction has to be made solely from the information we previously derived.
+However, as we are in a device-independent framework, this construction has to be made solely from the informations we previously derived, i.e. we can not assume the relations $X=\sigma_x$ and $Z=\sigma_z$ to be true.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.95\textwidth]{chapters/selftesting/img/swap.pdf}
 	\end{center}
-	\caption{Circuit representation of the isometry $\Lambda$.}
+	\caption{Circuit representation of the isometry $\Lambda$ extracting the target state, here $\ket{\psi^-}$, into ancillaries $A"B'$ with the correct dimesion. $H$ is the Hadamard gate, $Z$ and $X$ are control gates on the ancillaries.}
 	\label{fig:swap}
 \end{figure}
 
-First, we build the operators $X$ and $Z$ from Alice and Bob's observables
+Let us first build the operators $X$ and $Z$ from Alice and Bob's observables, following
 \begin{equation}
 	\begin{split}
 		Z_A = A_0, \qquad &X_A = A_1, \\
@@ -157,20 +159,21 @@ We can now compute the effect of the isometry on the shared system and the ancil
 													   & + \ket{10}_{A'B'} \otimes X_A(\id-Z_A)(\id+Z_B)\ket{\psi}_{ABC} \\
 													   & + \ket{11}_{A'B'} \otimes X_AX_B(\id-Z_A)(\id-Z_B)\ket{\psi}_{ABC} \Bigg]
 	\end{split}	
+	\label{eq:swap_output}
 \end{equation}
-To simplify this, we first use \refeq{aliceBobMeasEquivalence} to derive the following equivalences
+To simplify this, we first use \refeq{aliceBobMeasEquivalence} to derive the following equivalence relations
 \begin{equation}
-	X_A \ket{\psi} = X_B \ket{\psi}, \qquad Z_A \ket{\psi} = Z_B \ket{\psi},
+	X_A \ket{\psi} = X_B \ket{\psi}, \qquad Z_A \ket{\psi} = Z_B \ket{\psi}.
 	\label{eq:ABMeasEquivalence}
 \end{equation}
-Replacing $Z_A$ with $Z_B$ cancels all the term of the form $(\id\pm Z_A)(\id\mp Z_B)=(id-Z_A^2)=0$, leading to
+In \refeq{swap_output}, replacing $Z_A$ with $Z_B$ cancels all the term of the form $(\id\pm Z_A)(\id\mp Z_B)=(\id-Z_A^2)=0$, leading to
 \begin{equation}
 	\begin{split}
-		\Lambda[\id_{A'B'} \otimes \ket{\psi}_{ABC}] = &\frac{1}{4}\Bigg[\ket{00}_{A'B'}\otimes(\id+Z_A)(\id+Z_B)\ket{\psi}_{ABC} \\
+		\Lambda[\ket{00}_{A'B'} \otimes \ket{\psi}_{ABC}] = &\frac{1}{4}\Bigg[\ket{00}_{A'B'}\otimes(\id+Z_A)(\id+Z_B)\ket{\psi}_{ABC} \\
 													   & + \ket{11}_{A'B'} \otimes X_AX_B(\id-Z_A)(\id-Z_B)\ket{\psi}_{ABC} \Bigg]
 	\end{split}	
 \end{equation}
-By construction we have $\{Z_A,X_A\}=0$ and, from the anticommuting relation \refeq{anticommuting}, we have ${Z_B,X_B}\ket{\psi}=0$, which together with \refeq{ABMeasEquivalence} allow us to write
+By construction we have $\{Z_A,X_A\}=0$ and, from the anticommuting relation \refeq{anticommuting}, we have $\{Z_B,X_B\}\ket{\psi}=0$, which together with \refeq{ABMeasEquivalence} allow us to write
 \begin{equation}
 	\begin{split}
 		X_A X_B (\id - Z_A)(\id-Z_B)\ket{\psi}_{ABC} &= (\id + Z_A)(\id +Z_B)X_A X_B \ket{\psi}_{ABC}\\
@@ -179,13 +182,13 @@ By construction we have $\{Z_A,X_A\}=0$ and, from the anticommuting relation \re
 									 &= 2(\id + Z_A)\ket{\psi}_{ABC}
 	\end{split}
 \end{equation}
-Combing these expressions, the transformation under the isometry $\Lambda$ is
+Combing these expressions, the output of the isometry $\Lambda$ is given by
 \begin{equation}
-	\Lambda[ \id_{A'B'} \otimes \ket{\psi}_{ABC} ] = \underbrace{\frac{1}{2}\left( \ket{00}_{A'B'} + \ket{11}_{A'B'} \right)}_{\ket{\phi^+}} \otimes \underbrace{\frac{1+Z_A}{2}\ket{\psi}_{ABC}}_{\ket{\text{junk}}_{ABC}}
+	\Lambda[ \id_{A'B'} \otimes \ket{\psi}_{ABC} ] = \underbrace{\frac{1}{2}\left( \ket{00}_{A'B'} + \ket{11}_{A'B'} \right)}_{\ket{\phi^+}_{A'B'}} \otimes \underbrace{\frac{1+Z_A}{2}\ket{\psi}_{ABC}}_{\ket{\text{junk}}_{ABC}}
 	\label{eq:isometry}
 \end{equation}
 
-To get the self-testing statement ~\refeq{self-testing_statement}, Alice can apply an extra $\sigma_z$ gate on the $A'$ system, while Bob applies $\sigma_x$ on $B'$ to transform $\ket{\phi^+}$ into $\ket{\psi^-}$. These two gates can be embedded in $\Lambda$ as they are local unitaries.
+To get the self-testing statement ~\refeq{self-testing_statement}, Alice can apply an extra $\sigma_z$ gate on the $A'$ system, while Bob applies $\sigma_x$ on $B'$, transforming $\ket{\phi^+}_{A'B'}$ into $\ket{\psi^-}_{A'B'}$. These two gates can be freely embedded in $\Lambda$ as they are local unitaries on the ancillas.
 
 Note that the purification space is left untouched under $\Lambda$. This can be seen from the construction of the operator $Z_A,X_A,Z_B$ and $X_B$, and they are composed of Alice and Bob observables, not acting on $\Hil^C$. 
 
