@@ -1,2 +1,17 @@
 \newcommand{\refeq}[1]{Eq.~(\ref{eq:#1})}
 \newcommand{\reffig}[1]{Fig.~(\ref{fig:#1})}
+
+\newcounter{protocol}
+\newenvironment{protocol}[1]
+  {\par\addvspace{\topsep}
+   \noindent
+   \tabularx{\linewidth}{@{} X @{}}
+    \hline
+    \refstepcounter{protocol}\textbf{Protocol \theprotocol} #1 \\
+    \hline}
+  { \\
+    \hline
+   \endtabularx
+   \par\addvspace{\topsep}}
+
+\newcommand{\sbline}{\\[.5\normalbaselineskip]}% small blank line
