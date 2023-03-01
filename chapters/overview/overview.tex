@@ -1,23 +1,18 @@
 \part{Overview and definitions}
 
-%In this chapter, we review some key concepts that are used throughout this thesis. 
-%At the core of quantum information, the notions of quantum entanglement and non-locality are introduced in Sections \ref{section:entanglement} and \ref{section:nonlocality} respectively. 
-%Self-testing
-%Device-independent certification
-
 \chapter{Quantum Entanglement}
 \label{section:entanglement}
 
 Quantum entanglement is often thought has one of the most bizarre feature of quantum mechanics. 
-In 1935, it first puzzled \acrfull{epr} who described the phenomena in \cite{Einstein35}. 
-The same year, Schrödinger, in the seminal paper \cite{Schrödinger35},
+In 1935, it puzzled \acrfull{epr} who described the phenomena in \cite{Einstein35}. 
+The same year, Schrödinger, in his seminal paper \cite{Schrödinger35},
 coined the term \textit{entanglement} and portrayed it as not \enquote{\textit{one} but rather \textit{the} characteristic trait of quantum mechanics, the one that enforces its entire departure from classical lines of thought.}
 
-An entangled systems is described in opposition to a separable system, i.e. a system that can be fully described from the state of its individual components. 
+An entangled system is described in opposition to a separable system, i.e. a system that can be fully described from the state of its individual components. 
 Such entangled system are allowed by the \textit{superposition} principle and the structure of the space of joint quantum systems. 
 
 A pure quantum state $\ket{\psi}$ is represented by a vector in a Hilbert space $\mathscr{H}$.
-Given two pure state $\ket{\psi^A}$ and $\ket{\psi^B}$ and their respective Hilbert space $\mathscr{H}^A$ and $\mathscr{H}^B$, a separable system composed of these state can be written as the tensor product of its components
+Given two pure states $\ket{\psi^A}$ and $\ket{\psi^B}$ and their respective Hilbert space $\mathscr{H}^A$ and $\mathscr{H}^B$, a separable system composed of these states can be written as the tensor product of its components
 \begin{equation}
 	\ket{\psi} = \ket{\psi^A} \otimes \ket{\psi^B}
 	\label{eq:separable_state}
@@ -32,14 +27,14 @@ The four Bell states
 	\ket{\phi^-} &= \frac{1}{\sqrt{2}}\left(\ket{00}-\ket{11}\right)
 	\label{eq:bell_states}
 \end{align}
-are famous example of such entangled states.
+are famous examples of such entangled states.
 
 More generally, a convex sum of pure states, or \textit{mixed state}, described by the density matrix
 \begin{equation}
-	\rho_{AB} = \sum_i c_i \ket{\psi_i} \bra{\psi_i} \qquad \text{with} \quad \sum_i c_i = 1
+	\rho = \sum_i c_i \ket{\psi_i} \bra{\psi_i} \qquad \text{with} \quad \sum_i c_i = 1,\quad c_i\geq 0.
 	\label{eq:mixed_state}
 \end{equation}
-is said to be entangled if it can not be decomposed in a convex sum of product states
+A mixed bipartite state $\rho_{AB}$ is said to be entangled if it can not be decomposed in a convex sum of product states
 \begin{equation}
 	\rho_{AB} = \sum_i c_i \rho^A_i \otimes \rho^B_j.
 	\label{eq:product_state}
@@ -47,7 +42,7 @@ is said to be entangled if it can not be decomposed in a convex sum of product s
 
 \medbreak
 
-The phenomena of entanglement leads to counter intuitive predictions. 
+The concept of entanglement leads to counter intuitive predictions. 
 Most notably, the fact that a property measured on one part of an entangled system can determine the measurement outcome of that property on the other part of such system, even if both parties are far apart. 
 This was famously refered as a \enquote{spooky action at distance} by Einstein and it leads to a paradox, the \acrshort{epr} paradox.
 
@@ -55,16 +50,17 @@ Quantum mechanics imposes that the values of two non-commuting observables can n
 For example, it is impossible to both exactly know the spin value in the $x$-direction and in the $z$-direction of a system, since these two spin observables do not commute.
 The \acrshort{epr} paradox occurs when measuring such non-commuting observables on an entangled system.
 Consider the entangled state $\ket{\phi^+}$, described above, to be shared between Alice and Bob.
-If Alice where to measure the spin in the $z$-direction and obtain the value $S_z = 1/2$, she can assume that if Bob where to measure his system in the same manner he would also obtain $S_z = 1/2$. 
+If Alice were to measure the spin in the $z$-direction and obtain the value $1/2$, she can assume that if Bob were to measure his system in the same manner he would also obtain $1/2$. 
 So it seems that if Bob measures his system in the $x$-direction and ask Alice for the outcome of her measurement in the $z$-direction, he would precisely access the values of two non-commuting observables, which is paradoxical.
 
-Believing in the complete local determination of the outcomes, \acrlong{epr} proposed the existence of \textit{local-hidden variables} to solve this paradox. Another solution to the paradox is that physics is not compatible with \textit{local realism}.
+Believing in the complete local determination of the outcomes, \acrlong{epr} proposed the existence of \textit{hidden variables} to solve this paradox. 
+%Another solution to the paradox is that physics is not compatible with \textit{local realism}.
 
 \medbreak
-Entanglement was at first left by physicists as a purely fundamental and philosophical problem of quantum mechanics.
-In 1964, John Bell proved that quantum mechanics can not be explained by a physical theory of \textit{local-hidden variable}, under the assumption of \textit{free will}~\cite{Bell1964}. 
-Based on the work of John Bell, Clauser, Horne, Shimony and Holt (\acrshort{chsh}) proposed an experimental protocol to test Bell's proof~\cite{Clauser1969}. 
-This proposal was soon followed by a first experimental realisation showing evidence towards Bell's proof~\cite{Freedman1972}.
+Discussions around entanglement were at first left by physicists as a purely fundamental and philosophical problem of quantum mechanics.
+In 1964, John Bell devised a test to prove that quantum mechanics can not be explained by a physical theory of \textit{local-hidden variable}, under the assumption of \textit{free will}~\cite{Bell1964}. 
+Based on the work of John Bell, Clauser, Horne, Shimony and Holt (\acrshort{chsh}) made a convincing proposal for an experimental protocol to implement Bell's test~\cite{Clauser1969}. 
+This proposal was soon followed by a first experimental realisation showing evidence towards Bell's non locality~\cite{Freedman1972}, i.e. the idea that quantum correlations cannot be explained by local-hidden variable.
 In the early 80's, Alain Aspect and his colleagues performed a series of experiments, ensuring that the assumption of \textit{free will} is reasonable~\cite{Aspect1982}.
 Finally, in 1998, an experiment performed in the group of Anton Zeilinger, closed the last loophole, ensuring truly local conditions~\cite{Weihs1998}.
 These works were ultimately recognized by the 2022 Nobel prize, awarded to John Clauser, Alain Aspect and Anton Zeilinger.
@@ -251,8 +247,8 @@ Notice however, that such certification still requires some assumption on the Be
 \medbreak
 
 The device-independent approach goes beyond the simple certification of entanglement and is at the core of complex quantum information technologies.
-\acrfull{diqkd} is possibly one of the most characteristic of such technologies~\cite{Pironio2009,Nadlinger2022}.
-\acrshort{diqkd} allow two parties to share a secret key whose secrecy is guarantee by the law of physics and without making assumptions on the quantum devices used to produce that key.
+\acrfull{DIQKD} is possibly one of the most characteristic of such technologies~\cite{Pironio2009,Nadlinger2022}.
+\acrshort{DIQKD} allow two parties to share a secret key whose secrecy is guarantee by the law of physics and without making assumptions on the quantum devices used to produce that key.
 The simplest device-independent protocol is self-testing, the device-independent characterisation of quantum states and measurements~\cite{Supic2019}.
 Another great example of device-independent technology is blind distributed quantum computing, where a client with a small quantum apparatus can distribute a quantum computing task to a distant server and certify the privacy of the computation as well as its integrity~\cite{Fitzsimons2017}.
 Other notable device-independent protocols is the device-independent generation of random number of quantum origin~\cite{Liu2018}.
