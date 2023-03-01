@@ -73,25 +73,21 @@ The shared quantum state $\rho_{AB}$ does not necessarily have a block diagonal 
 However, before measuring this state, Alice and Bob can always project it in their respective local basis to obtain the state
 \begin{equation}
 	\tilde{\rho}_{AB} = \bigoplus_{i,j} p_{i,j}\rho_{AB}^{i,j}
-	\label{eq:}
 \end{equation}
 where $p_{i,j}$ is the success probability to project $\rho_{AB}$ in the $(i,j)$-block.
 Note that the state $\tilde{\rho}_{AB}$ achieve the same CHSH violation as $\rho_{AB}$ thanks to the block structure of the CHSH operator
 \begin{equation}
 	S = \trr{\mathcal{B}_\text{CHSH}\rho_{AB}} = \sum_{i,j} p_{i,j} \trr{\mathcal{B}_\text{CHSH}^{i,j}\rho_{AB}^{i,j}}.
-	\label{eq:}
 \end{equation}
 
 In the previous chapter, we have seen that in order to complete a self-testing statement we need to construct local maps $\Lambda = \Lambda_A \otimes \Lambda_B$.
 These local isometries can be constructed using the same block diagonal recipe 
 \begin{equation}
 		\Lambda = \bigoplus_{i,j} \Lambda_A^i \otimes \Lambda_B^j
-	\label{eq:}
 \end{equation}
 with the isometry in each block acting as
 \begin{equation}
 	\Lambda_A^i: \mathcal{L}(\mathds{C}^2) \rightarrow \mathcal{L}(\mathds{C}^2), \qquad \Lambda_B^j: \mathcal{L}(\mathds{C}^2) \rightarrow \mathcal{L}(\mathds{C}^2).
-	\label{eq:}
 \end{equation}
 
 From this block structure, the singlet extractability defined in \eqref{eq:extractability} reads
@@ -125,7 +121,6 @@ Using the convex structure of \refeq{block_extractability}, the convex roof of $
 Therefore, from a CHSH score $S$, one can hope to extract a singlet fidelity of at most 
 \begin{equation}
 	\Xi [\rho_{AB} \rightarrow \psi^{-}] \geq \mathcal{F}(S)=\max\left(1/2, f(S)\right).
-	\label{eq:}
 \end{equation}
 
 \subsection{Robustness bounds}
@@ -240,7 +235,6 @@ with
     \rho_{AB}^{3,3}&= \frac{1}{4}(\id-\sigma_z)\otimes(\id+\sigma_h)\\
     \rho_{AB}^{1,1}=\rho_{AB}^{1,3}=\rho_{AB}^{3,1} &= \frac{1}{4}(\id+\sigma_z)\otimes(\id+\sigma_h),
 	\end{split}	
-	\label{eq:}
 \end{equation}
 and with $p_{i,j} =0$ for all other values of $i,j$.
 Conveniently, this family of states yield a CHSH score of $S=2+(2\sqrt{2}-2)\nu$.
@@ -263,7 +257,6 @@ Our approach is based on a more refined analysis of the correlations which are n
 Instead of using a single Bell inequality, our protocol relies on a family of \textit{generalized CHSH inequalities}
 \begin{equation}
 S_\theta = \sqrt{2}(\cos(\theta) \underbrace{\mean{A_0(B_0+B_1)}}_{X} + \sin(\theta)\underbrace{\mean{A_1(B_0-B_1)}}_{Y})
-	\label{eq:}
 \end{equation}
 parametrized by an angle $\theta \in [0,\pi/2]$, for which we derived robust self-testing statements.
 

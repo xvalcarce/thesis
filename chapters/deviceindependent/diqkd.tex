@@ -45,7 +45,6 @@ In order to do so, Alice and Bob can simply XOR their key bits with a public ran
 Thanks to the symmetrisation step, the mutual information between Alice and Bob's raw key simply reads
 \begin{equation}
 	I(A_0 : B_2) = H(A_0) - H(A_0|B_2) = 1 - h(Q)
-	\label{eq:}
 \end{equation}
 where $Q=p(a=b|xy)-p(a\neq b |xy)$ is the quantum error bit rate (Qber) and $h$ is the binary entropy $h(x)=-x \log_2(x) - (1-x)log_2(1-x)$.
 
@@ -201,7 +200,6 @@ with unit vectors $\mathbf{\alpha_x^i} = (\alpha_x^{i,0},\alpha_x^{i,1})$ and $\
 Without loss of generality we can also write the shared state as
 \begin{equation}
 	\ket{\psi}_{ABE} = \bigoplus_{i,j} \sqrt{p_{i,j}} \ket{\psi}_{ABE}^{i,j}	
-	\label{eq:}
 \end{equation}
 with $\ket{\psi}_{ABE}^{i,j} \in \mathds{C}^2_A \otimes \mathds{C}^2_B \otimes \Hil_E^{(4)}$ and for some probability distribution $p_{i,j}$.
 This allow to express Eve's uncertainty on the key, after noisy preprocessing, as the convex sum
@@ -225,7 +223,6 @@ where $\ket{\phi_k}=\{\ket{\phi^+},\ket{\phi^-},\ket{\psi^+},\ket{\psi^-}\}$ are
 The objective of the minimization, Eve's entropy, reads
 \begin{equation}
 	H(A_0'|E)_{i,j} = H(A_0') - H_{i,j}(\rho_E) + \sum_{a' = \pm 1} p(a'|x=0)H_{i,j}(\rho_{E|a'})	
-	\label{eq:}
 \end{equation}
 where $\rho_E$ is Eve's subsystem and $\rho_{E|a'}$ is Eve's subsystem conditioned on the key bit $a' = (1-q)\,a + q\,(-a)$ occurring with probability $p(a')$, for a noisy preprocessing bit flip probability of $q$.
 This expression can be simplified as $H(A_0')=1$ from the symmetrisation step.
@@ -238,7 +235,6 @@ Finally, we can solve the minimization problem
 		&\mathrm{s.t.}\quad 
 		\mathcal{B}_\theta (\mathbf{L},\alpha_0^i,\alpha_1^i,\beta_0^j,\beta_1^j) \geq S_\theta
 	\end{split}
-	\label{eq:}
 \end{equation}
 where $\mathcal{B}_\theta (\mathbf{L},\alpha_0^i,\alpha_1^i,\beta_0^j,\beta_1^j)$ is the generalized CHSH operator on two-qubits, parametrized by $\theta$, for Alice and Bob's measurement angles $(\alpha_0,\alpha_1,\beta_0,\beta_1)$, applied on states of the form \refeq{psi_ABE_reduced} characterized by $\mathbf{L}$.
 
@@ -300,7 +296,6 @@ Including some small tweaks, and adding these constraints we obtain the problem
 			  & && [M_a^x,N_b^y]=[M_a^x,Z_{b,i}]=[N_b^y,Z_{a,i}] = 0 \qquad&&\forall a,b,x,y,i
 	\end{alignedat}
 	\end{aligned}
-	\label{eq:}
 \end{equation}
 where the minimum is taken over all collections $(\ket{\psi},\{M_a^x\},\{N_B^y\},\{Z_{a,i}\})$.
 Using the NPA hierarchy, this problem can be relaxed into a converging sequence of semi-definite program, which can be solved excatly.
