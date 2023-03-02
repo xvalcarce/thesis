@@ -9,28 +9,39 @@ We consider the \acrshort{chsh} game in the quantum framework, where Alice and B
 Alice has access to the subsytem that lays in the Hilbert space $\mathscr{H}^A$ while Bob has access to the one in $\mathscr{H}^B$, both of unknown dimension.
 Each party has a measurement device with two inputs, $x,y=\{0,1\}$, respectively corresponding to observables $A_x$ acting on $\mathscr{H}^A$, for Alice, and $B_y$ on $\mathscr{H}^B$, for Bob.
 These measurements only have two possible outcomes $(a,b)=\pm1$.
-For each copies of the unknown share state, Alice and Bob randomly select a measurement and record that measurement's outcome. 
+For each copies of the unknown share state, Alice and Bob randomly select a measurement and record that measurement outcome. 
 This allow Alice and Bob to learn the statistics $p(ab|xy)$, from which can be computed the correlators $\mean{A_x B_y} = p(a=b|xy)-p(a\neq b| xy)$ and the CHSH score $S$ following \refeq{CHSH}. 
 We here focus on the ideal-case where the maximal CHSH score is obtained, $S=2\sqrt{2}$ and from which we want to deduce the characteristics of the quantum realization $\{\rho_{AB},A_x,B_y\}$.
 
 \medbreak
 
 Let us first show that $A_x$ and $B_y$ fully specify the quantum model of the mesurements.
-As the measurements we condiser have two outcomes $\{\pm1\}$, the quantum model of each observable is a \acrfull{povm} with two elements $\{M^{+1},M^{-1}\}$. We label $\{M_x^{+1},M_x^{-1}\}$ the POVM of $A_x$ and $\{M_y^{+1},M_y^{-1}\}$ the one of $B_y$.
+As the measurements we consider have two outcomes $\{\pm1\}$, the quantum model of each observable is a \acrfull{povm} with two elements $\{M^{+1},M^{-1}\}$. We label $\{M_x^{+1},M_x^{-1}\}$ the POVM of $A_x$ and $\{M_y^{+1},M_y^{-1}\}$ the one of $B_y$.
 Elements of these POVM satisfy
 \begin{itemize}
 	\item Hermitianity, $(M^{\pm1})^\dag=M^{\pm1}$,
 	\item Positivity, $M^{\pm1} \succeq 0$, that is $\bra{\psi}M^{\pm1}\ket{\psi}$ for all $\psi$,
 	\item Completeness, $M^{+1}+M^{-1}=\id$.
 \end{itemize}
-Alice and Bob observables can be directly constructed from their respective POVM following
+Alice and Bob's observables can be directly constructed from their respective POVM following
 \begin{equation}
 	\begin{split}
 		A_x &= \sum_a \,a M^a_x = M^{+1}_x - M^{-1}_x, \\
 		B_y &= \sum_b \,b M^b_y = M^{+1}_y - M^{-1}_y.
 	\end{split}	
+	\label{eq:obs_povm}
 \end{equation}
-From this construction and completeness, we can deduce that each POVM element is fully described by the operator they correspond to, following
+From this construction, we deduce that Alice and Bob's observables are Hermitian
+\begin{equation}
+	(M^{+1} - M^{-1})^\dag = (M^{+1})^\dag - (M^{-1})^\dag = M^{+1} - M^{-1},
+	\label{eq:obs_hermitian}
+\end{equation}
+and unitary
+\begin{equation}
+	(M^{+1}- M^{-1})^2 = (M^{+1})^2 - 2 M^{+1} M^{-1} + (M^{-1})^2 = M^{+1} + M^{-1} = \id.
+	\label{eq:unitary}
+\end{equation}
+Using \refeq{obs_povm} and completeness, we can also show that each POVM element is fully described by the operator they correspond to, following
 \begin{equation}
 	\begin{split}
 		M^{+1}_A = \frac{1}{2}(\id+A_x),\qquad & M^{-1}_A = \frac{1}{2}(\id-A_x) \\
@@ -40,7 +51,7 @@ From this construction and completeness, we can deduce that each POVM element is
 
 \medbreak
 	
-From the violation of the CHSH inequality, the first property of the quantum model to derive is that $\rho_{AB}$ is entangled.
+From the violation of the CHSH inequality, the first property of the quantum model we can deduce is that $\rho_{AB}$ is entangled.
 Indeed, if the shared state is separable, then there exists weights $p_\lambda\geq 0$ and system states $\{\rho_{A}^\lambda\}$ and $\{\rho_{B}^\lambda\}$ such that
 \begin{equation}
 	\rho_{AB}^\text{sep} = \sum_\lambda\, p_\lambda\, \rho_{A}^\lambda \rho_B^\lambda.
@@ -55,12 +66,13 @@ Therefore, the statistics $p(ab|xy)$ can be obtained by a local strategy where A
 	\end{split}
 \end{equation}
 From these statistics a maximum CHSH score of $S=2$ can be expected.
+Hence, a CHSH score $S>2$ rules out the possibility that the measured state is separable.
 
 \medbreak
 
 Another aspect we can deduce from a CHSH score $S>2$ is that the measurements are locally incompatible, i.e. $[A_0,A_1] \neq 0$ and $[B_0,B_1] \neq 0$.
 To demonstrate this, let us focus on Alice's observables. 
-If her measurements would commute, then there exists a basis $\{\ket{k}\}$, with $\ket{k}\in \Hil_A$, where both operators are diagonal and in particular
+If her measurements would commute, then there would exist a basis $\{\ket{k}\}$, with $\ket{k}\in \Hil_A$, where both operators are diagonal and in particular
 \begin{equation}
 	\begin{split}
 		A_x = \sum_k \ketbra{k} A_x \ketbra{k}.
@@ -79,14 +91,16 @@ where $p_k$ is the probability to project $\rho_{AB}$ on $\ket{k}$.
 Let us now compute the correlators appearing in the CHSH score on the state $\tilde{\rho}_{AB}$
 \begin{equation}
 	\begin{split}
-		\mean{A_x B_y}_{\tilde{\rho}_{AB}} &= \trr{\sum_k \left(\ketbra{k}_A \otimes \id_B \right)\rho_{AB}	\left(\ketbra{k}_A \otimes \id_B \right) \left(A_x \otimes B_y\right) } \\
+		\mean{A_x B_y}_{\tilde{\rho}_{AB}} &= \trr{\tilde{\rho}_{AB}(A_x \otimes B_y)} \\
+										   &=\trr{\sum_k \left(\ketbra{k}_A \otimes \id_B \right)\rho_{AB}	\left(\ketbra{k}_A \otimes \id_B \right) \left(A_x \otimes B_y\right) } \\
 					   &= \trr{\rho_{AB} \sum_k \left(\ketbra{k}_A \otimes \id_B \right)\left(A_x \otimes B_y\right)\left(\ketbra{k}_A \otimes \id_B \right)  } \\	
 					   &= \trr{\rho_{AB}\left(\sum_k \ketbra{k}A_x \ketbra{k}\right) \otimes B_y} \\
 					   &= \trr{\rho_{AB}\left(A_x \otimes B_y\right)}.
 	\end{split}
+	\label{eq:compatible_separable}
 \end{equation}
-When using compatible measurement, the correlation obtained can be achieve using a separable state.
-Therefore, a violation of the CHSH inequality is a proof of locally anticommuting measurements.
+This shows the equivalence between correlations computed using locally compatible measurements and correlation computed using a separable state.
+Therefore, a violation of the CHSH inequality, only possible for entangled state, is a proof of locally anticommuting measurements.
 
 \medbreak
 
@@ -111,19 +125,24 @@ Similarly, we construct the relevant space for each parties' subsytem as
 	\end{split}
 \end{equation}
 
+Using \refeq{unitary}, we can deduce the useful relation
+\begin{equation}
+	A_0^2 \ket{\psi}_A = A_1^2 \ket{\psi}_A = \id.
+	\label{eq:involutory}
+\end{equation}
+
 Then, we recall the expression of the CHSH operator
 \begin{equation}
 	\mathcal{B}_{\mathrm{CHSH}} = A_0 \otimes \left( B_0 + B_1 \right) + A_1 \otimes \left( B_0 - B_1 \right)
 \end{equation}
 which is Hermitian by construction.
-From the sum-of-square decomposition of the tilted CHSH operator $2\sqrt{2}\id_{AB} - \mathcal{B}_\text{CHSH}$ we can show that
-\begin{align}
-	A_0^2 \ket{\psi_A} = A_1^2 \ket{\psi_A} = \ket{\psi_A} \label{eq:involutory} \\
-	A_0 A_1 \ket{\psi_A} = -A_1 A_0 \ket{\psi_A} \label{eq:anticom}
-\end{align}
-for all state $\ket{\psi_A} \in \Hil_A^\star$~\cite{Pironio2010,Supic2019}.
+From the sum-of-square decomposition of the CHSH operator $2\sqrt{2}\id_{AB} - \mathcal{B}_\text{CHSH}$ we can show that
+\begin{equation}
+	A_0 A_1 \ket{\psi}_A = -A_1 A_0 \ket{\psi}_A 
+	\label{eq:anticom}
+\end{equation}
+for all state $\ket{\psi}_A \in \Hil_A^\star$~\cite{Pironio2010,Supic2019}.
 
-\refeq{involutory} tells us that Alice's observables are involutory matrices, i.e. matrices with eigenvalues $\pm 1$.
 We label $\ket{0_k} \in \Hil_A^\star$ any eigenstates of $A_0$ satisfying $A_0 \ket{0_k} = \ket{0_k} $.
 We then introduce $\ket{1_k} = A_1 \ket{0_k}$.
 From \refeq{involutory} and \refeq{anticom}, we can check that the basis $\{\ket{0_k},\ket{1_k}\}$ is an orthonormal basis for which
@@ -143,7 +162,7 @@ Following the same steps for Bob, we find that his observables have the same blo
 	B_0 = \bigoplus_l \frac{\sigma_z^{(l)}+\sigma_x^{(l)}}{\sqrt{2}}, \qquad B_1 = \bigoplus_l \frac{\sigma_z^{(l)}-\sigma_x^{(k)}}{\sqrt{2}}.
 \end{equation}
 This suggest that $\Hil_A^\star$ can be written as a tensor space of a qubit subspace $\mathds{C}_A^2$ with basis $\{\ket{0},\ket{1}\}$ and a Hilbert space $\Hil_{k,A}$ of unknown dimension and carrying the label $k$.
-Formally, this allow us to write the decomposition
+Formally, this allows us to write the decomposition
 \begin{equation}
 	\begin{split}
 		\ket{0_k} &= \ket{0,k} = \ket{0}\ket{k} \\
@@ -185,7 +204,7 @@ From the derived form of both parties observables, we can write the CHSH operato
 	\end{split}
 \end{equation}
 which only acts non-trivially, according to $\mathcal{B}_\text{CHSH}^\text{2-qubit}$, on the two qubit space of Alice and Bob.
-The two-qubit operator $\mathcal{B}_\text{CHSH}^\text{2-qubit}$ has two-non zero eigenvalues, $2$ and $-2$, with corresponding eigenvectors $\ket{\phi^+}$ and $\ket{\psi^-}$ respectively. These eigenvectors are Bell states and their expression can be found in \refeq{bell_states}.
+The two-qubit operator $\mathcal{B}_\text{CHSH}^\text{2-qubit}$ has two non-zero eigenvalues, $2$ and $-2$, with corresponding eigenvectors $\ket{\phi^+}$ and $\ket{\psi^-}$ respectively. These eigenvectors are Bell states and their expression can be found in \refeq{bell_states}.
 This allow us to formulate the CHSH operator as
 \begin{equation}
 	\mathcal{B}_\text{CHSH}	= 2\sqrt{2}\left(\ketbra{\phi^+}-\ketbra{\psi^-}\right) \otimes \id_{A',B'}
@@ -216,7 +235,7 @@ From the CHSH score $S=2\sqrt{2}$, we can hence conclude that there is a basis i
 
 \medbreak
 
-Since the observed correlations would be unchanged by consider another basis in which the state and measurements would be map to
+Since the observed correlations would be unchanged by considering another basis in which the state and measurements would be map to
 \begin{equation}
 	\begin{split}
 		\rho_{AB} &\rightarrow \left(U_A \otimes U_B\right)\rho_{AB}\left(U_A \otimes U_B\right)^\dag \\
