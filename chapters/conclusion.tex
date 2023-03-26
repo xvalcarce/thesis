@@ -1,39 +1,50 @@
-In this thesis we presented our work on device-independent quantum information protocols, improving them with the end goal of easing their experimental implementations, and answering more fundamental questions along the way.
+In this thesis we presented our work on device-independent quantum information protocols, improving them with the end goal of easing their experimental implementations, and answering some fundamental questions along the way.
 As quantum information applications are expected to have an important impact on current technologies, notably revolutionizing computation and communication tasks, the device-independent framework appears as a necessity.
-Indeed, for quantum information protocols to replace their current classical counterparts, stable and robust implementations are as desired as improved performances. 
+Indeed, for quantum information protocols to replace their current classical counterparts, stable and robust implementations are as crucial as improved performances. 
 Moreover, in a global world where communication is key and where manufacturing is scattered across numerous actors, there is the need for cryptographic systems which not only come with the highest security proofs but also with the capability to detect the presence of interferences from the devices they rely on.
-Device-independent protocols address these concerns, by allowing certifications of resources and security guarantees made solely from classical outputs of the devices in use, i.e. without relying on assumption on their inner working. 
+Device-independent protocols address these concerns by allowing certifications of resources and security guarantees made solely from classical outputs of the devices in use, i.e. without relying on assumption on their inner working. 
 
 In the first part of this thesis, we analyzed self-testing, the simplest and most fundamental device-independent protocol, which enables the certification of some quantum resources.
 In a second part, we explored device-independent quantum key distribution, a device-independent approach to quantum cryptography, allowing two parties to share a secret symmetric key with a provable security guarantee, based on the fundamental laws of physics. 
 
 In this last part, we briefly recall the results we developed in this thesis before discussing some open questions raised by our contributions as well as by other recent works in the field.
 Finally, we put device-independent protocols, and in particular self-testing and DIQKD, into a boarder perspective.
-We show these protocols could help build a quantum internet, enhancing the computation and communication capabilities of humanity.
+We show how these protocols could help build a quantum internet, therefore enhancing the computation and communication capabilities of humanity.
 
 \paragraph{Self-testing} 
 
 Self-testing enables the device-independent certification of certain quantum resources from the presence of specific non-local correlations.
-In Chap.~\ref{chap:selftesting} we recalled a method to self-test two-qubit maximally entangled states and maximally incompatible measurements from the maximal violation of the CHSH inequality.
-We then explored a more practical scheme, robust self-testing, in Chap.~\ref{chap:robust}, enabling the certification of a singlet-fraction in a noisy and lossy regime, relevant for real world applications.
-More specifically, we focus on quantifying the fundamental resources that are required for such robust self-tests.
-In Sec~\ref{sec:robust_limits}, we explained how we derived a lower-bound on the CHSH-score below which the robust singlet self-testing fail~\cite{Valcarce2020}.
-This lead to some insights on where efforts need to be put to ease the experimental implementation of robust self-testing.
-Notably, as this bound is far from the local CHSH bound, and out of reach for fully-photonic experiments, we assessed the need for robust self-testing protocols beyond the CHSH score.
-Addressing this need, we formulated an original protocol, that we briefly reviewed in Sec.\ref{sec:robust_XY}.
-Based on a more refined analysis of the correlations, this protocol provides better robustness bounds, and, in the case of asymmetric noises, enables robust self-testing even below the CHSH lower-bound we derived~\cite{Valcarce2022}.
+In particular, from the maximal CHSH score, it is possible to self-test two-qubit maximally entangled states and maximally incompatible measurements.
+For real world applications, robust singlet self-testing provides the certification of a singlet-fraction from lower violation of the CHSH inequality, naturally occurring in a noisy and lossy regime. 
+We present our work towards the quantification of the fundamental resources that are required for robust singlet self-tests.
+Notably, we found a state yielding a CHSH score of $S\approx2.05$ while maintaining a trivial singlet extractability~\cite{Valcarce2020}.
+Therefore, this CHSH violation is a threshold below which robust singlet self-testing fails.
+From the relatively high value of this threshold, we emphasized the need for new robust self-testing protocols which provide certification beyond the CHSH score.
+To tackle this matter, we formulated an original protocol in \cite{Valcarce2022}, leveraging the available information of correlators pair to provide better robustness bounds without changing experimental requirements.
+Interestingly, in the case of imbalanced noises, our protocol allows for self-tests below the CHSH threshold of $S\approx 2.05$ and even as close as the local bound, $S=2$, providing an asymmetric enough noise. 
+Our new protocol, henceforth, eases the experimental realization of device-independent protocols based on the certification of singlet states.
+
+
+%In Chap.~\ref{chap:selftesting} we recalled a method to self-test two-qubit maximally entangled states and maximally incompatible measurements from the maximal violation of the CHSH inequality.
+%We then explored a more practical scheme, robust self-testing, in Chap.~\ref{chap:robust}, enabling the certification of a singlet-fraction in a noisy and lossy regime, relevant for real world applications.
+%More specifically, we focus on quantifying the fundamental resources that are required for such robust self-tests.
+%In Sec~\ref{sec:robust_limits}, we explained how we derived a lower-bound on the CHSH-score below which the robust singlet self-testing fail~\cite{Valcarce2020}.
+%This lead to some insights on where efforts need to be put to ease the experimental implementation of robust self-testing.
+%Notably, as this bound is far from the local CHSH bound, and out of reach for fully-photonic experiments, we assessed the need for robust self-testing protocols beyond the CHSH score.
+%Addressing this need, we formulated an original protocol, that we briefly reviewed in Sec.\ref{sec:robust_XY}.
+%Based on a more refined analysis of the correlations, this protocol provides better robustness bounds, and, in the case of asymmetric noises, enables robust self-testing even below the CHSH lower-bound we derived~\cite{Valcarce2022}.
 
 \medbreak
 
-The works presented in the first part of this thesis show the need for more robust self-testing protocols and point at some directions where improvements can be obtained, but also raise some more fundamental questions.
+Our results on self-testing, presented in the first part of this thesis, show the need for more robust self-testing protocols and point at some directions where improvements can be obtained, but also raise some more fundamental questions.
 First, the CHSH-score threshold we derived is still far from the bound given by the best CHSH-based self-testing protocol~\cite{Kaniewski2016}.
 Therefore an improvement is to be expected on the threshold or on the local isometries proposed in \cite{Kaniewski2016} or both.
 Then, analogously to what has been done for DIQKD~\cite{Brown2021}, one can hope for a robust self-testing protocol harnessing all of the available statistics.
 Insights obtained from our generalized-CHSH based self-test show that such a protocol should help providing self-tests that are robust to any type of noises.
-This appears as a crucial step not only to ease the implementation of self-testing, but also to make self-testing a handy and flexible certification tool, that could be used as a complementary tool with tomography.
+This would be a crucial step not only to ease the implementation of self-testing, but also to make self-testing a handy and flexible certification tool, that could be used as a complementary tool with tomography.
 Finally, better robustness bound could arise when considering a scenario with more than 2 inputs and outputs.
 However, this would require a new protocol derivation that does not rely on Jordan's lemma.
-Again, such a proof could come as an inspiration of the approach taken in \cite{Brown2021}.
+Again, such a proof could come from tools used by the approach taken in \cite{Brown2021} (sure?).
 
 \medbreak
 
@@ -41,8 +52,8 @@ More broadly, robust self-testing methods should be extended to enable the certi
 First, the robust self-testing of quantum channels, introduced in \cite{Sekatski2018}, could be extended to certify quantum measurements.
 A framework for the robust self-testing of joint quantum measurements could then be developed.
 Finally, this may lead to \textit{complete self-tests}, certifying at once both states and measurements.
-For each of these method, it is desired to have proofs valid in non-IID scenarios to enable practical applications.
-At first glance, the approach based on estimators on the statistics demonstrated in \cite{Bancal2021} could be extended to these more complete self-tests. 
+For each of these methods, it is desired to have proofs valid in non-IID scenarios to enable practical applications.
+Intuitively, the approach based on estimators on the statistics demonstrated in \cite{Bancal2021} could be extended to these more complete self-tests. 
 
 
 %Similarly to what is done with the self-test of quantum state, propose a way to robust self-test measurement.
@@ -52,27 +63,42 @@ At first glance, the approach based on estimators on the statistics demonstrated
 \paragraph{DIQKD}
 
 \acrfull{DIQKD} allow two parties to share a secret and identical cryptographic key in a provable way.
-In Chap.~\ref{chap:diqkd}, we discussed the motivations for DIQKD and the steps involved in a typical DIQKD protocol.
-Security proofs, in the form of key rates, are then reviewed in Chap.~\ref{chap:entropybound}. 
-This includes the fundamental key rate expression~\cite{Devetak2005}, and a practical key rate expression that has been derived from the CHSH score~\cite{Pironio2009}. 
-We then showed some improvements that have been build on top of this key rate, notably fine-grained error-correction~\cite{Ma2012} and noisy pre-processing~\cite{Ho2020,Woodhead2021}. 
-In order to ease concrete experimental realizations of DIQKD, we proposed a new security proof based on generalized-CHSH inequalities~\cite{Sekatski2021}, that we briefly reviewed in Sec.~\ref{sec:Pavel}.
-This proof enhances key rates in most cases, as well as the robustness to losses when considering certain classes of state.
-Finally, the recent work \cite{Brown2021} that has introduced key rate based on the full statistics, yielding the best rate and robustness, is discussed in Sec~\ref{sec:Brown}.
-After reviewing the different experimental platforms that can be used to implement DIQKD, in Chap.~\ref{chap:implementing_diqkd} we presented how we combined reinforcement learning and a custom-made simulation framework to automate the design of photonic experiments~\cite{Valcarce2022b}.
-Notably, when applied to DIQKD, our method proposed a setup yielding a higher rate and robustness to losses when compared to the SPDC setup, the standard photonic setup for Bell non-locality.
-Additionally, the flexibility of this approach led us to find a setup based on homodyne measurements, achieving higher CHSH score than the previous best proposal.
+Security proofs are commonly found in the form of a key rate guaranteeing a fraction of secure key bit per protocol run.
+After the derivation of a first practical key rate from the CHSH score, numerous improvements pushed that key rate to higher value and increased its robustness to losses.
+On the experimental side, photonic setups seems the most promising platform for long-term DIQKD applications.
+However, the SPDC setup -- the photonic implementation successfully used in Bell tests -- only achieves low CHSH score in realistic efficiency regimes, thus yielding key rates that are only slightly positive.
+Therefore, in order to ease photonic DIQKD realizations, we aimed at improving DIQKD security proofs.
+In ~\cite{Sekatski2021} we propose a new proof which utilize more information from the available statistics than the sole CHSH score.
+This refined analysis allowed us to more tightly bound the information an eavesdropper can get access to and, therefore, improve the key rate.
+Considering the SPDC setup, our security proof increased the key rate by $37\%$ in the ideal scenario.
+However, we did not witness improvement in the critical efficiency.
+We thus tackled the problem of enabling photonic DIQKD realizations from another perspective.
+Using reinforcement learning and a custom-made simulation framework, we crafted a method to automate the design of photonic experiments~\cite{Valcarce2022b}.
+When applied to DIQKD, our method proposed a new setup yielding both a higher rate and better robustness to losses when compared to the SPDC setup.
+Additionally, the flexibility of our approach led us to find a setup based on homodyne measurements, achieving higher CHSH score than the previous best proposal.
+
+
+%In Chap.~\ref{chap:diqkd}, we discussed the motivations for DIQKD and the steps involved in a typical DIQKD protocol.
+%Security proofs, in the form of key rates, are then reviewed in Chap.~\ref{chap:entropybound}. 
+%This includes the fundamental key rate expression~\cite{Devetak2005}, and a practical key rate expression that has been derived from the CHSH score~\cite{Pironio2009}. 
+%We then showed some improvements that have been build on top of this key rate, notably fine-grained error-correction~\cite{Ma2012} and noisy pre-processing~\cite{Ho2020,Woodhead2021}. 
+%In order to ease concrete experimental realizations of DIQKD, we proposed a new security proof based on generalized-CHSH inequalities~\cite{Sekatski2021}, that we briefly reviewed in Sec.~\ref{sec:Pavel}.
+%This proof enhances key rates in most cases, as well as the robustness to losses when considering certain classes of state.
+%Finally, the recent work \cite{Brown2021} that has introduced key rate based on the full statistics, yielding the best rate and robustness, is discussed in Sec~\ref{sec:Brown}.
+%After reviewing the different experimental platforms that can be used to implement DIQKD, in Chap.~\ref{chap:implementing_diqkd} we presented how we combined reinforcement learning and a custom-made simulation framework to automate the design of photonic experiments~\cite{Valcarce2022b}.
+%Notably, when applied to DIQKD, our method proposed a setup yielding a higher rate and robustness to losses when compared to the SPDC setup, the standard photonic setup for Bell non-locality.
+%Additionally, the flexibility of this approach led us to find a setup based on homodyne measurements, achieving higher CHSH score than the previous best proposal.
 
 
 \medbreak
 
 The recent development of DIQKD protocols, are important steps for new proof-of-concept DIQKD experiments.
-However, considering the photonic platform as the most promising one for long-term DIQKD applications, more efforts need to be put to improve key rates for the low efficiency regime which is characteristic of these setups.
+However, for the low efficiency regime characteristic of photonic setups, improvements are required to push the key rate by order of magnitude.
 One improvement could come from a more general pre-processing of inputs and outcomes, i.e. an extension of noisy pre-processing~\cite{Ho2020}.
 Indeed, works in non-locality distillation have shown that pre-processing may amplify the non-local nature of correlations~\cite{Forster2009}.
 Therefore, a general pre-processing may enable the distillation of better rates from current DIQKD protocols.
 
-Additionally, if in this thesis we focus on asymptotic key rates of DIQKD protocols, in practice, however, finite-size effects need to be taken into account~\cite{Tan2021}.
+Additionally, if in this thesis we focused on asymptotic key rates of DIQKD protocols, in practice, however, finite-size effects need to be taken into account~\cite{Tan2021}.
 In particular, the entropy accumulation theorem (EAT) used to derive security proofs valid under coherent attacks becomes costly -- resulting in lower key rates.
 However, this cost could be mitigated by a modified version of EAT that would yield better bounds, notably on the smooth max entropy of Eve on Bob's outcomes.
 Furthermore, for given correlations, a better suited Bell inequality than CHSH could be used as the min-tradeoff function on which the EAT relies.
@@ -80,21 +106,22 @@ Such an inequality can be extracted from the dual formulation of the problem \re
 
 \medbreak
 
-In parallel to protocols improvements, it is worth analyzing standard photonic setups, such as the SPDC setup, as well as newly proposed one, whenever a better security proof becomes available.
-With the currently best bound on Eve's uncertainty on the key and the capacity to consider all measurements outcomes in the security proof, positive key rates at practical efficiencies from these setups may be obtained with the protocol introduced in \cite{Brown2021}.
+For every new security proofs and protocol improvements, it is also worth analyzing standard photonic setups, such as the SPDC setup, as well as newly proposed one.
+For example, with the currently best bound on Eve's uncertainty on the key and the capacity to consider all measurements outcomes in the security proof, positive key rates at practical efficiencies from these setups may be already be obtained with the protocol introduced in \cite{Brown2021}.
+
 
 \medbreak 
 
-Finally, it is necessary to develop new experimental designs for DIQKD experiments.
+Finally, it is necessary to develop new experimental designs for DIQKD implementation.
 These new designs should progressively address practical requirements and limitations, e.g. a decent scalability with the distance between parties, the ability to operate at a high rate, or the capacity to transmit photons at telecom wavelength.
 Reinforcement learning may help generate new experiments blue prints covering some of these points.
-Furthermore, progress in other quantum information processing field, notably quantum computing, may provide new solutions to these challenges.
-For example, as suggested in \cite{Zapatero2023}, arrays of atoms or ions trapped could help parallelize the generation of entanglement, helping heralded entanglement systems to operate at a higher rate.
+Furthermore, progress in other quantum information processing field, such as quantum computing or quantum simulation, may provide new solutions to these challenges.
+For example, as suggested in \cite{Zapatero2023}, arrays of trapped atoms or ions could help parallelize the generation of entanglement, helping heralded entanglement systems to operate at a higher rate.
 
 \paragraph{Towards a Quantum Internet}
 
-The quantum internet is an hypothetical network of classical and quantum devices, connected by links in which transit both classical and quantum information.
-This upgraded version of the current Internet will provide new functionalities with the two most notable ones being communications secured by quantum cryptography and enhance computational power thanks to quantum computers.
+The quantum internet is a hypothetical network of classical and quantum devices, connected by links in which both classical and quantum information transit.
+This upgraded version of the current Internet will provide new functionalities with the two most notable ones being communication secured by quantum cryptography and enhance computational power from quantum computers.
 If currently many challenges are in the way of a quantum Internet, however, incentives for its realization are flourishing.
 Indeed, promises in quantum computing, from fault-tolerant quantum computing heading the roadmap of some companies~\cite{Google2022,Intel2022,IBM2022} to potential ground breaking quantum computation advantages~\cite{Deutsch1992,Shor1994,Grover1996} and applications~\cite{Bauer2020,Paudel2022} are pushing for the accessibility of quantum computers via internet~\cite{Rietsche2022}.
 Cloud quantum computing seems therefore to be the first key element for a quantum internet.
@@ -102,7 +129,7 @@ Cloud quantum computing seems therefore to be the first key element for a quantu
 \medbreak
 
 The ability to process quantum information in the cloud requires new security guarantees.
-Thanks to a minimal set of assumptions, self-testing is a privileged candidate to guarantee the proper functioning of elements involved in cloud quantum computing~\cite{Sekatski2018}.
+With a minimal set of assumptions, self-testing is a privileged candidate to guarantee the proper functioning of elements involved in cloud quantum computing~\cite{Sekatski2018}.
 Indeed, self-testing may become the tool of choice for the certification of network links, quantum gates and quantum measurements.
 Manufacturers and cloud providers could thus use self-testing to reliably identify faulty elements in their systems.
 Future progress in self-testing could lead to even more general protocol where composite systems could be self-tested, scaling the capacity for error detection.
@@ -116,11 +143,4 @@ Nowadays, QKD is however not privileged by the security agencies of numerous cou
 These agencies unanimously criticize the need for a special infrastructure, the required trust in relay points and the susceptibility to attacks from an eavesdropper.
 The former might be cover by infrastructure requirements for quantum computing and encouraged by potential quantum communication applications such as quantum money~\cite{Wiesner1983,Molina2013}.
 Furthermore, developing on-chip QKD systems coupled with transmission at telecom wavelength would reduce infrastructure changes to simply adding QKD rack units in data centers. 
-Device-independent quantum key distribution protocols address the last two concerns; the DI approach remove the trust needed in relays and protocols secure against coherent attacks prevent any type of hacking.
-
-
-%Device-independent protocols a
-%quantum internet: quantum computing will be in the cloud. 
-%slef-testing help certify network link so ++ security for sensible applications.
-%QKD is not privileged by countries UK, France, US, however the DI approach + the need for secure quantum link for quantum computing will help developped the infrastructure.
-%Boom Quantum Internet.
+Device-independent quantum key distribution protocols address the last two concerns; the device-independent approach removes the need to trust relays and protocols secure against coherent attacks prevent any type of hacking.
