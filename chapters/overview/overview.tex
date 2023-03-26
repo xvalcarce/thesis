@@ -29,7 +29,7 @@ The four Bell states
 \end{align}
 are famous examples of such entangled states.
 
-More generally, a convex sum of pure states, or \textit{mixed state}, described by the density matrix
+More generally, convex sum of pure states, or \textit{mixed state}, are described by the density matrix
 \begin{equation}
 	\rho = \sum_i c_i \ket{\psi_i} \bra{\psi_i} \qquad \text{with} \quad \sum_i c_i = 1,\quad c_i\geq 0.
 	\label{eq:mixed_state}
@@ -61,8 +61,7 @@ Discussions around entanglement were at first left by physicists as a purely fun
 In 1964, John Bell devised a test to prove that quantum mechanics can not be explained by a physical theory of \textit{local-hidden variable}, under the assumption of \textit{free will}~\cite{Bell1964}. 
 Based on the work of John Bell, Clauser, Horne, Shimony and Holt (\acrshort{chsh}) made a convincing proposal for an experimental protocol to implement Bell's test~\cite{Clauser1969}. 
 This proposal was soon followed by a first experimental realisation showing evidence towards Bell's non locality~\cite{Freedman1972}, i.e. the idea that quantum correlations cannot be explained by local-hidden variable.
-In the early 80's, Alain Aspect and his colleagues performed a series of experiments, ensuring that the assumption of \textit{free will} is reasonable~\cite{Aspect1982}.
-Finally, in 1998, an experiment performed in the group of Anton Zeilinger, closed the last loophole, ensuring truly local conditions~\cite{Weihs1998}.
+Over time, increasingly convincing implementations of Bell's test have been reported, including the seminal experiments conducted by Alain Aspect and his colleagues in the early 1980's~\cite{Aspect1982,Aspect1982b} and the experiment carried out by the Zeilinger group in the late 1990's~\cite{Weihs1998}.
 These works were ultimately recognized by the 2022 Nobel prize, awarded to John Clauser, Alain Aspect and Anton Zeilinger.
 
 \medbreak
@@ -78,25 +77,25 @@ Entanglement-based technologies include quantum key distribution~\cite{Ekert1991
 
 \section{Bell game}
 
-In order to answer the \acrshort{epr} paradox, John Bell introduced a theoretical game, known today as a \textit{Bell game}~\cite{Bell1964}.
-This game consists of two players, Alice and Bob, that may have been in contact in the past but that are spatially separated while the game is played.
-A spatial separation ensures that their is no communication between the two parties while the game is played, i.e. they can not influence each other.
-Alice and Bob each own a physical system as well as a finite number of measurement devices.
+In order to prove the existence of correlations not compatible with a local hidden variable theory, John Bell introduced a theoretical game, known today as a \textit{Bell game}~\cite{Bell1964}.
+This game consists of a particle pair souce and two space-like separated players, Alice and Bob, each having a measurement apparatus.
 
-Each round of the game, Alice chooses a measurement to perform and records the outcome of that measurement on her system.
+When a particle is received, Alice chooses a measurement to perform and records the outcome of that measurement.
 We label $x$ her \textit{measurement choice} or \textit{setting}, $A_x$ the corresponding measured observable, and $a$ the outcome.
-Similarly Bob makes a measurement choice $y$ and obtains the outcome $b$ from the observable $B_y$.
+Similarly, when he receives a particle, Bob makes a measurement choice $y$ and obtains the outcome $b$ from the observable $B_y$.
 This Bell game is sketched in \reffig{belltest}.
 
-The outcomes $a,b$ are not necessarily deterministically determined by the inputs $x,y$, we are thus interested in the probability $p(ab|xy)$. 
+The outcomes $a,b$ are not necessarily deterministically determined by the inputs $x,y$, we are thus interested in the joint probability $p(ab|xy)$ of having outcomes $a$ and $b$ given the meaasurement choices $x$ and $y$. 
 For a given game, one can arrange the probabilities for every possible outcomes and inputs in a vector $\mathbf{P}=\{ p(ab|xy)\}$ also refer to as \textit{correlations}.
 These correlations form a set whose boundaries depends on which assumptions are fulfilled by the Bell game and which resources are considered.
 
+Note that a spatial separation between players ensures that their is no influence between the two measurement devices while the game is played.
+
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.7\textwidth]{chapters/overview/img/belltest.pdf}
+		\includegraphics[width=0.95\textwidth]{chapters/overview/img/belltest.pdf}
 	\end{center}
-	\caption{Bell game. Alice and Bob are space-like separated. Alice freely chooses an input $x$ and obtain an output $a$. Bob has input $y$ and output $b$.}
+	\caption{Bell game. A source (yellow star) emits a particle-pair, one send to Alice (left) and one to Bob (right). Alice chooses an input $x$ and obtains an output $a$. Bob selects an input $y$ and records the output $b$. The blue areas represent light-cones of different events. For a Bell test to be valid, the measurement outcome of a party has to be recorded outside the light-cone triggered by the other party's choice of setting. }
 	\label{fig:belltest}
 \end{figure}
 
@@ -118,25 +117,25 @@ Mathematically, such correlations satisfy
 
 \section{Local and non-local correlations}
 
-\textit{Local correlations} are fully characterised from the local system of Alice and Bob, i.e. they are not influenced by any external factor.
+\textit{Local correlations} are fully characterised from the local system of Alice and Bob, i.e. they are not influenced by actions outside the light cone.
 This type of correlation accounts for some hypothetical shared hidden information between the two parties.
-Indeed, since Alice and Bob were in contact in the past, outcomes of their measurements can be influenced by some past factors, available locally to both parties' systems but possibly unobservable, i.e. \textit{hidden}.
-These past factors are \textit{local-hidden variables}, which can take arbitrary values, that we represent using $\lambda$.
-Moreover, because these variables might not stay constant throughout the game, we denote $q(\lambda)$ the probability distribution governing their evolution. 
-From here, we can formally defined local correlations as any correlation that can be decomposed as
+Since Alice and Bob's particles were in contact in the past, outcomes of their measurements can be influenced by some past factors, available locally to both parties' systems but possibly unobservable, i.e. \textit{hidden}.
+These past factors are often called \textit{local-hidden variables} and are represented by $\lambda$.
+Given that $\lambda$ can be distributed according to $q(\lambda)$ we formally defined local correlations as any correlation that can be decomposed as
 \begin{equation}
 	p(ab|xy) = \int_\lambda \mathrm{d}\lambda \, q(\lambda) p(a|x,\lambda) p(b|y,\lambda).
 	\label{eq:local}
 \end{equation}
-One assumption we made in writing this decomposition is the \textit{freedom of choice} of both parties' measurements, as $x$ and $y$ are independent of $\lambda$.
+One assumption we made in writing this decomposition is the \textit{freedom of choice} of both parties' measurements, that is $x$ and $y$ are independent of $\lambda$.
 
 Interestingly, any local correlation can be written as a convex sum of deterministic local strategies, $p_D(ab|xy)=p_D(a|x)p_D(b|y)$, for which the output only depends on the input, following
 \begin{equation}
 	p(ab|xy) = \sum_{p_D \in \mathcal{L}_\text{Det}} c_{p_D} p_D(ab|xy)
 	\label{eq:polytope}
 \end{equation}
-with $c_{p_D}\geq 0$ and $\sum c_{p_D} = 1$, and where $\mathcal{L}_\text{Det}$ is the set of all deterministic local strategies.
-From the previous decomposition it follows that the convex sum of local strategies is also local. 
+with $c_{p_D}\geq 0$ and $\sum c_{p_D} = 1$. 
+Here $\mathcal{L}_\text{Det}$ is the set of all deterministic local strategies.
+From the previous decomposition, it follows that the convex sum of local strategies is also local. 
 Geometrically, the set of local correlations is the convex hull of a finite number of deterministic strategies, which is a convex polytope, the \textit{local polytope}.
 
 \medbreak
@@ -144,13 +143,12 @@ Geometrically, the set of local correlations is the convex hull of a finite numb
 \textit{Non-local} correlations are defined as any correlation that does not admit a decomposition in the form of \refeq{local}.
 Such correlations can thus not be explained by means of local-hidden variables. 
 Note that this is the case for some non-signalling correlations as correlations satisfying \refeq{non-signalling} conditions do not necessarily admit a decomposition of the form \refeq{local}.
-However, local correlations respect the non-signalling assumption.
-
-For a review on non-locality refer to \cite{Brunner14}.
+However, local correlations fullfill the non-signalling assumption. 
+See \cite{Brunner14,Scarani2019} for a review on Bell nonlocality.
 
 \section{Quantum correlations}
 
-\textit{Quantum correlations} occur when Alice and Bob each share a part of a quantum system, $\rho_{AB}$, that they prepared when they were in contact.
+\textit{Quantum correlations} occur when Alice and Bob's particles are descirbed by a quantum state $\rho_{AB}$.
 Generally, this quantum state is a mixed state laying in the Hilbert space $\mathcal{L}(\mathscr{H}^{AB} = \mathscr{H}^{A} \otimes \mathscr{H}^B)$.
 For measurement choices $x,y$, quantum correlations are given by the Born rule
 \begin{equation}
@@ -162,10 +160,10 @@ where $M^a_x$ are the \acrfull{povm} elements of the observable $A_x$ associated
 \medbreak
 
 Quantum correlations satisfy the non-signalling assumption, but are not necessarily local.
-In order to obtain non-local quantum correlations, Alice and Bob must share an entangled state as the correlation produced by a separable state
+In order to obtain non-local quantum correlations, Alice and Bob must share an entangled state as the correlation produced by a separable state $\rho_{AB}^{\mathrm{sep}} = \sum_i c_i \rho^A_i \otimes \rho^B_i$,
 \begin{equation}
 	\begin{split}
-		p(ab|xy) &= \trr{\rho_{AB} \, M^a_x \otimes M^b_y} \\
+		p(ab|xy) &= \trr{\rho_{AB}^{\mathrm{sep}} \, M^a_x \otimes M^b_y} \\
 				 &= \sum_i c_i\, \trr{(\rho^A_i \otimes \rho^B_i) (M^a_x \otimes M^b_y)} \\
 				 &= \sum_i c_i\, \trr{\rho^A_i M^a_x \otimes \rho^B_i M^b_y} \\
 				 &= \sum_i c_i\, p_i(a|x)\, p_i(b|y)
@@ -176,7 +174,7 @@ Entanglement can therefore be detected solely from the observations of non-local
 
 \section{Bell inequalities}
 
-In his 1964 paper, John Bell proposed a theorem which bounds the correlations that can be obtain by local-hidden variables theories~\cite{Bell1964}.
+In his 1964 paper, John Bell proposed bounds on the correlations that can be obtain by local-hidden variables theories~\cite{Bell1964}.
 Today, these bounds are known as \textit{Bell inequalities}.
 Facets of the local polytopes are examples of such Bell inequalities.
 When a Bell inequality is not satisfied by some correlation, we observe a \textit{Bell violation}.
@@ -189,7 +187,7 @@ The most general expression of a Bell inequality $\mathcal{I}$ on some correlati
 	\mathcal{I}(\mathbf{P}) = \sum_{a,b,x,y}c_{abxy} p(ab|xy) \leq \beta_L
 	\label{eq:bell_inequality}
 \end{equation}
-where $\beta_L$ is the \textit{local bound}, i.e. the maximum Bell score such that $\mathbf{P}$ is compatible with local realism.
+where $\beta_L$ is the \textit{local bound}, i.e. the maximum Bell score such that $\mathbf{P}$ statisfies \refeq{local}.
 
 \section{CHSH inequality}
 
@@ -227,16 +225,16 @@ It can also be proven that $2\sqrt{2}$ is the maximum \acrshort{chsh} violation 
 \label{chapter:quantumInfo}
 
 Quantum entanglement and quantum non-locality gave birth to the field of quantum information and led to the second quantum revolution.
-Indeed, if quantum mechanics revolutionized technology by using quantum proprieties to process classical information, mostly thanks to the invention of the transistor, there is now a shift to use quantum objects as a direct carrier of information.
+Indeed, if quantum mechanics revolutionized technology by leveraging quantum proprieties to process classical information, mostly thanks to the invention of the transistor, there is now a shift to control indivdual quantum objects and use them as carrier of information.
 Quantum information already have numerous technological applications, from quantum computing to quantum cryptography, quantum simulation or quantum sensing to name a few.
-For an introduction to most quantum information concepts see \cite{Nielsen2012}.
+For an introduction on most quantum information concepts see \cite{Nielsen2012}.
 
 \section{Device-independent quantum information processing}
 
-Quantum information processing rely heavily on quantum non-locality and consequently on quantum entanglement.
+Quantum information processing relies heavily on quantum entanglement.
 It is then necessary to certify that a proposed implementation carries out some form of entanglement.
 A possible approach is to use quantum state tomography, which allows to reconstruct the density matrix of a quantum state~\cite{MauroDAriano2003}.
-Another possibility is perform entanglement witnesses, measuring a target quantum state against specific operators, see e.g. \cite{Bru2002}.
+Another possibility is to use entanglement witnesses, characteriizing the \textit{closeness} of state to a target quantum state from specific operators, see e.g. \cite{Bru2002}.
 On the downside, these two methods require precisely calibrated measurement devices, which is a major experimental challenge.
 
 To circumvent this problem, one can use a \textit{device-independent} approach, in which all the quantum devices used, both for the implementation and the entanglement certification, are considered as black-boxes, i.e. no assumption are made on their inner working.
