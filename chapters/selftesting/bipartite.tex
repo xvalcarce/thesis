@@ -1,4 +1,4 @@
-\chapter{Self-testing of the two-qubit maximally entangled state}
+\chapter{Self-testing two-qubit maximally entangled states}
 \label{chap:selftesting}
 
 In this chapter we discuss the self-test of two-qubit maximally entangled states in a fully device-independent scope.
@@ -32,16 +32,16 @@ Alice and Bob's observables can be directly constructed from their respective PO
 	\end{split}	
 	\label{eq:obs_povm}
 \end{equation}
-From this construction, we deduce that Alice and Bob's observables are Hermitian
-\begin{equation}
-	(M^{+1} - M^{-1})^\dag = (M^{+1})^\dag - (M^{-1})^\dag = M^{+1} - M^{-1},
-	\label{eq:obs_hermitian}
-\end{equation}
-and unitary
-\begin{equation}
-	(M^{+1}- M^{-1})^2 = (M^{+1})^2 - 2 M^{+1} M^{-1} + (M^{-1})^2 = M^{+1} + M^{-1} = \id.
-	\label{eq:unitary}
-\end{equation}
+%From this construction, we deduce that Alice and Bob's observables are Hermitian
+%\begin{equation}
+%	(M^{+1} - M^{-1})^\dag = (M^{+1})^\dag - (M^{-1})^\dag = M^{+1} - M^{-1},
+%	\label{eq:obs_hermitian}
+%\end{equation}
+%and unitary
+%\begin{equation}
+%	(M^{+1}- M^{-1})^2 = (M^{+1})^2 - 2 M^{+1} M^{-1} + (M^{-1})^2 = M^{+1} + M^{-1} = \id.
+%	\label{eq:unitary}
+%\end{equation}
 Using \refeq{obs_povm} and completeness, we can also show that each POVM element is fully described by the operator they correspond to, following
 \begin{equation}
 	\begin{split}
@@ -63,10 +63,10 @@ Therefore, the statistics $p(ab|xy)$ can be obtained by a local strategy where A
 		p(ab|xy) &= \trr{\left(M^a_x \otimes M^b_y \right) \rho_{AB}^\text{sep}}  \\
 				 & = \sum_\lambda\, p_\lambda \, \trr{\left(M^a_x \otimes M^b_y \right)\left(\rho_{A}^\lambda \otimes \rho_B^\lambda\right)} \\
 				 & = \sum_\lambda\, p_\lambda\, \trr{M^a_x \rho_A^\lambda} \trr{M^b_x \rho_B^\lambda} \\
-				 & = \sum_\lambda\, p_\lambda\, p(a|x,\lambda) p(b|y,\lambda)
+				 & = \sum_\lambda\, p_\lambda\, p(a|x,\lambda) p(b|y,\lambda).
 	\end{split}
 \end{equation}
-From these statistics a maximum CHSH score of $S=2$ can be expected.
+From these statistics, a maximum CHSH score of $S=2$ can be expected.
 Hence, a CHSH score $S>2$ rules out the possibility that the measured state is separable.
 
 \medbreak
@@ -109,7 +109,7 @@ If entanglement and locally incompatible measurement are solely deduced from a C
 More specifically, a maximal CHSH violation can only by achieved by a specific quantum model of a maximally entangled state and some locally maximally incompatible measurements, i.e. measurement with a zero joint measurability region~\cite{Summers1987,Popescu92,Tsirelson1993}.
 Therefore, a maximal CHSH violation is a good criteria for a self-testing statement.
 
-To formulate this statement, we first defined the relevant Hilbert spaces.
+To formulate this statement, we first define the relevant Hilbert spaces.
 We start by introducing $\Hil_{AB}= \Hil_A \otimes \Hil_B$, the basis in which the shared state is diagonal
 \begin{equation}
 	\rho_{AB} = \sum_i p_i \ketbra{\psi_i}	.
@@ -126,9 +126,9 @@ Similarly, we construct the relevant space for each parties' subsytem as
 	\end{split}
 \end{equation}
 
-Using \refeq{unitary}, we can deduce the useful relation
+Since the observables we consider have eigenvalues $\pm 1$, we can deduce the useful relation
 \begin{equation}
-	A_0^2 \ket{\psi}_A = A_1^2 \ket{\psi}_A = \id.
+	A_0^2 \ket{\psi}_A = A_1^2 \ket{\psi}_A = \ket{\psi}_A.
 	\label{eq:involutory}
 \end{equation}
 
@@ -162,7 +162,7 @@ Following the same steps for Bob, we find that his observables have the same blo
 \begin{equation}
 	B_0 = \bigoplus_l \frac{\sigma_z^{(l)}+\sigma_x^{(l)}}{\sqrt{2}}, \qquad B_1 = \bigoplus_l \frac{\sigma_z^{(l)}-\sigma_x^{(k)}}{\sqrt{2}}.
 \end{equation}
-This suggest that $\Hil_A^\star$ can be written as a tensor space of a qubit subspace $\mathds{C}_A^2$ with basis $\{\ket{0},\ket{1}\}$ and a Hilbert space $\Hil_{k,A}$ of unknown dimension and carrying the label $k$.
+This suggests that $\Hil_A^\star$ can be written as a tensor space of a qubit subspace $\mathds{C}_A^2$ with basis $\{\ket{0},\ket{1}\}$ and a Hilbert space $\Hil_{k,A}$ of unknown dimension and carrying the label $k$.
 Formally, this allows us to write the decomposition
 \begin{equation}
 	\begin{split}
@@ -245,7 +245,7 @@ Since the observed correlations would be unchanged by considering another basis 
 	\end{split}	
 \end{equation}
 for some unitaries $U_A,U_B$, it is only relevant to consider self-testing up to local unitaries.
-Hence, we can formulate the following self-testing statement for the two-qubit maximally entangled state,
+Hence, we can formulate the following self-testing statement for the two-qubit maximally entangled state:
 \begin{theorem}
 	For any quantum realization $\{\rho_{AB},A_x,B_y\}$ compatible with a CHSH score of $2\sqrt{2}$ there exists local isometries $f_A,f_B$ such that a two-qubit maximally entangled state can be extracted following
 	\begin{displaymath}
@@ -255,10 +255,10 @@ Hence, we can formulate the following self-testing statement for the two-qubit m
 	\begin{equation}
 		\nonumber
 		\begin{split}
-			f_A [A_0] &= \sigma_z \otimes \id_{A'B'} \\
-			f_A [A_1] &= \sigma_x \otimes \id_{A'B'} \\
-			f_B [B_0] &= \frac{\sigma_z+\sigma_x}{2} \otimes \id_{A'B'} \\
-			f_B [B_1] &= \frac{\sigma_z-\sigma_x}{2} \otimes \id_{A'B'}. 
+			f_A [A_0] &= \sigma_z \otimes \id_{A'} \\
+			f_A [A_1] &= \sigma_x \otimes \id_{A'} \\
+			f_B [B_0] &= \frac{\sigma_z+\sigma_x}{2} \otimes \id_{B'} \\
+			f_B [B_1] &= \frac{\sigma_z-\sigma_x}{2} \otimes \id_{B'}. 
 		\end{split}
 	\end{equation}
 \end{theorem}
