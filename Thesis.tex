@@ -150,17 +150,17 @@
 		\begin{tabular}{|p{7cm}l}
 			\arrayrulecolor{Prune}
 			\textbf{Eleni Diamanti} & Présidente\\ 
-			Directrice de recherche, Sorbonne Université, Laboratoire d'informatique (LIP6), CNRS & \\
+			Directrice de recherche, Sorbonne Université, Laboratoire d'informatique (LIP6), CNRS. & \\
 			\textbf{Antonio Ac\'in} &  Rapporteur \& Examinateur \\ 
-			Professor, ICFO.   &   \\ 
+			ICREA Professor, Institut de Ciències Fotòniques (ICFO).   &   \\ 
 			\textbf{Nicolas Brunner} &  Rapporteur \& Examinateur \\ 
-			Professor, Departement de Physique Appliquée, Université de Genève.  &   \\ 
+			Professeur Ordinaire, Departement de Physique Appliquée, Université de Genève.  &   \\ 
 			\textbf{Peter Brown} &  Examinateur \\ 
 			Assistant Professor, Télécom Paris, Institut Polytechnique de Paris.   &   \\ 
 			\textbf{Nicolas Sangouard} &  Directeur de thèse \\ 
-			Professor CEA, Université Paris-Saclay, CNRS, CEA, Institut de physique théorique.   &   \\ 
-			\textbf{Jean-Daniel Bancal} &  Invité \\ 
-			Professor CEA, Université Paris-Saclay, CNRS, CEA, Institut de physique théorique.   &   
+			CEA Researcher, Université Paris-Saclay, CNRS, CEA, Institut de physique théorique.   &   \\ 
+			\textbf{Jean-Daniel Bancal} &  Co-Encadrant de thèse \\ 
+			CEA Researcher, Université Paris-Saclay, CNRS, CEA, Institut de physique théorique.   &   
 		\end{tabular} 
 		
 	\end{titlepage}
@@ -206,7 +206,7 @@
 		In our effort, we highlight fundamental limits of self-testing, and widen its range of applicability.
 		Secondly, we investigate device-independent quantum key distribution, a quantum cryptographic protocol that can be used to secure data exchange with provable security guarantees.
 		Beside extensions of existing security proofs, we also propose a way to generate new implementation schemes which could lead to a first photonic realisation of device-independent quantum key distribution.
-		Finally, we wrap up all of these protocols into a global perspective, showing how self-testing and quantum cryptography are complementary elements in the realization of a quantum internet.
+		Finally, we wrap up all of these protocols into a global perspective, showing how self-testing and quantum cryptography are complementary elements in the realisation of a quantum internet.
 	\end{multicols}
 \end{mdframed}
 
@@ -282,7 +282,8 @@
 \newgeometry{top=4cm, bottom=4cm, left=4cm, right=4cm}
 
 %\printglossary[type=\acronymtype,title=Acronyms, toctitle=Acronyms]
-\printglossary[type=\acronymtype,nonumberlist]
+\glssetwidest{DIQKD~~}
+\printglossary[type=\acronymtype,style=alttree,nonumberlist]
 
 \input{chapters/front/front.tex}
 
@@ -292,6 +293,8 @@
 \input{chapters/selftesting/selftesting.tex}
 \input{chapters/deviceindependent/di.tex}
 \input{chapters/conclusion.tex}
+
+\backmatter
 
 \printbibliography[heading=bibintoc]
 

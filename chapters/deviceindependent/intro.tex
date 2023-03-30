@@ -21,11 +21,11 @@ A setup to perform DIQKD is depicted in \reffig{DIQKD_setup}.
 With this setup, a typical DIQKD protocol has the following steps
 \begin{enumerate}
 		%\item Preparation: Alice and Bob agree on which protocol rounds to use to test the device, i.e. to verify if the observed correlations fulfill some requirements or to abort the protocol otherwise. These rounds are referred as \textit{test rounds}, while the other rounds are \textit{generation rounds}.
-	\item Measurements: For each rounds, a source generate and distribute a shared quantum state $\ket{\psi_{ABE}} \in \Hil_a \otimes \Hil_B \otimes \Hil_E$ to Alice and Bob over the quantum channel. Alice randomly picks an input $x\in\{0,1\}$ and preform the corresponding measurement $\hat{A}_x$. 
+	\item Measurements: For each round, a source generates and distributes a shared quantum state $\ket{\psi_{ABE}} \in \Hil_a \otimes \Hil_B \otimes \Hil_E$ to Alice and Bob over the quantum channel. Alice randomly picks an input $x\in\{0,1\}$ and preform the corresponding measurement $\hat{A}_x$. 
 		Bob decides if the round is a \textit{test round}, used to test the quantum devices, or a \textit{generation round}, used to create the key.
 		He then measures with either $\hat{B}_0$ or $\hat{B}_1$, chosen randomly, in case of a test round, or with $\hat{B}_2$ for a generation round. 
 		Alice records the obtained outcomes in a string $\mathbf{A}$. 
-		Similarly Bob fill a string $\mathbf{B}$ from his outcomes. 
+		Similarly, Bob fills a string $\mathbf{B}$ from his outcomes. 
 	\item Sifting: 
 		Alice and Bob share the string of their input choices, $\mathbf{X}$ and $\mathbf{Y}$, respectively.
 		To indicate the type of rounds chosen, Bob will also send to Alice a binary string $\mathbf{T}$ with bits set to $0$ for test rounds and $1$ for generation rounds.  
@@ -45,16 +45,18 @@ With this setup, a typical DIQKD protocol has the following steps
 Some extra steps can be included to further enhance the performance of DIQKD protocols.
 Notably, following insights on QKD, Alice can add noise by shifting the outcomes of $\hat{A}_0$ with a probability fixed before the protocol starts~\cite{Ho2020}. 
 The protocol can also be slightly modified by including an extra measurement for Bob, $B_3$, that is randomly chosen instead of $B_2$ during key generation rounds~\cite{Schwonnek2021}. 
-Recently, a protocol for which the key is generated using a randomly post-selected subset of the key generation round has been proposed~\cite{Xu2022}. For a general review on different DIQKD protocols, see ~\cite{Primaatmaja2023}.
+Recently, a protocol for which the key is generated using a randomly post-selected subset of the key generation round has been proposed~\cite{Xu2022}. For a general review on the different DIQKD protocols, see \cite{Primaatmaja2023}.
 
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.95\textwidth]{chapters/deviceindependent/img/setup.pdf}
 	\end{center}
-	\caption{DIQKD Setup. Alice's lab (delimited by the blue line) and Bob's lab (delimited by the pink line) are linked by an authenticated classical channel of communication (gray craved line), and by a quantum channel (green dashed rectangle). A source (yellow star) generates a bipartite state with one part send to Alice while the other is send to Bob. Alice selects an input $x$, to perform the measurement $\hat{A}_x$ and obtain the outcome $A_x$. Similarly Bob chose an input $y$, to measure his
-		received state with respect to $\hat{B}_y$ and obtain $B_y$.
-	Eve, represented by the CIA logo, has full access on the quantum channel, the classical channel, and may have compromised the measurement devices. }
+	\caption{DIQKD Setup. 
+		Alice's lab (delimited by the blue line) and Bob's lab (delimited by the pink line) are linked by an authenticated classical channel of communication (gray craved line), and by a quantum channel (green dashed rectangle). 
+		A source (yellow star) generates a bipartite state with one part send to Alice while the other is sent to Bob. 
+		Alice selects an input $x$, to perform the measurement $\hat{A}_x$ and obtain the outcome $A_x$. 
+		Similarly, Bob chooses an input $y$, to measure his received state with respect to $\hat{B}_y$ and obtain $B_y$.
+		Eve, represented by the CIA logo, has full access on the quantum channel, the classical channel, and may have compromised the measurement devices. }
 	\label{fig:DIQKD_setup}
 \end{figure}
-

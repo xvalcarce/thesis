@@ -11,12 +11,12 @@ Alice has access to the subsytem that lays in the Hilbert space $\mathscr{H}^A$ 
 Each party has a measurement device with two inputs, $x,y=\{0,1\}$, respectively corresponding to observables $A_x$ acting on $\mathscr{H}^A$, for Alice, and $B_y$ on $\mathscr{H}^B$, for Bob.
 These measurements only have two possible outcomes $(a,b)=\pm1$.
 For each copies of the unknown share state, Alice and Bob randomly select a measurement and record that measurement outcome. 
-This allow Alice and Bob to learn the statistics $p(ab|xy)$, from which can be computed the correlators $\mean{A_x B_y} = p(a=b|xy)-p(a\neq b| xy)$ and the CHSH score $S$ following \refeq{CHSH}. 
+This allows Alice and Bob to learn the statistics $p(ab|xy)$, from which can be computed the correlators $\mean{A_x B_y} = p(a=b|xy)-p(a\neq b| xy)$ and the CHSH score $S$ following \refeq{CHSH}. 
 We here focus on the ideal-case where the maximal CHSH score is obtained, $S=2\sqrt{2}$ and from which we want to deduce the characteristics of the quantum realization $\{\rho_{AB},A_x,B_y\}$.
 
 \medbreak
 
-Let us first show that $A_x$ and $B_y$ fully specify the quantum model of the mesurements.
+Let us first show that $A_x$ and $B_y$ fully specify the quantum model of the measurements.
 As the measurements we consider have two outcomes $\{\pm1\}$, the quantum model of each observable is a \acrfull{povm} with two elements $\{M^{+1},M^{-1}\}$. We label $\{M_x^{+1},M_x^{-1}\}$ the POVM of $A_x$ and $\{M_y^{+1},M_y^{-1}\}$ the one of $B_y$.
 Elements of these POVM satisfy
 \begin{itemize}
@@ -57,7 +57,8 @@ Indeed, if the shared state is separable, then there exists weights $p_\lambda\g
 \begin{equation}
 	\rho_{AB}^\text{sep} = \sum_\lambda\, p_\lambda\, \rho_{A}^\lambda \rho_B^\lambda.
 \end{equation}
-Therefore, the statistics $p(ab|xy)$ can be obtained by a local strategy where Alice and Bob's measurement devices first prepare the state $\rho_A^\lambda$ and $\rho_B^\lambda$, respectively, from the random variable $\lambda$, distributed according to $p_\lambda$, before measuring it according to $M^a_x,M_b^y$, that is
+Therefore, the statistics $p(ab|xy)$ can be obtained by a local strategy where Alice and Bob's measurement devices first prepare the state $\rho_A^\lambda$ and $\rho_B^\lambda$, respectively, from the random variable $\lambda$, distributed according to $p_\lambda$, before measuring it according to $M^a_x,M_b^y$. 
+Formally, that is
 \begin{equation}
 	\begin{split}
 		p(ab|xy) &= \trr{\left(M^a_x \otimes M^b_y \right) \rho_{AB}^\text{sep}}  \\
@@ -73,14 +74,14 @@ Hence, a CHSH score $S>2$ rules out the possibility that the measured state is s
 
 Another aspect we can deduce from a CHSH score $S>2$ is that the measurements are locally incompatible, i.e. $[A_0,A_1] \neq 0$ and $[B_0,B_1] \neq 0$.
 To demonstrate this, let us focus on Alice's observables. 
-If her measurements would commute, then there would exist a basis $\{\ket{k}\}$, with $\ket{k}\in \Hil_A$, where both operators are diagonal and in particular
+If her measurements commute, then there would exist a basis $\{\ket{k}\}$, with $\ket{k}\in \Hil_A$, where both operators are diagonal and in particular
 \begin{equation}
 	\begin{split}
 		A_x = \sum_k \ketbra{k} A_x \ketbra{k}.
 	\end{split}	
 \end{equation}
 Using this basis, we construct an entanglement breaking quantum channel $\Lambda_A$ projecting the received state in Alice's local basis $\{k\}$ and discarding the measurement results. 
-Formally this channel acts on $\rho_{AB}$ as follow
+Formally, this channel acts on $\rho_{AB}$ as follows
 \begin{equation}
 	\begin{split}
 		\Lambda_A[\rho_{AB}] &= \sum_k \left(\ketbra{k}_A \otimes \id_B \right)\rho_{AB}	\left(\ketbra{k}_A \otimes \id_B \right) \\
@@ -101,13 +102,13 @@ Let us now compute the correlators appearing in the CHSH score on the state $\ti
 	\label{eq:compatible_separable}
 \end{equation}
 This shows the equivalence between correlations computed using locally compatible measurements and correlation computed using a separable state.
-Therefore, a violation of the CHSH inequality, only possible for entangled state, is a proof of locally anticommuting measurements.
+Therefore, a violation of the CHSH inequality, only possible for entangled states, is a proof of locally anticommuting measurements.
 
 \medbreak
 
 If entanglement and locally incompatible measurement are solely deduced from a CHSH score $S>2$, there is, however, more to deduce from a maximal CHSH score $S=2\sqrt{2}$.
-More specifically, a maximal CHSH violation can only by achieved by a specific quantum model of a maximally entangled state and some locally maximally incompatible measurements, i.e. measurement with a zero joint measurability region~\cite{Summers1987,Popescu92,Tsirelson1993}.
-Therefore, a maximal CHSH violation is a good criteria for a self-testing statement.
+More specifically, a maximal CHSH violation can only be achieved by a specific quantum model of a maximally entangled state and some locally maximally incompatible measurements, i.e. measurement with a zero joint measurability region~\cite{Summers1987,Popescu92,Tsirelson1993}.
+Therefore, a maximal CHSH violation is a good criterion for a self-testing statement.
 
 To formulate this statement, we first define the relevant Hilbert spaces.
 We start by introducing $\Hil_{AB}= \Hil_A \otimes \Hil_B$, the basis in which the shared state is diagonal
@@ -206,7 +207,7 @@ From the derived form of both parties observables, we can write the CHSH operato
 \end{equation}
 which only acts non-trivially, according to $\mathcal{B}_\text{CHSH}^\text{2-qubit}$, on the two qubit space of Alice and Bob.
 The two-qubit operator $\mathcal{B}_\text{CHSH}^\text{2-qubit}$ has two non-zero eigenvalues, $2$ and $-2$, with corresponding eigenvectors $\ket{\phi^+}$ and $\ket{\psi^-}$ respectively. These eigenvectors are Bell states and their expression can be found in \refeq{bell_states}.
-This allow us to formulate the CHSH operator as
+This allows us to formulate the CHSH operator as
 \begin{equation}
 	\mathcal{B}_\text{CHSH}	= 2\sqrt{2}\left(\ketbra{\phi^+}-\ketbra{\psi^-}\right) \otimes \id_{A',B'}
 \end{equation}
@@ -236,7 +237,7 @@ From the CHSH score $S=2\sqrt{2}$, we can hence conclude that there is a basis i
 
 \medbreak
 
-Since the observed correlations would be unchanged by considering another basis in which the state and measurements would be map to
+Since the observed correlations would be unchanged by considering another basis in which the state and measurements would be mapped to
 \begin{equation}
 	\begin{split}
 		\rho_{AB} &\rightarrow \left(U_A \otimes U_B\right)\rho_{AB}\left(U_A \otimes U_B\right)^\dag \\

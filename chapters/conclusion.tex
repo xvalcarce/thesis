@@ -32,12 +32,12 @@ Our new protocol, henceforth, eases the experimental realization of device-indep
 
 Our results on self-testing, show the need for more robust self-testing protocols, point at directions where improvements can be obtained, and raise some more fundamental questions.
 First, the CHSH-score threshold we derived is still far from the bound $S\approx 2.11$ given by the best known CHSH-based self-testing protocol~\cite{Kaniewski2016}.
-Therefore an improvement is to be expected on the threshold or on the bound $S\approx 2.11$, e.g. by improving on the local isometries proposed in \cite{Kaniewski2016}, or on both.
+Therefore, an improvement is to be expected on the threshold or on the bound $S\approx 2.11$, e.g. by improving on the local isometries proposed in \cite{Kaniewski2016}, or on both.
 Then, analogously to what has been done for DIQKD~\cite{Brown2021}, one can hope for a robust self-testing protocol harnessing all of the available statistics.
-Insights obtained from our generalized-CHSH based self-test show that such a protocol should help providing self-tests that are robust to any type of noises.
+Insights obtained from our generalized-CHSH based self-test show that such a protocol should help provide self-tests that are robust to any type of noises.
 This would be a crucial step not only to ease the implementation of self-testing, but also to make self-testing a handy and flexible certification tool, that could be used as a complementary tool with tomography.
 Finally, better robustness bound could arise when considering a scenario with more than 2 inputs and outputs.
-However, this would requires derivations that does not rely on Jordan's lemma.
+However, this would require derivations that do not rely on Jordan's lemma.
 If the SWAP method provides a numerical solution to self-testing from all the correlations and without relying on Jordan's lemma, its general scope yields suboptimal extractability bound in the case of the singlet~\cite{Yang2014,Bancal2015}.
 An improved SWAP method may thus be derived.
 Elements from the approach \cite{Brown2021} may be useful to tackle this problem as well.
@@ -48,7 +48,7 @@ More broadly, robust self-testing methods should be extended to enable the certi
 First, the robust self-testing of quantum channels, introduced in \cite{Sekatski2018}, could be extended to certify quantum measurements beyond commutation~\cite{Kaniewski2017}.
 A framework for the robust self-testing of joint quantum measurements beyond the Bell-state measurement~\cite{Bancal2018,Renou2018} could then be developed.
 Finally, this may lead to \textit{complete self-tests}, certifying at once both states and measurements.
-For each of these methods, it is desired to have proofs valid in non-IID scenarios to enable practical applications.
+For each of these methods, it is desired to have proofs valid in non-\acrshort{iid} scenarios to enable practical applications.
 Intuitively, the approach based on estimators on the statistics demonstrated in \cite{Bancal2021} could be extended to these more complete self-tests. 
 
 
@@ -75,12 +75,12 @@ Additionally, the flexibility of our approach led us to find a setups based on h
 
 Together, our works contribute to progress for the first realization of a photonic DIQKD experiment.
 The higher key rate resulting from our DIQKD protocol lowers requirements on the repetition rate of experiments.
-Additionally, we propose new photonic setup designs that lead to positive key rate with reduced constraint on the efficiency.
+Additionally, the new photonic setup designs we propose leads to positive key rate for a reduced constraint on the efficiency.
 
 \medbreak
 
 The recent development of DIQKD protocols are important steps for new proof-of-concept DIQKD experiments.
-However, for the low efficiency regime characteristic of photonic setups, further improvements are required to push the key rate by orders of magnitude.
+However, for the low efficiency regime that is characteristic of photonic setups, further improvements are required to push the key rate by orders of magnitude.
 One improvement could come from a more general pre-processing of inputs and outcomes, i.e. an extension of noisy pre-processing~\cite{Ho2020}.
 Indeed, works in non-locality distillation have shown that pre-processing may amplify the non-local nature of correlations~\cite{Forster2009}.
 It would be interesting to find out whether a general pre-processing could enable the distillation of better rates from current DIQKD protocols.
@@ -98,9 +98,9 @@ For example, with the currently best known bound on Eve's uncertainty on the key
 
 \medbreak 
 
-Finally, it is necessary to develop new experimental designs for DIQKD implementation.
+Finally, it is necessary to develop new experimental designs for the implementation of DIQKD.
 These new designs should progressively address practical requirements and limitations, e.g. a decent scalability with the distance between parties, the ability to operate at a high rate, or the capacity to transmit photons at telecom wavelength.
-Reinforcement learning may help generate new experiments blue prints covering some of these points.
+Reinforcement learning may help generate new experiments blueprints covering some of these points.
 Furthermore, progress in other quantum information processing field, such as quantum computing or quantum simulation, may provide new solutions to these challenges.
 For example, as suggested in \cite{Zapatero2023}, arrays of trapped atoms or ions could help multiplexing the generation of entanglement, helping heralded entanglement systems to operate at a higher rate.
 
@@ -110,7 +110,7 @@ While all device-independent protocols possess promising applications, their use
 The quantum internet is a hypothetical network of classical and quantum devices, connected by links in which both classical and quantum information transit.
 This upgraded version of the current Internet will provide new functionalities with the two most notable ones being communication secured by quantum cryptography and enhance computational power from quantum computers.
 If currently many challenges are in the way of a quantum Internet, however, incentives for its realization are flourishing.
-Indeed, promises in quantum computing, from fault-tolerant quantum computing heading the roadmap of some companies~\cite{Google2022,Intel2022,IBM2022} to potential ground breaking quantum computation advantages~\cite{Deutsch1992,Shor1994,Grover1996} and applications~\cite{Bauer2020,Paudel2022} are pushing for the accessibility of quantum computers via internet~\cite{Rietsche2022}.
+Indeed, promises in quantum computing, from fault-tolerant quantum computing heading the roadmap of some companies~\cite{Google2022,Intel2022,IBM2022} to potential groundbreaking quantum computation advantages~\cite{Deutsch1992,Shor1994,Grover1996} and applications~\cite{Bauer2020,Paudel2022} are pushing for the accessibility of quantum computers via internet~\cite{Rietsche2022}.
 Securing access to cloud quantum computing seems therefore to be the first key element for a quantum internet.
 
 \medbreak

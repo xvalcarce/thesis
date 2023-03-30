@@ -7,13 +7,13 @@ Indeed, imperfections such as noise and loss in creating, distributing and measu
 Furthermore, since any self-testing experiment can only collect a limited sample of Bell game rounds, the correlations are only estimated up to a certain confidence interval. %Yes we can remove but interval of confidence -> lower CHSH bound
 Acknowledging such limitations, there is the need for self-testing protocols robust to the presence of imperfections in the correlations, also known as \textit{robust self-testing}.
 
-There is multiple approaches to robust self-testing. 
+There are multiple approaches to robust self-testing. 
 Chronologically, the Mayers-Yao self-test was made robust in \cite{Magniez2006} while robust self-testing based on CHSH was introduced in \cite{Bardyn2009}.
 A framework for the robust self-testing of the singlet was presented in \cite{McKague2012}.
-Since then, numerous improvement were made to improve the robustness of self-testing, and to extended it to different scenario, e.g. Bell scenarios with more inputs or outputs.
+Since then, numerous improvement were made to improve the robustness of self-testing, and to extend it to different scenario, e.g. Bell scenarios with more inputs or outputs.
 
 Here we present a numerical method, using Jordan's lemma, relevant for the robust self-test of the singlet. 
-Two notable methods than will not be discussed here are the analytical method based on operator inequalities presented in ~\cite{Kaniewski2016} and the numerical one SWAP method~\cite{Bancal2015}.
+Two notable methods than will not be discussed here are the analytical method based on operator inequalities presented in ~\cite{Kaniewski2016} and the numerical SWAP method~\cite{Bancal2015}.
 We then expose some fundamental limitations on robust self-testing based on the CHSH inequality.
 Finally, we present a method that we developed, overcoming some of these limitations by extending robust self-testing of the singlet beyond the CHSH inequality.
 
@@ -40,7 +40,7 @@ A detailed proof of the equivalence of these two extractability definitions in c
 
 
 Note that the extractability is lower bounded by $1/2$ as it is always possible for Alice and Bob to construct maps discarding the received state and preparing a new one with a fidelity of $1/2$ with respect to the target one. 
-For example, if the target state is the singlet $\psi^{-}$, we can build maps acting as
+For example, if the target state is the singlet $\ket{\psi^{-}}$, we can build maps acting as
 \begin{equation}	
 	\left(\Lambda_A \otimes \Lambda_B\right)[\rho_{AB}] = \ket{1}\bra{1} \otimes \ket{0}\bra{0}.
 \end{equation}
@@ -52,7 +52,7 @@ Therefore, a non-trivial self-testing statement can be made if and only if $\Xi[
 \subsection{Robust self-testing with two binary measurements}
 
 As a device-independent protocol, no assumption is made on the dimension of the shared quantum state and the measurements in self-testing.
-However, in the particular case of a Bell game where Alice and Bob own two dichotomic measurements, i.e. with two outcomes, we can use Jordan's lemma to define a basis where local observables are block diagonal.
+Interestingly, in the particular case of a Bell game where Alice and Bob own two dichotomic measurements -- with two outcomes -- we can use Jordan's lemma to define a basis where local observables are block diagonal.
 Indeed, Jordan's lemma states that for two Hermitian operators with eigenvalues $\pm1$ there exists a basis in which both operators are block-diagonal, with blocks of dimension $2 \times 2$.
 To simplify further calculations, we consider these blocks to be in the $(\sigma_x,\sigma_z)$-plane.
 This is done without loss of generality as Alice and Bob can always perform local rotations of their basis to recover that plane.
@@ -77,7 +77,7 @@ However, before measuring this state, Alice and Bob can always project it in the
 	\tilde{\rho}_{AB} = \bigoplus_{i,j} p_{i,j}\rho_{AB}^{i,j}
 \end{equation}
 where $p_{i,j}$ is the success probability to project $\rho_{AB}$ in the $(i,j)$-block.
-Note that the state $\tilde{\rho}_{AB}$ achieve the same CHSH score as $\rho_{AB}$ thanks to the block structure of the CHSH operator
+Note that the state $\tilde{\rho}_{AB}$ achieves the same CHSH score as $\rho_{AB}$ thanks to the block structure of the CHSH operator
 \begin{equation}
 	S = \trr{\mathcal{B}_\text{CHSH}\rho_{AB}} = \sum_{i,j} p_{i,j} \trr{\mathcal{B}_\text{CHSH}^{i,j}\rho_{AB}^{i,j}}.
 \end{equation}
@@ -101,10 +101,10 @@ Given that the probabilities $p_{i,j}$ are non-negative real numbers that sum up
 
 \medbreak
 
-To obtain a CHSH-based robust self-test of the singlet, we need to lower bound the singlet extractability with respect to all quantum realization achieving a given CHSH score $S$.
+To obtain a CHSH-based robust self-test of the singlet, we need to lower bound the singlet extractability with respect to all quantum realisation achieving a given CHSH score $S$.
 In order to do so, we can first obtain a lower bound on this extractability over all two-qubit blocks.
 This can be done by first fixing the dependence of the maps on the block indexes $(i,j)$, i.e. the expression of the maps would be a fixed function of the local measurement angle, $\Lambda_A^i = \Lambda_A(\alpha_i)$ for Alice and $\Lambda_B^j = \Lambda_B(\beta_j)$  for Bob.
-Note that the resulting isomteries might not maximize the singlet extractability.
+Note that the resulting isometries might not maximize the singlet extractability.
 Therefore, we will obtain a lower bound on \refeq{block_extractability} in this way.
 The minimum singlet fidelity over all two-qubit states and measurement choices compatible with a score $S$ is obtained by solving the optimisation
 \begin{equation}
@@ -121,7 +121,7 @@ The optimisation over all two-qubit states $\tau$ can be solved to arbitrary pre
 Therefore, a strategy to solve \refeq{sdp_extractability} is to minimize over the angles $(\alpha_i,\beta_j)$ the singlet-fidelity minimized over $\tau$.
 
 Using the convex structure of \refeq{block_extractability}, the convex roof of $O_{\min}(S)$ over all CHSH scores, $f(S)$, gives a lower bound on the singlet-extractability with respect to the CHSH score~\cite{Sekatski2018}.
-Therefore, from a CHSH score $S$, one can hope to extract a singlet fidelity of at most 
+Hence, from a CHSH score $S$, one can hope to extract a singlet fidelity of at most 
 \begin{equation}
 	\Xi [\rho_{AB} \rightarrow \psi^{-}] \geq \mathcal{F}(S)=\max\left(1/2, f(S)\right).
 \end{equation}
@@ -129,12 +129,12 @@ Therefore, from a CHSH score $S$, one can hope to extract a singlet fidelity of 
 \subsection{Robustness bounds}
 
 % Should I really get rid of this?
-To asses the performance of robust self-testing, we are interested in the evolution of the extractability with respect to the CHSH score.
+To assess the performance of robust self-testing, we are interested in the evolution of the extractability with respect to the CHSH score.
 In particular, the minimum score for which a non-trivial fidelity to the target state can be extracted is called the \textit{robustness bound}.
 This bound is crucial as any implementation of a self-testing protocol is required to have the capability to achieve a Bell violation at least as high as the robustness bound.
 
 To glean the robustness bound with the method presented in the previous section, we first need to choose the local maps $\Lambda_A^i$ and $\Lambda_B^i$ appearing in \refeq{sdp_extractability}.
-These maps are completely-positive trace preserving maps acting on qubit space and parametrised by Alice and Bob measurement choice, respectively.
+These maps are \acrlong{CPTP} maps acting on qubit space and parametrised by Alice and Bob measurement choice, respectively.
 A relevant pick for such maps has been reported in \cite{Kaniewski2016}.
 For the block $i$, let Alice's map be a dephasing map of the form
 \begin{equation}
@@ -190,19 +190,19 @@ There is thus a threshold CHSH score higher than the local bound $2$ and lower t
 This raises numerous questions. 
 First, as photonic implementations seems more desirable for technological applications of self-testing, most photonic loophole free Bell test realisation are based on polarization entangled photons for which detection efficiencies of $\approx 90\%$ are required to achieve a score higher that $2.11$~\cite{Vivoli2015b}. 
 Such detection efficiencies are beyond the realm of current possibilities. 
-Therefore, if the threshold CHSH score is close to $2.11$, self-testing the singlet will be hard to perform experimentally with photonic realization.
+Therefore, if the threshold CHSH score is close to $2.11$, self-testing the singlet will be hard to perform experimentally with photonic realisation.
 Secondly, if that threshold is close to the local bound, efforts are needed to craft better local maps than the ones proposed in Ref.~\cite{Kaniewski2016}.
 Thirdly, and more fundamentally, it raises the question of the type of resources needed for self-testing.
 
-The CHSH threshold proves that under local operation (LO) only, singlet-extraction is not possible from any CHSH score.
-However, if Alice and Bob can share classical information (LOCC), a singlet state can always be extracted from the slightest CHSH violation~\cite{Bardyn2009}. 
-Therefore, it would be interesting to explore if this threshold still occurs under other regimes such as local operations and shared randomness (LOSR).
+The CHSH threshold proves that under \acrfull{lo} only, singlet-extraction is not possible from any CHSH score.
+However, if Alice and Bob can share classical information (\acrshort{locc}), a singlet state can always be extracted from the slightest CHSH violation~\cite{Bardyn2009}. 
+Therefore, it would be interesting to explore if this threshold still occurs under other regimes such as \acrfull{losr}.
 %Finally, it is worth exploring whether this threshold appears when the singlet-fidelity in the extractability is replaced by another quantity such as the trace distance. 
 
 \medbreak
 
-In an attempt to answer some of these question, in Article 1~\cite{Valcarce2020} we search for the quantum realization achieving a maximum CHSH score while resulting in a trivial singlet extractability.
-Using Jordan's lemma, this problem corresponds to the optimization
+In an attempt to answer some of these question, in Article 1~\cite{Valcarce2020} we search for the quantum realisation achieving a maximum CHSH score while resulting in a trivial singlet extractability.
+Using Jordan's lemma, this problem corresponds to the optimisation
 \begin{equation}
 	\begin{split}
 		\sup_{\{\rho_{AB},A_x,B_y\}}\ &S=\sum_{i,j} p_{i,j} \tr (\mathcal{B}_\text{CHSH}^{i,j} \rho_{AB}^{i,j})\\
@@ -246,7 +246,7 @@ Conveniently, this family of states yield a CHSH score of $S=2+(2\sqrt{2}-2)\nu$
 
 A relaxation of all separable two-qubit maps on these specific states, which we detailed in our article, allows us to obtain an upper bound on the singlet extractability given as a non-linear maximisation of only five real parameters.
 To obtain a CHSH threshold, we minimized this upper-bound over the weights of the states of the family we consider, for a gradually increasing CHSH score, i.e. for a higher $\nu$.
-This approach gave us a state with a parameter $\nu=0.061$, hence achieving a CHSH violation of $\approx 2.05$, below which non singlet can be extracted.
+This approach gave us a state with a parameter $\nu=0.061$, hence achieving a CHSH violation of $\approx 2.05$, below which no singlet can be extracted.
 Our result pushed the CHSH threshold by an order of magnitude.
 Importantly, this shows the limitation of CHSH-based self-testing as the \textit{CHSH threshold} lays in the $[2.05,2.11]$ range.
 
@@ -258,19 +258,19 @@ In an attempt to make robust self-testing more accessible to experimental implem
 In the previous section, we saw that robust CHSH-based self-testing has been only proven for a CHSH score higher than $S\approx 2.11$ and can not be made for score below $2.05$.
 These relatively high CHSH scores are hardly in reach experimentally, and, as such, a very few self-testing experiments have been reported so far~\cite{Tan2017,Bancal2021}.
 
-It is in this scope that in Article 2 we proposed a new protocol for robust self-testing.
+It is in this scope that in Article 2 we propose a new protocol for robust self-testing.
 Our approach is based on a more refined analysis of the correlations which are needed to compute the CHSH score, i.e. our protocol does not require any additional data.
 Instead of using a single Bell inequality, our protocol relies on a family of \textit{generalized CHSH inequalities}
 \begin{equation}
 	S_\theta = \sqrt{2}(\cos(\theta) \underbrace{\mean{A_0(B_0+B_1)}}_{X} + \sin(\theta)\underbrace{\mean{A_1(B_0-B_1)}}_{Y})
 	\label{eq:generalized_CHSH}
 \end{equation}
-parametrized by an angle $\theta \in [0,\pi/2]$, for which we derived robust self-testing statements.
+parametrised by an angle $\theta \in [0,\pi/2]$, for which we derived robust self-testing statements.
 
 As our approach applies to a Bell game with two dichotomic measurements, we prove self-testing statements from Jordan's lemma, following the steps explained in the previous section. 
 Analogously to the CHSH-case, we obtained the robustness bound by minimizing the singlet fidelity over all state and measurement choices, for fixed maps.
 We crafted maps with a dependency in both the local measurement choice and $\theta$.
-More specifically, these maps are inspired by the one presented in \refeq{dephasing_maps}, with a couple of tweaks, notably a dephasing strength depending on $\theta$, and for one party, an additional rotation along $\sigma_y$ as well as a dephasing direction depending on the angle of measurement and $\theta$.
+More specifically, these maps are inspired by the one presented in \refeq{dephasing_maps}, with a couple of tweaks, notably a dephasing strength depending on $\theta$, and for one party, an additional rotation along $\sigma_y$ as well as a dephasing direction depending both on the angle of measurement and $\theta$.
 
 We then provide a robust self-testing statement recipe for any given correlator pair $(X,Y)$.
 From a list of parameters $\theta$ and their corresponding robustness bound $S_\theta^\text{bound}$ that we provide, one can hope to obtain a singlet-extractability of 
@@ -282,7 +282,7 @@ From a list of parameters $\theta$ and their corresponding robustness bound $S_\
 	\label{eq:singlet-extractability-theta}
 \end{equation}
 Note that the argument $\theta$ maximizing this optimisation directly gives the best Bell inequality of the family \refeq{generalized_CHSH} to self-test the considered correlator pair $(X,Y)$.
-The maximum singlet-extractability over all $\theta$, as a function of correlator pairs $(X,Y)$ is depicted in \reffig{generalizedCHSHfid}.
+The maximum singlet-extractability over all $\theta$, as a function of correlators pair $(X,Y)$ is depicted in \reffig{generalizedCHSHfid}.
 
 Comparing to CHSH-based self-testing, our protocol achieves higher singlet-extractability for any correlator $X\neq Y$.
 Furthermore, our protocol can be used to perform self-tests for correlation leading to CHSH scores below the robustness bound of $S\approx 2.11$, below which no self-testing statement has been proven, and even below the currently known CHSH threshold of $2.05$, provided enough imbalance between the correlators, e.g. $X \gg Y$.
@@ -292,7 +292,7 @@ Therefore, this protocol makes self-testing implementations more accessible, esp
 	\begin{center}
 		\includegraphics[width=0.95\textwidth]{chapters/selftesting/img/generalizedCHSH.pdf}
 	\end{center}
-	\caption{Solution to \refeq{singlet-extractability-theta} for all pair of correlator $(X,Y)$. The dashed lines represent different singlet-extractabilities using CHSH, while the solid line shows the singlet-extractability achieved using the most fitting generalized CHSH inequality. Correlators in the black zone can not be used to make self-testing statement with our method.}
+	\caption{Solution to \refeq{singlet-extractability-theta} for all pairs of correlators $(X,Y)$. The dashed lines represent different singlet-extractabilities using CHSH, while the solid line shows the singlet-extractability achieved using the most fitting generalized CHSH inequality. Correlators in the black zone can not be used to make self-testing statement with our method.}
 	\label{fig:generalizedCHSHfid}
 \end{figure}
 

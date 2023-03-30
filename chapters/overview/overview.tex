@@ -7,7 +7,7 @@
 Quantum entanglement is often thought as one of the most bizarre feature of quantum mechanics. 
 In 1935, it puzzled \acrfull{epr} who described the phenomena in \cite{Einstein35}. 
 The same year, Schrödinger, in his seminal paper \cite{Schrödinger35},
-coined the term \textit{entanglement} and portrayed it as not \enquote{\textit{one} but rather \textit{the} characteristic trait of quantum mechanics, the one that enforces its entire departure from classical lines of thought.}
+coined the term \textit{entanglement} and portrayed it as not \enquote{\textit{one} but rather \textit{the} characteristic trait of quantum mechanics, the one that enforces its entire departure from classical lines of thought.}.
 
 An entangled system is described in opposition to a separable system, i.e. a system that can be fully described from the state of its individual components. 
 Such an entangled system is allowed by the \textit{superposition} principle and the structure of the space of joint quantum systems. 
@@ -19,15 +19,17 @@ Given two pure states $\ket{\psi^A}$ and $\ket{\psi^B}$ and their respective Hil
 	\label{eq:separable_state}
 \end{equation}
 associated with the Hilbert space $\mathscr{H}^{AB}=\mathscr{H}^A\otimes\mathscr{H}^B$. 
-Conversely a state in $\mathscr{H}^{AB}$ that can not be written in the previous form is said to be entangled.
+Conversely, a state in $\mathscr{H}^{AB}$ that can not be written in the previous form is said to be entangled.
 The two-qubit maximally entangled states
-\begin{align}
-	\ket{\psi^+} &= \frac{1}{\sqrt{2}}\left(\ket{01}+\ket{10}\right) \\
-	\ket{\psi^-} &= \frac{1}{\sqrt{2}}\left(\ket{01}-\ket{10}\right) \\
-	\ket{\phi^+} &= \frac{1}{\sqrt{2}}\left(\ket{00}+\ket{11}\right) \\
-	\ket{\phi^-} &= \frac{1}{\sqrt{2}}\left(\ket{00}-\ket{11}\right)
+\begin{equation}
+	\begin{split}
+		\ket{\psi^+} &= \frac{1}{\sqrt{2}}\left(\ket{01}+\ket{10}\right) \\
+		\ket{\psi^-} &= \frac{1}{\sqrt{2}}\left(\ket{01}-\ket{10}\right) \\
+		\ket{\phi^+} &= \frac{1}{\sqrt{2}}\left(\ket{00}+\ket{11}\right) \\
+		\ket{\phi^-} &= \frac{1}{\sqrt{2}}\left(\ket{00}-\ket{11}\right)
+	\end{split}
 	\label{eq:bell_states}
-\end{align}
+\end{equation}
 are famous examples of such entangled states and are known as Bell states.
 
 More generally, convex sum of pure states, or \textit{mixed state}, are described by the density matrix
@@ -43,9 +45,9 @@ A mixed bipartite state $\rho_{AB}$ is said to be entangled if it can not be dec
 
 \medbreak
 
-The concept of entanglement leads to counter intuitive predictions. 
+The concept of entanglement leads to counter-intuitive predictions. 
 Most notably, the fact that a property measured on one part of an entangled system can determine the measurement outcome of that property on the other part of such system, even if both parties are far apart. 
-This was famously refered as a \enquote{spooky action at distance} by Einstein and it leads to a paradox, the \acrshort{epr} paradox.
+This was famously referred as a \enquote{spooky action at distance} by Einstein, and it leads to a paradox, the \acrshort{epr} paradox.
 
 Quantum mechanics imposes that the values of two non-commuting observables can not be known simultaneously. 
 For example, it is impossible to both exactly know the spin value in the $x$-direction and in the $z$-direction of a system, since these two spin observables do not commute.
@@ -58,17 +60,17 @@ Believing in the complete local determination of the outcomes, \acrlong{epr} pro
 %Another solution to the paradox is that physics is not compatible with \textit{local realism}.
 
 \medbreak
-Discussions around entanglement were at first left by physicists as a purely fundamental and philosophical problem of quantum mechanics.
+Discussions about entanglement were at first left by physicists as a purely fundamental and philosophical problem of quantum mechanics.
 In 1964, John Bell devised a test to prove that quantum mechanics can not be explained by a physical theory of \textit{local-hidden variable}, under the assumption of \textit{free will}~\cite{Bell1964}. 
 Based on the work of John Bell, Clauser, Horne, Shimony and Holt (\acrshort{chsh}) made a convincing proposal for an experimental protocol to implement Bell's test~\cite{Clauser1969}. 
 This proposal was soon followed by a first experimental realisation showing evidence towards Bell's non locality~\cite{Freedman1972}, i.e. the idea that quantum correlations cannot be explained by local-hidden variable.
 Over time, increasingly convincing implementations of Bell's test have been reported, including the seminal experiments conducted by Alain Aspect and his colleagues in the early 1980's~\cite{Aspect1982,Aspect1982b} and the experiment carried out by the Zeilinger group in the late 1990's~\cite{Weihs1998}.
-These works were ultimately recognized by the 2022 Nobel prize, awarded to John Clauser, Alain Aspect and Anton Zeilinger.
+These works were ultimately recognized by the 2022 Nobel Prize, awarded to John Clauser, Alain Aspect and Anton Zeilinger.
 
 \medbreak
 The work of Bell followed by experimental evidences brought back interest on entanglement.
-In particular, the capability to generate entangled pair of particles led into thinking of entanglement as a quantum resource.
-This allowed for a variety of new technologies and the creation of a subfield of physics known today as \textit{quantum information} (see Chap.~\ref{chapter:quantumInfo}).
+In particular, the capability to generate entangled pairs of particles led into thinking of entanglement as a quantum resource.
+This allowed for a variety of new technologies and the creation of a subfield of physics today known as \textit{quantum information} (see Chap.~\ref{chapter:quantumInfo}).
 Entanglement-based technologies include quantum key distribution~\cite{Ekert1991}, quantum computing~\cite{Preskill2018}, quantum random numbers generators~\cite{Acin2016}, quantum machine learning~\cite{Biamonte2017}, and much more. 
 
 
@@ -79,7 +81,7 @@ Entanglement-based technologies include quantum key distribution~\cite{Ekert1991
 \section{Bell game}
 
 In order to prove the existence of correlations not compatible with a local hidden variable theory, John Bell introduced a game, known today as a \textit{Bell game}~\cite{Bell1964}.
-This game consists of a particle pair souce and two space-like separated players, Alice and Bob, each having a measurement apparatus.
+This game consists of a particle pair source and two space-like separated players, Alice and Bob, each having a measurement apparatus.
 
 When a particle is received, Alice chooses a measurement to perform and records the outcome of that measurement.
 We label $x$ her \textit{measurement choice} or \textit{setting}, $A_x$ the corresponding measured observable, and $a$ the outcome.
@@ -87,11 +89,11 @@ Similarly, when he receives a particle, Bob makes a measurement choice $y$ and o
 This Bell game is sketched in \reffig{belltest}.
 
 The outcomes $a,b$ are not necessarily deterministically determined by the inputs $x,y$. 
-We are thus interested in the joint probability $p(ab|xy)$ of having outcomes $a$ and $b$ given the meaasurement choices $x$ and $y$. 
+We are thus interested in the joint probability $p(ab|xy)$ of having outcomes $a$ and $b$ given the measurement choices $x$ and $y$. 
 For a given game, one can arrange the probabilities for every possible outcomes and inputs in a vector $\mathbf{P}=\{ p(ab|xy)\}$ also refer to as \textit{correlations}.
 These correlations form a set whose boundaries depend on which assumptions are fulfilled by the Bell game and which resources are considered.
 
-Note that a spatial separation between players ensures that their is no influence between the two measurement devices while the game is played.
+Note that a spatial separation between players ensures that there is no influence between the two measurement devices while the game is played.
 
 \begin{figure}
 	\begin{center}
@@ -203,7 +205,7 @@ A well-suited Bell inequality for this game is the \acrshort{chsh} inequality
 	\label{eq:CHSH}
 \end{equation}
 where $S$ is the \textit{CHSH score}, and $\mean{A_x B_y} = \sum_{a,b} ab\,p(ab|xy)$ expresses a \textit{correlator} -- quantifying how correlated are the outcomes of two measurements.
-Note that correlators of a quantum state $\rho_{AB}$ are defined using Born rule, $\mean{A_x,B_y} = \trr{(A_X \otimes B_y)\rho_{AB}}$.
+Note that correlators of a quantum state $\rho_{AB}$ are defined using the Born rule, $\mean{A_x,B_y} = \trr{(A_X \otimes B_y)\rho_{AB}}$.
 It is convenient to define the \acrshort{chsh} operator, a Bell operator,
 \begin{equation}
 	\mathcal{B}_{\mathrm{CHSH}} = A_0 \otimes \left( B_0 + B_1 \right) + A_1 \otimes \left( B_0 - B_1 \right)
@@ -258,11 +260,11 @@ Another notable device-independent protocol outside the scope of this thesis is 
 
 \section{Self-testing}
 
-Introduced by Mayers and Yao, self-testing is the cornerstone of device-independent protocols~\cite{Mayers2004}.
+Introduced by Mayers and Yao~\cite{Mayers2004}, self-testing is the cornerstone of device-independent protocols.
 It finds its use when a classical client, with access to multiple black-boxes, would like to certify that these boxes performed specific measurements on a specific shared quantum state producing non-local correlations.
 Each boxes has some inputs the client can choose freely, and some outputs they can record, that together form some correlations, similarly to a Bell game.
 Self-testing protocols test these correlations against a Bell inequality crafted to certify the presence of a specific state and measurements.
-More precisely, the maximum violation of some Bell inequality can only be achieved by a particular family of correlations, that necessary originates form a specific state and measurements.
+More precisely, the maximum violation of some Bell inequalities can only be achieved by a particular family of correlations, that necessary originates from a specific state and measurements.
 The first self-testing protocol uses the \acrshort{chsh} inequality to certify the presence of maximally entangled two-qubit states~\cite{Mayers2004}. 
 New protocols then extended self-testing, notably to all pure bipartite entangled two-qubit states~\cite{Yang2013,Bamps2015}, and even to any pure bipartite entangled state~\cite{Coladangelo2017}. 
 For a in-depth review on self-testing, see \cite{Supic2019}.
@@ -288,7 +290,7 @@ Robust self-testing protocols were developed to decrease the requirement on the 
 As recent advances in quantum computing threaten the security of our current encryption algorithm~\cite{Shor1994,Gouzien2021,Gouzien2023}, more-than-ever is the need for stronger cryptographic protocols. 
 
 One approach is \textit{post-quantum cryptography} (PQC), new classical cryptography protocols that are resistant to known quantum attacks.
-PQC is convenient as it does not require new infrastructure, i.e. classical computers and communication links are sufficient. 
+PQC is convenient as it does not require a new infrastructure, i.e. classical computers and communication links are sufficient. 
 However, a major drawback is a poor long-term security; information encrypted using PQC can be stored for years until new quantum attacks that can break the encryption scheme are developed. 
 Furthermore, mathematical flaws in these protocols can be discovered, ruling out their security.
 This recently happened to a protocol short-listed by the NIST as a candidate for PQC~\cite{Castryck2022}.
@@ -303,7 +305,7 @@ It is worth noting that quantum key distribution and PQC are not in competitions
 
 \medbreak 
 
-First \acrshort{QKD} protocols were \textit{prepare-and-measure} protocols~\cite{Bennett84,Grosshans2002,Grosshans2003}.
+First \acrshort{QKD} protocols were \textit{prepare and measure} protocols~\cite{Bennett84,Grosshans2002,Grosshans2003}.
 In these protocols Alice would send information encoded in a quantum state to Bob.
 Thanks to the no-cloning theorem and to the uncertainty principle, attacks performed by an eavesdropper to gain information on the encoded message would unavoidably lead to detectable disturbances.
 Alice and Bob could thus detect the eavesdropper and abort the protocol.
@@ -320,7 +322,7 @@ The security of QKD protocols relies on the following assumptions
 	\item 1. The devices used to generate the key and to attack the protocol behave according to quantum theory,
 	\item 2. There is no information leakage out of Alice and Bob systems, e.g. Alice and Bob are each in a hermetic laboratory,
 	\item 3. Alice and Bob have access to random numbers,
-	\item 4. The classical devices used to process classical information are trusted 
+	\item 4. The classical devices used to process classical information are trusted,
 	\item 5. The quantum devices used to prepare the state and perform measurements are perfectly calibrated and behave predictably.
 \end{itemize}
 
@@ -332,7 +334,7 @@ Indeed, the devices or the apparatus composing these devices may be compromised 
 A famous example of such interference on classical system is the cryptographic devices sold by Crypto AG which were bugged by the Central Intelligence Agency~\cite{Miller2020}.
 However, even considering an honest manufacturer, the quantum devices implementing QKD are hard to build and will always contain noises and losses~\cite{Diamanti2016,Xu2020}.
 Subsequently, QKD implementations inevitably mismatch with the theoretical models on which the security proofs are based. 
-Moreover imperfections, especially the ones occurring in single-photon detectors, have been successfully exploited to attack QKD protocols~\cite{Fung2007,Lydersen2010,Gerhardt2011,Weier2011}. 
+Moreover, imperfections, especially the ones occurring in single-photon detectors, have been successfully exploited to attack QKD protocols~\cite{Fung2007,Lydersen2010,Gerhardt2011,Weier2011}. 
 For a review on quantum hacking, with attack examples, refer to \cite{Lo2014}.
 
 \medbreak
@@ -345,6 +347,6 @@ Crucially, DIQKD protocols will simply abort in the presence of exploitable impe
 \medbreak
 
 From a maximal violation of the CHSH inequality the singlet state and specific measurements can be self-tested, and therefore, guaranteeing that two parties can have correlated outcomes, unknown to a third party.
-Intuitively, DIQKD can be built on top of self-tests; the CHSH score asses the presence of the required resources from which a security proof on the distributed key is derived.
+Intuitively, DIQKD can be built on top of self-tests; one could first assess the presence of the required resources from the CHSH score, and then compute a security proof on the distributed key.
 However, this self-tests-based approach leads to performance far from practical applications~\cite{Fu2018,Kundu2022}.
-Hence, for better efficiency, the security proof of most protocols is directly based on the CHSH score, or, for even better performance, directly on the observed correlations~\cite{Pironio2009,Ho2020,Sekatski2021,Woodhead2021,Brown2021}.
+Hence, for better efficiency, the security proof of most protocols is directly computed from the CHSH score, or, for even better performance, directly from the observed correlations~\cite{Pironio2009,Ho2020,Sekatski2021,Woodhead2021,Brown2021}.
