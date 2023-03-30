@@ -1,0 +1,29 @@
+\chapter{Organisation of the manuscript}
+
+In Part~\ref{part:intro} of this thesis, we introduce key concepts of quantum information.
+This allow us to introduce the two device-independent protocols that are the focus of this thesis: self-testing and \acrfull{DIQKD}.
+
+\medbreak
+
+Part~\ref{part:self-testing} focuses on self-testing.
+In Chap.~\ref{chap:selftesting} we recall a method to self-test two-qubit maximally entangled states and maximally incompatible measurements from the maximal violation of the CHSH inequality.
+We then explore a more practical scheme, robust self-testing, in Chap.~\ref{chap:robust}, enabling the certification of a singlet-fraction in a noisy and lossy regime, relevant for real world applications.
+After introducing the core concept of extractabitliy in Sec~\ref{sec:extractability}, we focus on quantifying the fundamental resources that are required for such robust self-tests.
+In Sec~\ref{sec:robust_limits}, we explain how we derived a lower-bound on the CHSH-score below which robust singlet self-testing fails, assessing the need for new robust self-tests.
+In this scope, in Sec.\ref{sec:robust_XY} we briefly review an original self-testing protocol based on a more refined analysis of the correlations, that we formulated. 
+\medbreak
+
+Part~\ref{part:diqkd} of the manuscript covers \acrfull{DIQKD}.
+In Chap.~\ref{chap:diqkd}, we discuss motivations for DIQKD and the steps involved in a typical DIQKD protocol.
+Security proofs, in the form of key rates, are then reviewed in Chap.~\ref{chap:entropybound}. 
+This includes the fundamental key rate expression, and a practical key rate expression that has been derived from the CHSH score. 
+We then show some improvements that have been built on top of this key rate, notably fine-grained error-correction and noisy pre-processing. 
+In order to ease concrete experimental realizations of DIQKD, we proposed a new security proof based on generalized-CHSH inequalities, that we briefly review in Sec.~\ref{sec:Pavel}.
+Finally, a recent work that has introduced key rate based on the full statistics, yielding the best rate and robustness, is discussed in Sec~\ref{sec:Brown}.
+After reviewing the different experimental platforms that can be used to implement DIQKD, in Chap.~\ref{chap:implementing_diqkd} we present how we combined reinforcement learning and a custom-made simulation framework to automise the design of photonic experiments.
+The results of this method when applied DIQKD is discussed in ~\ref{sec:new_design}.
+Leveraging the flexibility of our approach, a new setup for the experimental violation of the CHSH inequality are presented in Sec.~\ref{sec:homodyne}.
+
+\medbreak
+Finally, in Part~\ref{part:conclusion}, we present some conclusions on both self-testing and DIQKD and devise some perspectives for the future of this two protocols. 
+We then suggest how these two device-independent methods should fall within the framework of a quantum internet.

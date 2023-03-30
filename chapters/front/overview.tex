@@ -1,0 +1,71 @@
+\chapter{Thesis overview}
+
+\section{Motivations and background}
+
+Physics went through a drastic paradigm change at the beginning of the 20th century.
+The perspective of a continuous world, provided both by differential equations in Newtonian mechanics and by Maxwell-Boltzmann equations, clashed with the discrete world depicted by the quantization of energy postulated by Max Planck.
+Moreover, our intuitive comprehension of physical objects, locally and deterministically characterized in space and time, was blown away by the fundamentally probabilistic nature of quantum theory.
+This led to numerous philosophical debates on the interpretation of the quantum world, with some of them still thriving nowadays.
+Additionally, new models widening the understanding of our surrounding were constructed from quantum physics.
+From quantum chemistry to the Standard model, all of these models met unprecedented success in predicting natural phenomena.
+Furthermore, these models enabled a myriad of new technological applications.
+The laser, transistors or MRIs are some famous examples of such applications.
+Together, these models and technologies constitute what is known today as the \textit{first quantum revolution}.
+
+\medbreak
+
+The 1980s marked a shift in focus from understanding quantum objects to engineering and controlling them.
+This change was driven by the realization that some quantum behaviors could be harnessed to enhance our information processing capabilities, and led to the emergence of a new field, \textit{quantum information processing}.
+Leveraging quantum entanglement, quantum communication promises cryptographic proofs based on the fundamental law of physics, while quantum computing suggests exponential performance gains for some tasks.
+Moreover, quantum sensing enables the resolution of physical properties with an unprecedented precision and quantum simulators will help us solve open questions that are beyond reach to our current computing capacity. 
+In this scope, national and international alliances are pooling resources to develop and scale up quantum technologies.
+On the long-term, we could see the apparition of a quantum internet, connecting quantum computers, simulators and sensors, and secured by quantum communication.
+
+\medbreak
+
+In the quest towards a complex networks of quantum technologies, the capacity to reliably certify quantum technologies comes as a necessity.
+Certification of resources would enable quick detection of errors and provide guarantees on the behaviour of quantum devices, crucial for security-sensitive applications.
+Interestingly, certification protocols can be formulated in a \textit{device-independent} manner, i.e. without assumption on the behaviour of quantum devices. 
+\textit{Self-testing} is a particularly noteworthy protocol that provides a guarantee on the presence of specific states and measurements.
+Alternatively, for certain quantum applications, protocols can be devised that only succeed if resources requirements are met.
+\textit{Device-independent quantum key distribution} is of prime example of this, allowing two parties to share a secret key, with a security proof that does not rely on assumptions on the quantum devices.
+In the presence of interferences, whether from adversarial attacks or from faulty quantum devices, DIQKD protocols will simply abort.
+
+\medbreak
+
+In this thesis, we focus on these device-independent protocols, with an emphasis on enabling their experimental implementations.
+Indeed, while these protocols are promising, their realization requires meeting high requirements.
+Therefore, we begin by quantifying the resources necessary for their successful implementation.
+We then improve the robustness of these protocols, ultimately lowering the requirements for their implementations.
+Finally, we propose a method to generate new experimental designs which led to proposals well-suited for their successful realization.
+
+\section{Summary of the contributions}
+
+\paragraph{Device-independent certification of quantum resources} 
+
+Self-testing enables the certification of quantum resources from observed measurement statistics.
+We focus on robust singlet self-testing, the self-test of two-qubit maximally entangled states in the presence of losses and noises.
+
+\medbreak
+
+\textbf{Article 1~\cite{Valcarce2020}:} We quantify resources that are necessary for robust self-tests protocols to apply.
+We focus on self-test based on a single condition on the measurement statistics; the violation of the CHSH inequality.
+Our work lead to the discovery of a no-go condition, a minimal violation below which this robust self-test fails.
+This fundamental limit improves our understanding of self-testing, shows clear experimental requirements and suggests directions for future robust singlet self-testing protocols.
+
+\textbf{Article 2~\cite{Valcarce2022}:} From a refined analysis of the measurement statistics, we derive new robust singlet self-tests.
+The new protocol we propose provides a better robustness to losses and thus eases experimental realization of singlet self-testing.
+
+\paragraph{Device-independent quantum key distribution}
+
+Device-independent quantum key distribution protocols allow two parties to share a key in a provably secure way.
+Their security proof rely on conditions on the observed measurement statistics. 
+
+\medbreak
+
+\textbf{Article 3~\cite{Sekatski2021}:} We introduce a new security proof, bounding more tightly the information an eavesdropper could gather on the key.
+Our proof is based on two correlations functions instead of a linear combination of all correlators.
+The resulting key rate is higher for realistic photonic implementations and partially entangled states but does not provide a better critical efficiency.
+
+\textbf{Article 4~\cite{Valcarce2022b}:} We automize the design of photonic experiments by combining machine learning and a custom-made simulation framework~\cite{Valcarce2021}. Applied to DIQKD, our method results in new realistic experimental blue prints, yielding both a higher key rate and a higher tolerance to losses compared to known photonic proposals.
+

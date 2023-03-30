@@ -49,15 +49,17 @@
 \usepackage{mathrsfs}
 \usepackage{tabularx}
 \usepackage{subcaption}
+\usepackage{wasysym}
 \usepackage[backend=biber,style=alphabetic]{biblatex}
 \addbibresource{references.bib}
-\usepackage[toc]{glossaries}
+\usepackage[toc,acronym]{glossaries}
 \input{math.tex}
 \input{acronyms.tex}
 \input{command.tex}
 \hypersetup{ % paramétrage couleur des liens hypertextes, toujours garder colorlinks=true
 	colorlinks=true,
 	linkcolor=black,
+	citecolor=B4,
 	urlcolor=purple}
  
 \makeatletter
@@ -68,7 +70,6 @@
 
 \pagestyle{plain} % pour ne garder que les n°de page en milieu-bas et supprimer les indications de chapitre en marge haute
 
-\usepackage{lipsum} % à retirer!!!
 \begin{document}
 	
 	\begin{titlepage}
@@ -88,7 +89,7 @@
 		
 		\begin{picture}(0,0)
 			\put(-152,-743){\rotatebox{90}{\Large \textsc{THESE DE DOCTORAT}}} \\
-			\put(-120,-743){\rotatebox{90}{NNT : 2020UPASA001}}
+			\put(-120,-743){\rotatebox{90}{NNT : }} %2020UPASA001
 		\end{picture}
 		
 		%*****************************************************
@@ -106,11 +107,13 @@
 		\vspace{30mm} % à régler éventuellement
 		\color{Prune}
 		\fontfamily{cmss}\fontseries{m}\fontsize{22}{26}\selectfont
-		\Huge Device-independent certification: from foundations to applications \\
+		\Huge
+		Device-independent certification: quantum resources and \\
+		quantum key distribution
 		
 		\normalsize
 		\color{black}
-		\Large{\textit{Device-independent certification: Fondations et Applications}}\\
+		\Large{\textit{Certification \guillemotleft bo\^ite noire\guillemotright: ressources quantiques et distribution quantique de clé }}\\
 		%*****************************************************
 		
 		\fontfamily{fvs}\fontseries{m}\fontsize{8}{12}\selectfont
@@ -127,10 +130,10 @@
 		\small Graduate School : Physique, Référent : Faculté des sciences d'Orsay \\
 		\vspace{6mm}
 		
-		\footnotesize Thèse préparée à l’Institut de Physique Théorique (Université Paris-Saclay, CNRS, CEA) sous la direction de Nicolas Sangouard, directeur de recherche (CEA). \\
+		\footnotesize Thèse préparée à l’\textbf{Institut de Physique Théorique (Université Paris-Saclay, CNRS, CEA)} sous la direction de \textbf{Nicolas Sangouard}, professeur (CEA). \\
 		\vspace{15mm}
 		
-		\textbf{Thèse soutenue à Paris-Saclay, le JJ mois AAAA, par}\\
+		\textbf{Thèse soutenue à Paris-Saclay, le 17 mai 2023, par}\\
 		\bigskip
 		\Large {\color{Prune} \textbf{Xavier VALCARCE}}
 		
@@ -146,19 +149,18 @@
 		\scriptsize
 		\begin{tabular}{|p{7cm}l}
 			\arrayrulecolor{Prune}
-			\textbf{Prénom Nom} &   Président ou Présidente\\ 
-			Titre, Affiliation & \\
-			\textbf{Prénom Nom} &  Rapporteur \& Examinateur / trice \\ 
-			Titre, Affiliation   &   \\ 
-			\textbf{Prénom Nom} &  Rapporteur \& Examinateur / trice \\ 
-			Titre, Affiliation  &   \\ 
-			\textbf{Prénom Nom} &  Examinateur ou Examinatrice \\ 
-			Titre, Affiliation   &   \\ 
-			\textbf{Prénom Nom} &  Examinateur ou Examinatrice \\ 
-			Titre, Affiliation   &   \\ 
-			\textbf{Nicolas Sangouard} &  Directeur ou Directrice de thèse \\ 
-			Titre, Affiliation   &   \\ 
-			
+			\textbf{Eleni Diamanti} & Présidente\\ 
+			Directrice de recherche, Sorbonne Université, Laboratoire d'informatique (LIP6), CNRS & \\
+			\textbf{Antonio Ac\'in} &  Rapporteur \& Examinateur \\ 
+			Professor, ICFO.   &   \\ 
+			\textbf{Nicolas Brunner} &  Rapporteur \& Examinateur \\ 
+			Professor, Departement de Physique Appliquée, Université de Genève.  &   \\ 
+			\textbf{Peter Brown} &  Examinateur \\ 
+			Assistant Professor, Télécom Paris, Institut Polytechnique de Paris.   &   \\ 
+			\textbf{Nicolas Sangouard} &  Directeur de thèse \\ 
+			Professor CEA, Université Paris-Saclay, CNRS, CEA, Institut de physique théorique.   &   \\ 
+			\textbf{Jean-Daniel Bancal} &  Invité \\ 
+			Professor CEA, Université Paris-Saclay, CNRS, CEA, Institut de physique théorique.   &   
 		\end{tabular} 
 		
 	\end{titlepage}
@@ -179,7 +181,7 @@
 %***** LOGO DE L'ED À CHANGER IMPÉRATIVEMENT *********
 %*****************************************************
 \includegraphics[height=2.45cm]{Logo/logo_usp_PIF.png}
-\vspace{1cm}
+\vspace{.5cm}
 %*****************************************************
 \fontfamily{cmss}\fontseries{m}\selectfont
 
@@ -187,29 +189,52 @@
 
 \begin{mdframed}[linecolor=Prune,linewidth=1]
 	
-	\textbf{Titre:} titre (en français)..................................................................................................................
+	\textbf{Title:} Device-independent certification: quantum resources and quantum key distribution
 	
-	\noindent \textbf{Mots clés:} 3 à 6 mots clefs (version en français)
+	
+	\noindent \textbf{Keywords:} Quantum Information, Quantum Communication, Quantum Internet, Quantum Cryptography, Device-independent Certification, Device-independent Quantum Key Distribution 
 	
 	\vspace{-.5cm}
 	\begin{multicols}{2}
-		\noindent \textbf{Résumé:}\lipsum[1-2] 
+		\noindent \textbf{Abstract:} 
+		Quantum information is a new paradigm in which quantum systems are used to carry, transfer and process information.
+		Leveraging fundamental properties of quantum physics, quantum information protocols have been developed to enhance the capabilities of classical protocols for computation and communication tasks.
+		In particular, non-local correlations have been used to reliably certify quantum systems and to provide unprecedented security guarantees on cryptographic protocols.
+		These certifications and security proofs are \textit{device-independent} -- they can be formulated solely from the observed statistics of measurement results, without making assumptions on the inner-working of the quantum devices from which these results originate.
+		In this thesis, we study two of these device-independent protocols, from their foundations to their experimental implementations. 
+		Firstly, we explore self-testing, the most fundamental device-independent protocol, which suitably certifies the functioning of quantum devices.
+		In our effort, we highlight fundamental limits of self-testing, and widen its range of applicability.
+		Secondly, we investigate device-independent quantum key distribution, a quantum cryptographic protocol that can be used to secure data exchange with provable security guarantees.
+		Beside extensions of existing security proofs, we also propose a way to generate new implementation schemes which could lead to a first photonic realisation of device-independent quantum key distribution.
+		Finally, we wrap up all of these protocols into a global perspective, showing how self-testing and quantum cryptography are complementary elements in the realization of a quantum internet.
 	\end{multicols}
-	
 \end{mdframed}
 
-\vspace{8mm}
+\vspace{2mm}
 
 \begin{mdframed}[linecolor=Prune,linewidth=1]
 	
-	\textbf{Title:} titre (en anglais)..................................................................................................................
-	
-	\noindent \textbf{Keywords:} 3 à 6 mots clefs (version en anglais)
-	
+	\textbf{Titre:} Certification \guillemotleft bo\^ite noire\guillemotright: ressources quantiques et distribution quantique de clé 
+
+	\noindent \textbf{Mots clés:} Information Quantique, Communication Quantique, Internet Quantique, Cryptographie Quantique, Certification «boîte noire», Distribution quantique de clé de type «boîte noire»
+
+	\vspace{-.5cm}
 	\begin{multicols}{2}
-		\noindent \textbf{Abstract:} \lipsum[1-2]
+		\noindent \textbf{Résumé:}
+		L'information quantique est un nouveau paradigme qui utilise des systèmes quantiques pour le transfert, l'échange et le traitement de l'information.
+		En tirant avantage des propriétés de la physique quantique, les protocoles d'information quantique offrent des améliorations notables sur certains protocoles classiques de calculs et de communication.
+		Grâce aux corrélations non-locales, il est possible de certifier de façon fiable des systèmes quantiques et de construire des protocoles cryptographiques avec des garantis de sécurité inégalée.
+		Certaines de ces certifications et preuves de sécurité adoptent une approche \textit{boîte noire} -- elles peuvent être formulées à partir des statistiques de résultats de mesures, sans faire d'hypothèse sur le fonctionnement interne des appareils quantiques à l'origine de ces statistiques.
+		Dans cette thèse, nous étudions deux de ces protocoles boîte noire, de leurs fondements à leurs réalisations expérimentales.
+		Tout d'abord, nous explorons le self-testing, le protocole boîte noire le plus fondamental, qui certifie adéquatement le fonctionnement d'appareils quantiques.
+		Nos recherches ont mis en lumière des limites fondamentales du self-testing et ont permis d'étendre son champ d'application. 
+		Dans un second temps, nous analysons la distribution quantique de clé de type boîte noire, un protocole de cryptographie quantique ayant une sécurité démontrable.
+		En plus d'avoir étendu les preuves de sécurités, nous proposons également une méthode produisant des schémas expérimentaux ouvrant la voie à une première expérience photonique de distribution quantique de clés de type boîte noire.    
+		Finalement, nous inscrivons ces protocoles dans une perspective plus globale en montrant comment le self-testing et la cryptographie quantique sont des éléments-clés dans le développement d'un internet quantique.
 	\end{multicols}
 \end{mdframed}
+
+
 
 \titleformat{\part}[block]{\bfseries\Huge\color{Prune}\filright}{\thepart\ --\ }{.1ex}
 {\vspace{0.1ex}
@@ -245,38 +270,28 @@
 
 \newgeometry{top=4cm, bottom=4cm, left=2cm, right=2cm}
 
-\chapter{Acknowledgements}
+\input{chapters/front/acknowledgements.tex}
+
 \newpage
 
+\begingroup
+\hypersetup{linkcolor=black}
 \tableofcontents
+\endgroup
 
 \newgeometry{top=4cm, bottom=4cm, left=4cm, right=4cm}
 
-\printglossary[type=\acronymtype,title=Acronyms, toctitle=Acronyms]
+%\printglossary[type=\acronymtype,title=Acronyms, toctitle=Acronyms]
+\printglossary[type=\acronymtype,nonumberlist]
 
-\chapter{Thesis overview}
-
-\section{Motivations and background}
-
-\section{Summary of the contributions}
-
-\chapter{Synthèse en français}
-
-\section{Motivations et context}
-
-\section{Résumé des contributions}
-
-\chapter{Organisation of the manuscript}
-
-\input{chapters/front/publications.tex}
+\input{chapters/front/front.tex}
 
 \mainmatter
 
 \input{chapters/overview/overview.tex}
 \input{chapters/selftesting/selftesting.tex}
 \input{chapters/deviceindependent/di.tex}
-
-\part{Conclusion and perspectives}
+\input{chapters/conclusion.tex}
 
 \printbibliography[heading=bibintoc]
 
