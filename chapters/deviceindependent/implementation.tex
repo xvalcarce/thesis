@@ -4,7 +4,7 @@
 \section{Platform comparison}
 
 DIQKD protocols relies on entanglement to generate a provably secure key.
-Before practical considertions such as distance between parties or noise resistance, the key rate of protocol, asserting the amount of secure key bit that can be extracted per experiment rounds, is the arguably the first reference benchmark to compare DIQKD implementations.
+Before practical considerations such as distance between parties or noise resistance, the key rate of protocol, asserting the amount of secure key bit that can be extracted per experiment rounds, is the arguably the first reference benchmark to compare DIQKD implementations.
 As the key rates presented in Sec.~\ref{sec:Pavel} and Sec.~\ref{sec:Brown} are recent and were not easily exploitable at the time of preparing this thesis, we here focus on key rates based on the CHSH score to compare DIQKD implementations.
 
 \medbreak
@@ -13,20 +13,20 @@ In order to implement DIQKD, a first requirement is to be able to entrust all as
 Specifically, the no-leakage assumption needs particular attention.
 In a Bell test, no information about the input of a party should influence the outcome of the other party's measurement.
 This locality loophole is often closed by using a space-like separation between Alice and Bob's measurement events, see e.g. \cite{Hensen2015,Giustina2015,Shalm2015}.
-When it comes to DIQKD, this is however more complex as not only the inputs but also the outcomes of each rounds have to be kept secret.
-Therefore, DIQKD experiment proposals have to address this loophole by suggesting a relevant way to isolate Alice and Bob's lab.
+When it comes to DIQKD, this is however more complex as we need to ensure that there is no information leakage to Eve.
+Indeed, any information about the inputs or outputs of the parties would open up a new range of attacks beyond coherent attacks.
+Therefore, DIQKD experiment proposals have to address this assumption by suggesting a relevant way to isolate Alice and Bob's lab.
 
 \medbreak
 
 CHSH based key rates increase with the CHSH score.
-Subsequently, proposed DIQKD experiments should be based on a plateform known to be able to generate highly entangled states leading to a high CHSH score in a loophole-free manner.
+Subsequently, proposed DIQKD experiments should be based on a plateform known to be able to generate highly entangled states leading to a high CHSH score in a detection loophole-free manner.
 
 \medbreak
 
 A critical factor in implementing DIQKD is the ability for the experiment to operate at a high repetition rate.
 Indeed, as the product of the repetition rate with the key rate gives the key rate per unit of time, a high repetition rate is necessary for practical applications.
 Furthermore, as key rates drop with losses, a high repetition rate enables mildly lossy implementations by maintaining their practicality.
-
 
 \medbreak
 
@@ -54,13 +54,12 @@ As such, while heralded entanglement systems are a great tool for proof-of-conce
 A first DIQKD experiment, making use of trapped ions, has been reported in ~\cite{Nadlinger2022}.
 This was made possible from the strong entanglement between two ions separated by $2\mathrm{m}$, yielding a high CHSH score of $S\approx 2.677$ and having a low quantum bit error rate of $Q\approx 0.0144$
 This experiment generated a key of $95\,884$ bits out of $1\,500\,000$ repetitions, achieving a key rate of $r \approx 0.0639$. This was obtained with an effective repetition rate of $\approx 60Hz$ over $7.9$h. 
-Around the same time, another DIQKD experiment using trapped ions separated by a distance two orders of magnitude larger demonstrated parameters compatible with a positive key rate in the limit of large repetition~\cite{Zhang2022}. 
+Around the same time, another DIQKD experiment using neutral atoms separated by a distance two orders of magnitude larger demonstrated parameters compatible with a positive key rate in the limit of large repetition~\cite{Zhang2022}. 
 However, no key could be generated, illustrating the challenge of extending DIQKD at large distances.
 
 \subsection{Photonic setups}
 
-The thoroughly studied photonic setups can produce photons which are entangled in various degree-of-freedom.
-If the common approach uses photons entangled in polarization, there is other possibilities such as path-entangled single-photon~\cite{Caspar2020}.
+The thoroughly studied photonic setups can produce photons which are entangled in various degree-of-freedom, with polarization-entangled photons being the most commonly used approach.
 Leveraging the entanglement production capabilities of these setups, experimental loophole-free Bell tests have been successfully conducted~\cite{Giustina2015,Shalm2015,Li2018}.
 
 Photonic setups offer numerous advantages over the heralded entanglement approach.
@@ -71,35 +70,35 @@ In fact, photonic device-dependent QKD realization has been performed with syste
 For the implementation of DIQKD protocols, photonic setups have two main limitations.
 First, photonic sources used in most Bell test demonstrations produce states which are far from ideal two-qubit states, resulting in a low CHSH score.
 For example, photon entangled in polarization, generated by a SPDC source can only achieve a CHSH score of $S\approx 2.35$~\cite{Vivoli2015b}.
-Furthermore, photonic implementations are highly susceptible to losses, mainly from distribution in optical fiber and from non-resolution in single-photon detectors.
-This leads to low CHSH, e.g. the highest score that has been reported in a loophole-free Bell test using a SPDC source is of $S \approx 2.02$~\cite{Liu2021}, as well as a challenging scalability with respect to longer transmission distances.
+Furthermore, photonic implementations are highly susceptible to losses, mainly from distribution in optical fibers and from non unit efficiency of single-photon detectors.
+This leads to low CHSH scores, e.g. the highest score that has been reported in a loophole-free Bell test using a SPDC source is of $S \approx 2.02$~\cite{Liu2021}, as well as a challenging scalability with respect to longer transmission distances.
 In particular, the low Bell violation seriously reduces the expected key rate, even in presence of high repetition rate.
 However, these limitations can be mitigated.
 Recent theoretical advances in DIQKD protocols coupled with more efficient quantum optical devices can lead to possible photonic DIQKD realizations.
-Furthermore, quantum repeater could help transmitting photons over long distances without breaking entanglement~\cite{Sangouard2011}.
+Furthermore, heralded qubit amplifiers could help transmitting photons over long distances without breaking entanglement~\cite{Gisin2010}.
 
 \medbreak
 
 Photonic setups are hence a natural candidate for DIQKD experiments and more long-term applications~\cite{Zapatero2023}.
 Encouragingly, a first proof-of-concept realization of DIQKD with photons entangled in polarization has been reported, where parameters compatible with a positive key rate in the limit of large repetition were remonstrated~\cite{Liu2022}.
-Several improvements are still required to obtain a first photonic DIQKD key following this proposal, including the implementation of random basis switching and a proof of security valid against the most general type of attacks.
+Several improvements are still required to obtain a first photonic DIQKD key following this proposal, including the implementation of random basis switching and a proof of security valid against the most general type of attacks in case where random postselection is applied. 
 
 \medbreak
 
 More efforts are therefore needed in order to see a photonic DIQKD realization. 
 Complementary to protocol improvements we detailed in Chap.~\ref{chap:entropybound}, it is also worth exploring new photonic experiment designs.
 In the next section, we present a common approach to photonic DIQKD, based on photons entangled in polarization.
-The key rate obtained with this setup is used as a benchmark to newly suggested experiment design.
-Then, in the last section of this chapter, we show how photonic experiments can be design in an automated manner, as we proposed in Article 4.
-Applied to DIQKD, this lead to new setups which are promising candidates for photonic DIQKD implementations.
+The key rate obtained with this setup is used as a benchmark to newly suggested experimental designs.
+Then, in the last section of this chapter, we show how photonic experiments can be designed in an automated manner, as we proposed in Article 4.
+Applied to DIQKD, this led to new setups which are promising candidates for photonic DIQKD implementations.
 
 
 \section{DIQKD with polarization-entangled photons}
 \label{sec:PolarizationDIQKD}
 
 A standard approach to implement DIQKD with photons is to use polarization entangled photons generated by a spontaneous down-conversion source (SPDC) and measured in different polarization basis thanks to wave plates, polarization beam-splitters and single-photon detectors.
-This typical setup, sometimes referred as the \textit{SPDC setup}, is depicted in \reffig{spdc}.
-This approach is the one chosen in the proof-of-concept experiment \cite{Liu2022} and is often used to benchmark theoretical key rate improvements~\cite{Ho2020,Sekatski2021}.
+This typical setup, here referred as the \textit{SPDC setup}, is depicted in \reffig{spdc}.
+This approach is the one chosen in the results reported in \cite{Liu2022} and is often used to benchmark theoretical key rate improvements~\cite{Ho2020,Sekatski2021}.
 
 \begin{figure}[t]
 	\begin{center}
@@ -113,9 +112,8 @@ This approach is the one chosen in the proof-of-concept experiment \cite{Liu2022
 \medbreak
 
 Let us briefly describes the statistics obtained from this implementation.
-An SPDC source is often implemented as a laser pulsed into a non-linear crystal.
-This emits photons in coupled modes, with mode $a$ sent to Alice and mode $b$ sent to Bob.
-Note that here we only consider a single mode, whereas, in practice, multiple modes can be created.
+An SPDC source is implemented with a non-linear crystal used to emit photons in coupled modes, with mode $a$ sent to Alice and mode $b$ sent to Bob.
+Note that here we only consider a single mode per party, whereas, in practice, multiple modes can be created.
 We denote $a,a_\perp$ the two orthogonal polarizations of Alice's mode, and, similarly $b,b_\perp$ for Bob.
 The state emitted is given by
 \begin{equation}
@@ -124,7 +122,7 @@ The state emitted is given by
 with $T_g = \tanh(g)$ and $T_{g'} = \tanh(g')$, and where $g$ and $g'$ are the squeezing parameters given by the non-linear susceptibility of the crystal and by the power of the pump~\cite{Vivoli2015b}.
 
 For each measurement input, Alice rotates her measurement basis with the help of wave plates.
-Formally, for angles $(\alpha_x,\phi_x)$ corresponding to the input choice $x$, the two orthogonal polarization change following
+Formally, for angles $(\alpha_x,\phi_x)$ corresponding to the input choice $x$, the two orthogonal polarizations change following
 \begin{equation}
 	\begin{split}
 		a &= \cos(\alpha_x)\tilde{a} + e^{i\phi_x}\sin(\alpha_x)\tilde{a}_\perp, \\
@@ -138,7 +136,7 @@ Finally, each polarizing beam-splitter outputs two modes, one for each polarizat
 For Alice, the detectors will measure the modes $\tilde{a},\tilde{a}_\perp$, respectively, while for Bob they will resolve $\tilde{b}$ for one and $\tilde{b}_\perp$ for the other.
 Such detectors are \acrfull{NPNR} detectors with outcomes $+1$, or \textit{click}, when a photonic signal is detected and $-1$, or \textit{no-click}, otherwise.
 These detector have an efficiency $\eta$, i.e. in the presence of photons the outcome should be $+1$ with probability $\eta$.
-Formally, a $\eta$-efficient NPNR detector on a mode $\tilde{a}$, is characterized by the POVM $\{M_{-1}^{\tilde{a}},1-M_{+1}^{\tilde{a}}\}$ where
+Formally, a $\eta$-efficient NPNR detector on a mode $\tilde{a}$, is characterized by the POVM $\{M_{-1}^{\tilde{a}},\id-M_{+1}^{\tilde{a}}\}$ where
 \begin{equation}
 	M_{-1}^{\tilde{a}} = (1-\eta)^{\tilde{a}^\dag\tilde{a}}.
 \end{equation}
@@ -152,7 +150,7 @@ For the outcomes pair $\{p_H,p_V\}$, the binning choice
 \end{equation}
 has been shown to be optimal~\cite{Vivoli2015b}.
 
-Combing the expression of the state, the measurement basis choices and the detection operators, one can compute the statistics $p(ab|xy)$ as a function of the squeezing parameters, Alice and Bob measurements angles and detector efficiencies.
+Combining the expression of the state, the measurement basis choices and the detection operators, one can compute the statistics $p(ab|xy)$ as a function of the squeezing parameters, Alice and Bob measurements angles and detector efficiencies.
 The full derivation of these statistics can be found in \cite{Vivoli2015b} and \cite{Ho2020}.
 
 \medbreak
@@ -161,7 +159,7 @@ The full derivation of these statistics can be found in \cite{Vivoli2015b} and \
 	\begin{center}
 		\includegraphics[width=.95\textwidth]{chapters/deviceindependent/img/key_rate_spdc.pdf}
 	\end{center}
-	\caption{Key rate with efficiency. The blue line correspond to the key rate obtained from a mono-mode SPDC setup when all source and measurement parameters are optimized.
+	\caption{Key rate with respect to the detection efficiency. The blue line correspond to the key rate obtained from a mono-mode SPDC setup when all source and measurement parameters are optimized.
 	The orange curve gives the key rate obtained for two-qubit partially entangled state, as a reference.}
 	\label{fig:SPDC_kr}
 \end{figure}
@@ -169,7 +167,7 @@ The full derivation of these statistics can be found in \cite{Vivoli2015b} and \
 The statistics computed from the SPDC setup allow to study its application for DIQKD.
 This is achieved by optimising the key rate over the squeezing parameters and measurement angles.
 With this method, we compute the critical detection efficiency by repeating the optimisation for progressively smaller efficiency $\eta$ until no positive key rate is obtained.
-Note that this is possible as losses in the optical fiber before detection can be reformulate as inefficient NPRP detectors, i.e. these two types of losses commute. 
+%Note that this is possible as losses in the optical fiber before detection can be reformulate as inefficient NPRP detectors, i.e. these two types of losses commute. 
 
 Using the key rate \refeq{Ho}, with fine-grained error correction and noisy preprocessing, the mono-mode SPDC setup have a key rate of $r\approx 0.2552$ for the ideal case $\eta=1$. 
 When allowing for more modes, the key rate goes up to $\approx 0.295$.
@@ -187,7 +185,7 @@ The evolution of the key rate with the detection efficiency, in the mono-mode re
 If photonic setups are a promising plateform for quantum information processing and, in particular, for DIQKD, finding a suitable photonic experiment design is cumbersome.
 Indeed, thanks to integrated photonic~\cite{Pelucchi2021} there is the possibility to implement complex circuits, combining numerous optical devices.
 Therefore, a systematic search through all possible implementations seems unrealistic.
-Furthermore, for each photonic setup, carrying the computation by hand is a time-consuming task while using numerical analysis based on available Fock-representation framework quickly turn resource heavy when precise computation and more optical modes are considered.
+Furthermore, for each photonic setup, carrying the computation of the measurement statistics by hand is a time-consuming task while using numerical analysis based on available Fock-representation framework quickly turn resource heavy when precise computation and more optical modes are considered.
 Finally, with a constant evolution of DIQKD protocols, new implementations need to be proposed continuously.
 
 To circumvent these issues, in Article 4~\cite{Valcarce2022b}, we propose an approach using machine learning and an efficient custom-made photonic simulation framework which, together, can propose photonic design matching a given figure of merit, e.g. a DIQKD key rate. 
@@ -206,14 +204,14 @@ Then, we show how our method performs for the design of DIQKD experiments as wel
 
 \subsection{Simulating quantum optical circuits}
 
-Photonic circuits can be seen as a quantum circuits where each mode $i$ is a bosonic mode characterized by the bosonic operators $a_i,a_i^\dagger$, and where gates are transformations of these modes.
-We restrict ourselves to optical transformation that are commonly available in quantum optics laboratory : single- and two-modes squeezers, displacements, phase-shifters and beam-splitters.
+Photonic circuits can be seen as quantum circuits where each mode $i$ is a bosonic mode characterized by the bosonic operators $a_i,a_i^\dagger$, and where gates are transformations of these modes.
+We restrict ourselves to optical transformations that are commonly available in quantum optics laboratory : single- and two-modes squeezers, displacements, phase-shifters and beam-splitters.
 To measure these bosonic modes, we focus on non photon-number resolving (NPNR) detectors sometimes called single-photon detectors, which have outcome $+1$ or \textit{click}, when a signal is detected and $-1$, or \textit{no-click}, otherwise.
-In addition to these operations, we also include heralding operations, conditioning the state of the circuit on the presence of signal in the heralded mode.
+In addition to these operations, we also include heralding operations, conditioning the state of the circuit on the presence of a signal in the heralded mode.
 
 
 In order to efficiently explore these photonic setups, there is the need for a fast and accurate simulation framework.
-We address this need with an approach based on the Gaussian representation of state and operations.
+We address this need with an approach based on the Gaussian representation of states and operations.
 This representation has the advantage of allowing for an exact and memory-efficient representation of circuits.
 Concretely, we develop a numerical framework using this representation to efficiently evaluate any given photonic circuit.
 
@@ -225,14 +223,15 @@ Each mode $i$ can be described in term of quadrature operators; the position $x_
 The entire circuit is thus characterized by the vector $\mathbf{q}=(q_1,\dots,q_{2n})=(x_1,p_1,\dots,x_n,p_n)$.
 
 Gaussian states, such as the vacuum state, are fully characterized by a displacement vector $\mathbf{\mu}$ and a covariance matrix $\Sigma$.
-Elements of these two object are functions of $\mathbf{q}$, they are given by
+Elements of these two object are functions of $\mathbf{q}$.
+More precisely, they are given by
 \begin{align}
 	\mathbf{\mu} = (\mu_1,\dots,\mu_{2n}), \qquad &\text{with}\quad \mu_i = \mean{q_i} = \trr{\rho q_i} \\
 	\Sigma = \begin{pmatrix} \Sigma_{11} & \dots & \Sigma_{1,2n} \\
 							\vdots & \ddots & \vdots \\
 						\Sigma{2n,1} & \dots & \Sigma_{2n,2n}\end{pmatrix} , \qquad &\text{with}\quad \Sigma_{i,j} = \frac{\mean{q_i q_j + q_j q_i}}{2}-\mu_i \mu_j.
 \end{align}
-This representation is compact as it only need $2n(n+1)$ real parameters to fully characterized a $n$-mode bosonic system.
+This representation is compact as it only needs $2n(n+1)$ real parameters to fully characterized a $n$-mode bosonic system.
 
 Gaussian transformations are transformations which conserve the Gaussian properties of Gaussian states. 
 These include
@@ -248,7 +247,7 @@ Applied on a Gaussian state $(\mathbf{\mu},\Sigma)$, such transformations output
 	(\mathbf{\mu},\sigma)\; \mapsto\; (M\mathbf{\mu} + d,\, M\Sigma M^T).
 \end{equation}
 
-The no-click probability of a NPNR detector with efficiency $\eta$, on mode $i$, $p_{\circ,i}$, is computed from the displacement vector and covariance matrix of a Gaussian state following
+The no-click probability $p_{\circ,i}$ of a NPNR detector on mode $i$ with efficiency $\eta$, is computed from the displacement vector and covariance matrix of a Gaussian state following
 \begin{equation}
 p_{\circ i} =\frac{2}{2-\eta}\sqrt{\frac{(\det \Sigma)^{-1}}{ \det(\Sigma^{-1}+F)}}
 e^{-\frac{1}{2}{\mathbf{\mu} }^T\left( \Sigma^{-1} - \Sigma^{-1} (\Sigma^{-1}+F)^{-1} \Sigma^{-1} \right){\mathbf{\mu} }}
@@ -324,10 +323,10 @@ From past experiences -- state, chosen action, new state and reward -- the \acrs
 
 We used this automated approach to the design of DIQKD experiments where Alice and Bob have access to a single bosonic mode. 
 In order to ensure that our photonic setups are complete, we systematically finish the circuits by placing a pair of heterodyne measurements, i.e. a displacement operation followed by a NPNR detector on Alice's and on Bob's modes. 
-We allow the agent to explore circuits that use a third mode, and place a NPNR detector on this mode in order to herald the state measured by Alice and Bob. 
+We allow the agent to explore circuits that use an auxiliary mode, and place a NPNR detector on this mode in order to herald the state measured by Alice and Bob. 
 We then consider two different rewards.
 
-First, we pick the key rate ~\refeq{Ho} achieved in an ideal scenario, i.e. in the absence of losses and noises, as the reward to me maximized by the agent. 
+First, we pick the key rate ~\refeq{Ho} achieved in an ideal scenario, i.e. in the absence of losses and noises, as the reward to be maximized by the agent. 
 In other words, for every photonic circuit considered by the agent, we compute the maximum key rate that can be achieved by this circuit by optimizing over all of the circuit parameters.
 After training a \acrshort{ppo} agent on that task, the best circuit we obtain is a fairly complex photonic circuit, composed of 12 elements.
 In the ideal case, this setup achieves a key rate of $r_{Ho}\approx 0.914$, outperforming the benchmark implementation detailed in Sec.~\ref{sec:PolarizationDIQKD}.
@@ -340,24 +339,25 @@ The reward is directly proportional to $1-\eta_{\approx \mathrm{crit}}$.
 Our method provides a simple circuit of only 7 optical devices, more robust that the reference implementation.
 Indeed, this setup output key rate $r_{Ho}\geq10^{-8}$ for efficiency $\apprge 0.8245$. 
 Furthermore, the obtained key rate are consistently higher than the one achieved by the benchmark setup.
-These setups as well as their key rate as the function of the efficiency can be found in Article 4.
+These setups as well as their key rates as the function of the efficiency can be found in Article 4.
 
 
 \subsection{Application toward continuous-variable DIQKD}
+\label{sec:homodyne}
 
 Our automated approach for designing photonic experiments can be readily extended to implement any task that can be expressed as a function of measurements.
 An interesting task for quantum cryptography is \textit{continuous-variable} DIQKD; DIQKD implementations in which Alice and Bob perform homodyne measurements, resolving the quadratures $x,p$ of bosonic modes.
-These measurements are particularly relevant as they are known to be robust to losses and can be performed at a high repetition rate.
-However, if a violation of the CHSH inequality -- the first step toward DIQKD -- can be obtained in this regime, the implementation with the highest violation that has been proposed so far yield a score of $S \approx 2.046$~\cite{GarciaPatron2004,GarciaPatron2005}.
-From this low violation current DIQKD protocols provide a mere positive key rates, e.g. even considering the unrealistic case of $H(A_0'|B_2)=0.0$, \refeq{Ho} gives only $r_{Ho}\approx 10^{-2}$.
+These measurements are particularly relevant as they are known to be efficient and can be performed at a high repetition rate.
+However, if a violation of the CHSH inequality -- the first step towards DIQKD -- can be obtained in this regime, the implementation with the highest violation that has been proposed so far yield a score of $S \approx 2.046$~\cite{GarciaPatron2004,GarciaPatron2005}.
+From this low score, current DIQKD protocols provide a mere positive key rates, e.g. even considering the unrealistic case of $H(A_0'|B_2)=0.0$, \refeq{Ho} gives only $r_{Ho}\approx 10^{-2}$.
 To improve on this violation, a proposal combining homodyne and NPNR detectors has shown an expected violation of $S\approx 2.25$~\cite{Cavalcanti2011}.
-Note that a CHSH score of $S \approx 2.35$ with homodyne measurements has been reported, however, has it fails to close any loophole this setup has to be excluded for DIQKD~\cite{Thearle2018}.
+Note that a CHSH score of $S \approx 2.35$ with homodyne measurements has been reported, however, as it fails to close any loophole this setup has to be excluded for DIQKD~\cite{Thearle2018}.
 
-It is in this context that we apply our automated method with the task of maximizing the CHSH violation using solely homodyne measurement, heralding operations, and the optical devices listed above.
-We limit our selves to the measurement settings proposed in \cite{GarciaPatron2005} and to a sign binning of the homodyne measurement outcome.
+It is in this context that we apply our automated method with the task of maximizing the CHSH violation using solely homodyne measurements, heralding operations, and the optical devices listed above.
+We limit our selves to the measurement settings proposed in \cite{GarciaPatron2005} and to a sign binning of the homodyne measurement outcomes.
 After learning, our intelligent agent proposed the circuit depicted in \reffig{homodyne}. 
 Interestingly, this circuit attains a CHSH score of $S\approx 2.068$. 
-Encouragingly, this score is closed to $2.072$, the maximum violation that could be reached with homodyne measurements, sign binning and any state of the form $\ket{\psi}=\sum_i c_i \ket{i,i}$~\cite{Munro1999}.
+%Encouragingly, this score is closed to $2.072$, the maximum violation that could be reached with homodyne measurements, sign binning and any state of the form $\ket{\psi}=\sum_i c_i \ket{i,i}$~\cite{Munro1999}.
 
 \begin{figure}[ht]
 	\begin{center}

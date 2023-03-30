@@ -6,7 +6,7 @@
 To asses the performance of DIQKD protocols we need to compute the \textit{key rate}, labelled $r$, corresponding to the amount of key bit that can be extracted per round.
 We here solely focus on asymptotic key rates, which are key rates derived in the limit of an infinite number of rounds.
 If asymptotic key rates are fundamentally inaccessible, they are a handy tool to asses the quality of a DIQKD protocol.
-In particular, avoiding finite size effects greatly simplify the computation of key rates.
+In particular, avoiding finite size effects greatly simplifies the computation of key rates.
 However, by not including these finite size effects, the asymptotic regime yield key rates higher that the ones obtained for a finite number of rounds.
 These finite size effects are beyond the scope of this thesis, some details can be found in ~\cite{Tan2021,Tan2022,Primaatmaja2023}.
 
@@ -36,7 +36,7 @@ Note that the key rate can be expressed using conditional von Neumann entropies 
 	\end{split}
 \end{equation}
 
-The remaining challenge is to bound these two term, and in particular to upper-bound the Holevo quantity directly from the correlations $p(ab|xy)$, as no assumption can be made on Eve's system and the quantum devices. 
+The remaining challenge is to bound these two terms, and in particular to upper-bound the Holevo quantity directly from the correlations $p(ab|xy)$, as no assumption can be made on Eve's system and the quantum devices. 
 In the following two sections we will described two methods to tackle this bound, the first one utilizing the CHSH score, the second one is based on a more refined analysis of the correlations.
 
 \section{CHSH-based security}
@@ -46,7 +46,7 @@ In the following two sections we will described two methods to tackle this bound
 
 In \cite{Pironio2009}, the first upper-bound on the Devetak-Winter bound has been derived.
 This approach makes use of an additional symmetrisation step in the protocol presented in the previous chapter.
-The symmetrisation step allow Alice and Bob to obtain uniform marginals, which result in $H(A_x)=H(B_y)=1$.
+The symmetrisation step allows Alice and Bob to obtain uniform marginals, which result in $H(A_x)=H(B_y)=1$.
 In order to do so, Alice and Bob can simply XOR their key bits with a public random string that is shared over the classical channel.
 
 Let's consider uniform noise, i.e. noise affecting symmetrically the outcomes of Alice and Bob's measurements.
@@ -55,7 +55,7 @@ In that case, the mutual information between Alice and Bob's raw key simply read
 \begin{equation}
 	I(A_0 : B_2) = H(A_0) - H(A_0|B_2) = 1 - h(Q)
 \end{equation}
-where $Q=p(a=b|xy)-p(a\neq b |xy)$ is the quantum error bit rate (Qber) and $h$ is the binary entropy $h(x)=-x \log_2(x) - (1-x)log_2(1-x)$.
+where $Q=p(a=b|xy)-p(a\neq b |xy)$ is the quantum bit error rate (Qber) and $h$ is the binary entropy $h(x)=-x \log_2(x) - (1-x)log_2(1-x)$.
 
 From the parameter estimation step of the protocol presented above, Bob can compute the CHSH score $S=\mean{\hat{A}_0 \hat{B}_0} + \mean{\hat{A}_0 \hat{B}_1} + \mean{\hat{A}_1 \hat{B}_0} - \mean{\hat{A}_1 \hat{B}_1}$.
 From this score and using Jordan's lemma, an upper-bound on the Holevo quantity appearing in \refeq{Devetak-Winter} is derived
@@ -64,7 +64,7 @@ From this score and using Jordan's lemma, an upper-bound on the Holevo quantity 
 	\label{eq:holevo_pironio}
 \end{equation}
 
-Finally, from this two results, a lower bound on the DIQKD key rate is given by
+Finally, from these two results, a lower bound on the DIQKD key rate is given by
 \begin{equation}
 	r \geq r_\mathrm{P} = 1 - h\left(\frac{1+\sqrt{(S/2)^2-1}}{2} \right) - h(Q).
 	\label{eq:pironio}
@@ -76,7 +76,7 @@ Finally, from this two results, a lower bound on the DIQKD key rate is given by
 When presenting the protocol in the previous chapter, we assumed that Alice and Bob have binary measurements with outcomes $\pm 1$.
 A more general approach would allow both parties to have measurements with more outcomes, that could ultimately be binned to form the raw key.
 Non-binary outcomes naturally occur in the presence of loss, as loss might lead to no measurement outcomes, which can be accounted as an extra outcome.
-Interstingly, Bob can use the extra information of the non-binned or \textit{fine} outcomes of $B_2$ to reduce the cost of error-correction~\cite{Ma2012}.
+Interestingly, Bob can use the extra information of the non-binned or \textit{fine} outcomes of $B_2$ to reduce the cost of error-correction~\cite{Ma2012}.
 This \textit{fine-grained error correction} is given by
 \begin{equation}
 	\begin{split}
@@ -98,7 +98,7 @@ Therefore, a tighter lower-bound on the key rate is
 
 \subsection{Noisy Preprocessing}
 
-In the case of device-dependent QKD~\cite{Renner2005,Kraus2005,Renes2007}, it has been shown that Eve's uncertainty might increase if Alice includes a \textit{noisy-preprocessing} step following the measurement step of the DIQKD protocol we consider here~\cite{Ho2020}.
+Following insights from device-dependent QKD~\cite{Renner2005,Kraus2005,Renes2007}, it can be advantageous for Alice to include a \textit{noisy-preprocessing} step following the measurement step of the DIQKD protocol we consider here~\cite{Ho2020}.
 This noise acts as a bit-flip operation on the binned outcome of $\hat{A}_0$, used for key generation, occurring with a probability $q$, fixed by Alice.
 Formally, this is the transformation
 \begin{equation}
@@ -106,7 +106,7 @@ Formally, this is the transformation
 \end{equation}
 We denote $A_0'$ the raw key bit of Alice after noisy pre-processing.
 
-For a CHSH score $S$ and a noisy preprocessing probabliy $q$, the Holevo quantity is upper bounded by
+For a CHSH score $S$ and a noisy preprocessing probability $q$, the Holevo quantity is upper bounded by
 \begin{equation}
 	\begin{split}
 		\chi(A_0' : E) \leq I_q(S) = &h\left(\frac{1+\sqrt{(S/2)^2-1}}{2}\right) \\
@@ -141,7 +141,7 @@ We consider measurements to be as general as possible on the $(\sigma_x-\sigma_z
 with $M(\theta) = \frac{1}{2}\left(\id + \cos(\theta)\sigma_z + \sin(\theta)\sigma_x \right)$ and the angles $\alpha_x,\beta_y\in[0,\pi/2]$.
 To verify our intuition in the absence of loss, without noisy preprocessing $q=0$, and with the optimal angles $(\alpha_0,\alpha_1)=(0,\pi/2)$ and $(\beta_0,\beta_1,\beta_2)=(\pi/4,-\pi/4,0)$, we indeed obtain a key rate of
 \begin{equation}
-	r \geq 1-h\left(\frac{1+\sqrt{(S/2)^2-1}}{2}\right)-h(Q) = 1 - h(1) - h(1) = 1.
+	r \geq 1-h\left(\frac{1+\sqrt{(S/2)^2-1}}{2}\right)-h(Q) = 1 - h(1) - h(0) = 1.
 \end{equation}
 
 In the presence of loss, we need to address the possibility of the shared state being lost before the measurement, which would result in the absence of outcome.
@@ -149,11 +149,11 @@ We label $\eta\in[0,1]$ the efficiency of the quantum devices, i.e. the shared s
 If the state is lost, Alice and Bob can recover binary outcomes by binning the no-outcome event as $+1$.
 Thus, their POVMs becomes
 \begin{equation}
-	\{M^{+1},\,M^{-1}\} \rightarrow \{\eta M^{+1}+(1-\eta) \id,\, 1-\left(\eta M^{+1}+(1-\eta) \id\right)\}.
+	\{M^{+1},\,M^{-1}\} \rightarrow \{\eta M^{+1}+(1-\eta) \id,\, \id-\left(\eta M^{+1}+(1-\eta) \id\right)\}.
 \end{equation}
 However for his measurement $B_2$, Bob can simply consider all three outcomes, with the corresponding POVM
 \begin{equation}
-	B_2\, : \, \{\eta M(\beta_2),\, \eta (1-M(\beta_2)),\, (1-\eta) \id \},
+	B_2\, : \, \{\eta M(\beta_2),\, \eta (\id-M(\beta_2)),\, (1-\eta) \id \},
 \end{equation}
 since exploiting fine-grained outcomes can reduce the cost of error-correction as explained in Sec.~\ref{sec:Ma_Lutk}.
 
@@ -199,7 +199,7 @@ Conveniently, since the CHSH score is computed from these correlations, no extra
 \subsection{Security statement from the generalized-CHSH score}
 \label{sec:Pavel}
 
-The generalized CHSH score $S_\theta=\sqrt{2}(\cos(\theta)X+\sin(\theta)Y)$, obtained from the genrealized CHSH operator $\mathcal{B}_\theta$, allows to exploit the knowledge of the correlator pair
+The generalized CHSH score $S_\theta=\sqrt{2}(\cos(\theta)X+\sin(\theta)Y)$, obtained from the generalized CHSH operator $\mathcal{B}_\theta$, allows to exploit the knowledge of the correlator pair
 \begin{equation}
 	\begin{split}
 		X = \mean{A_0 \otimes (B_0+B_1)},\\
@@ -209,7 +209,7 @@ The generalized CHSH score $S_\theta=\sqrt{2}(\cos(\theta)X+\sin(\theta)Y)$, obt
 We have seen in the previous part that generalized CHSH inequalities, compared to CHSH, can be advantageous for a device-independent protocol that is self-testing~\cite{Valcarce2022}.
 Intuitively, these inequalities can be useful for DIQKD as well.
 The intuition comes from the correlator pair $X,Y$ allowing to differentiate between the contributions of measurements $\hat{A}_0$, used for key generation, and $\hat{A}_1$ solely used to test the quantum devices.
-Therfore, this extra degree of freedom could allow us to bound Eve's entropy on the outcome $A_0$ more tightly.
+Therefore, this extra degree of freedom could allow us to bound Eve's entropy on the outcome $A_0$ more tightly.
 
 In Article 3, we investigate this intuition, paving the way for DIQKD security proofs beyond the CHSH score. 
 We here provide a sketch of the proof, for more detail please refer to \cite{Sekatski2021} or, alternatively, to \cite{Woodhead2021}.
@@ -262,7 +262,7 @@ This entropy can be expressed as
 \begin{equation}
 	H(A_0'|E) = H(A_0') - \underbrace{\left(H(\rho_E) - \sum_{a'=\pm1}p(a')H(\rho_{E|a'})\right)}_{I_{\theta,q}(X,Y)}
 \end{equation}
-where $\rho_E$ is the reduced state of Eve, and where $\rho_{E|a'}$ is Eve's state conditioned on the key bit $A_0'=a'$, occuring with probability $p(a')$.
+where $\rho_E$ is the reduced state of Eve, and where $\rho_{E|a'}$ is Eve's state conditioned on the key bit $A_0'=a'$, occurring with probability $p(a')$.
 Using the symmetrisation step explained in Sec~\ref{sec:pironio}, we have $H(A_0')=1$.
 We show in \cite{Sekatski2021} that, using Jordan's lemma, the quantity $I_{\theta,q}(X,Y)$ reduced on two-qubit states $I'_{\theta,q}(X,Y)$ can be obtained by solving the maximization problem
 \begin{equation}
@@ -278,18 +278,18 @@ where $\rho_{E|a'=+1}(\mathbf{L},\alpha_0,q)$ is a two-qubit states shared betwe
 	\label{eq:}
 \end{equation}
 with $\ket{\phi_k}=\{\ket{\phi^+},\ket{\phi^-},\ket{\psi^+},\ket{\psi^-}\}$, characterized by $\mathbf{L}=(L_1,L_2,L_3,L_4)$.
-In \cite{Sekatski2021} we further explain how to solve this optimisation, and how to obtain the function $\tilde{I}_{\theta,q}(X,Y)\geq I'_{\theta,q}(X,Y)$ concave in $S_\theta$.
+In \cite{Sekatski2021} we further explain how to solve this optimisation, and how to obtain an upper bound $\tilde{I}_{\theta,q}(X,Y)\geq I'_{\theta,q}(X,Y)$ concave in $S_\theta$.
 
-In Article 3, we solve the minimization for all $\theta\in[0,pi/2]$. This gave us the bound on the conditional entropy $1-\min_{\theta}\tilde{I}_{\theta,q}(X,Y)\leq H(A_0|E)$ and, hence, the lower bound on the key rate
+In Article 3, we solve the minimization for all $\theta\in[0,\pi/2]$. This gave us the bound on the conditional entropy $1-\min_{\theta}\tilde{I}_{\theta,q}(X,Y)\leq H(A_0|E)$ and, hence, the lower bound on the key rate
 \begin{equation}
 	r \geq r_\mathrm{Sek} = 1 - \min_{\theta} \tilde{I}_{\theta,q}(X,Y) - H(A_0'|B_2).
 	\label{eq:Sekatstki}
 \end{equation}
 Interestingly, this approach achieves higher key rate than CHSH-based key rates, except when correlators satisfies $X(X+Y)=4$ for which obtained key rates are equal.
-When considering optimal noisy preprocessing, the gap in improved key rate diminish but is still non-neglectible.
-Applied to the concrete case of a singlet state as explained in \ref{sec:robust_DIQKD}, the criticial detection efficiency drops from $\approx 0.903$ to $\approx 0.900$ when using generalized CHSH security proof.
+When considering optimal noisy preprocessing, the gap in improved key rate diminishes but is still non-negligible.
+Applied to the concrete case of a singlet state as explained in \ref{sec:robust_DIQKD}, the critical detection efficiency drops from $\approx 0.903$ to $\approx 0.900$ when using generalized CHSH security proof.
 However, for partially entangled two-qubit states, there is no improvement in critical detection efficiency.
-Note that, independently to our results, \cite{Woodhead2021} reported on similar results. In particular, a DIQKD security proof has also been dervied from the generalized CHSH score and the reported advantages in key rate and critical efficiencies are indentical to the ones found using our method.
+Note that, independently to our results, \cite{Woodhead2021} reported on similar results. In particular, a DIQKD security proof has also been derived from the generalized CHSH score and the reported advantages in key rate and critical efficiencies are identical to the ones found using our method.
 
 \medbreak
 
@@ -319,12 +319,12 @@ For some $m\in\mathds{N}$, lemma 3.1 of \cite{Brown2021} states that Eve's entro
 where $c_m=\frac{-1}{m^2 \ln(2)}+\sum_{i=1}^m \frac{w_i}{t_i \ln(2)}$ and where $w_i$ and $t_i$ are the nodes and weights of the $m$-order Gauss-Radau quadrature in the range $[0,1]$.
 \refeq{Brown} converges to $H(A_0|E)$ when $m$ converges to infinity.
 
-To obtain a device-independent lower bound on the conditional von Neumann entropy, we can constraint \refeq{Brown} to  all quantum model compatible with the observed correlations. 
+To obtain a device-independent lower bound on the conditional von Neumann entropy, we can constraint \refeq{Brown} to all quantum models compatible with the observed correlations. 
 In particular, we define $r$ constraints as inequalities of linear combinations of the observed correlations 
 \begin{equation}
 	\sum_{abxy}c^i_{abxy}p(ab|xy) \geq \gamma_i \quad \forall i\in\{1,...,r\}.
 \end{equation}
-Adding these constraints and relaxing \refeq{Brown} by commuting the sum and the infinimum as well as by replacing the tensor product structure of the space of $\rho_{AE}$ by intrdoucing commutation relations on the relevant variables, one obtains the problem 
+Adding these constraints and relaxing \refeq{Brown} by commuting the sum and the infinimum as well as by replacing the tensor product structure of the space of $\rho_{AE}$ by introducing commutation relations on the relevant variables, one obtains the problem 
 \begin{equation}
 	\begin{aligned}
 		c_m + \inf \sum_{i=1}^{m-1}\frac{w_i}{t_i\ln(2)}\sum_a 	\bra{\psi} M_a^0(Z_{a,i}+ Z_{a,i}^* +(1-t_i)Z_{a,i}Z_{a,i}^*+t_i(\id_A\otimes Z_{a,i} Z_{a,i}^*)\ket{\psi} \\
@@ -347,8 +347,8 @@ Using the NPA hierarchy, this problem can be relaxed into a converging sequence 
 
 This method, when applied to correlations compatible with a two-qubit partially entangled state shared between Alice and Bob, gives the most advantageous key rate. 
 We find that the critical detection efficiency, in particular, drops to $\approx 0.805$, considering a $(m=8)$-order Gauss-Radau quadrature.
-This critical detection efficiency for two-qubit partially entangled states is real close to the optimal one, as it has been proven that no key rate can be obtain from efficiency below $\approx 0.7904$\cite{Lukanowski2022}.
+This critical detection efficiency for two-qubit partially entangled states is close to the optimal one, as it has been proven that no key rate can be obtain from efficiency below $\approx 0.7904$\cite{Lukanowski2022}.
 
 Note, however, that this method requires heavy computational resources.
 It is, henceforth, not convenient for a quick benchmark of a DIQKD implementation proposal.
-In this scope, solving ~\refeq{NPA_DIQKD} more efficiently is desired, this could be achieve by choosing better monomial sets or by exploiting symmetries to reduce the size of the SDPs~\cite{Rosset2021}.
+In this scope, solving ~\refeq{NPA_DIQKD} more efficiently is desired, this could be achieved by choosing better monomial sets or by exploiting symmetries to reduce the size of the SDPs~\cite{Rosset2021}.
