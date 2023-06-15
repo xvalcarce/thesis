@@ -5,7 +5,7 @@
 
 La physique a connu un changement radical de paradigme au début du XXe siècle.
 La perspective d'un monde continu décrit à la fois par les équations différentielles de la mécanique Newtonienne et par les équations de Maxwell-Boltzmann, fut confrontée à un monde discret, dépeint par la quantification de l'énergie postulée par Max Planck.
-De plus, notre compréhension intuitive des objets physiques, caractérisés de manière locale et déterministe dans l'espace et le temps, a été balayée par la nature fondamentalement probabiliste de la théorie quantique.
+De plus, notre compréhension intuitive des objets physiques, caractérisés de manière locale et déterministe dans l'espace et le temps, a été ba\-layée par la nature fondamentalement probabiliste de la théorie quantique.
 Cela engendra de nombreux débats philosophiques sur l'interprétation de la physique quantique, dont certains sont encore d'actualité aujourd'hui.
 Par ailleurs, de nouveaux modèles furent construits à partir de la physique quantique, nous permettant d'étendre notre compréhension du monde.
 De la chimie quantique au modèle standard de la physique des particules, ces modèles ont connu un succès éclatant pour la prédiction des phénomènes naturels de l'Univers.
@@ -16,20 +16,21 @@ Ces nouveaux modèles et technologies ont marqué la \textit{première révoluti
 \medbreak
 
 Dans les années 80, une nouvelle direction fut prise : nous ne cherchions plus seulement à comprendre les objets quantiques, mais à les construire et à les contrôler.
-Ce changement fut provoqué lorsque nous avons compris que certaines propriétés quantiques peuvent être utilisées pour augmenter nos capacités de calcul et de communication.
+Ce changement advint lorsque nous avons compris que certaines propriétés quantiques peuvent être utilisées pour augmenter nos capacités de calcul et de communication.
 En exploitant l'intrication quantique, la communication quantique promet des preuves de cryptographie basées sur les lois fondamentales de la physique, tandis que l'informatique quantique suggère des gains exponentiels de performance pour la réalisation de certaines tâches.
-De plus, les capteurs quantiques permettent d'atteindre une précision jamais atteinte pour la résolution de certaines grandeurs physiques, et les simulateurs quantiques nous aideront à résoudre des problèmes au-delà de nos capacités de calcul actuelles.
+De plus, les capteurs quantiques permettent d'obtenir une précision jamais atteinte pour la résolution de certaines grandeurs physiques, et les simulateurs quantiques nous aideront à résoudre des problèmes au-delà de nos capacités de calcul actuelles.
 Dans ce contexte, des organisations nationales et internationales réunissent les ressources nécessaires au développement et à l'évolution de ces technologies quantiques.
 À long terme, nous pourrions voir apparaître un internet quantique reliant ordinateurs, capteurs et simulateurs quantiques, le tout communiquant de manière sécurisée grâce à la communication quantique.
 
 \medbreak
 
 Pour la réalisation d'un réseau complexe de technologies quantiques, la capacité de certifier ces technologies quantiques apparaît comme primordiale. 
-La certification de ressources quantiques devrait permettre la détection rapide d'erreurs et d'attester du comportement des appareils quantiques, ce qui est critique pour les tâches sensibles en matière de sûreté.
+La certification de ressources quantiques devrait permettre de détecter rapidement des erreurs et d'attester du comportement des appareils quantiques, ce qui est critique pour les tâches sensibles en matière de sûreté.
 Certains protocoles de certification peuvent être réalisés dans une approche \guillemotleft boîte noire\guillemotright, c'est-à-dire sans hypothèse sur le fonctionnement interne des appareils quantiques, considérés comme des boîtes noires. 
-L'exemple le plus notable est le \textit{self-testing}, un protocole permettant de garantir la présence d'états quantiques et de mesures spécifiques.
+L'exemple le plus notable est le \textit{self-testing}, un protocole permet\-tant de garantir la présence d'états quantiques et de mesures spécifiques.
 Pour certaines applications quantiques, il est également possible de concevoir des protocoles «boîte noire» dont leur succès est conditionné à la présence de ressources particulières.
-La distribution quantique de clé de type \guillemotleft boîte noire\guillemotright~est un exemple caractéristique de ce type de protocoles. Elle permet à deux parties de partager une clé secrète de chiffrement dont la preuve de sécurité ne dépend pas des appareils utilisés. 
+La distribution quantique de clé de type \guillemotleft boîte noire\guillemotright~est un exemple caractéristique de ce type de protocoles. 
+Elle permet à deux parties de partager une clé secrète de chiffrement dont la preuve de sécurité ne dépend pas des appareils uti\-lisés. 
 Une attaque par une partie adverse ou des défauts dans les appareils utilisés engendrent inévitablement des interférences détectables par le protocole, qui s'interrompra.
 
 \medbreak
@@ -40,40 +41,98 @@ Nous commençons par déterminer les ressources fondamentales nécessaires à le
 Enfin, nous proposons une méthode pour automatiser la conception d'expériences d'optique quantique. 
 Cela nous permettra d'obtenir de nouveaux designs bien adaptés à la réalisation de ces protocoles.
 
+\section{Présentation des protocoles \guillemotleft boîte noire\guillemotright}
 
-\section{Résumé des contributions}
+\subsection{Certification «boîte noire» de ressources quantiques}
 
-\paragraph{Certification «boîte noire» de ressources quantiques} 
-
-Le self-testing certifie la présence de certaines ressources quantiques à partir de statistiques de mesures.
-Nous examinons le \textit{robust self-testing} du singlet, le protocole permettant, malgré la présence de bruit et de pertes, la certification d'un état de deux qubits maximalement intriqués.
+Le \textit{self-testing}, proposé par Mayer et Yao~\cite{Mayers2004}, est la pierre angulaire des protocoles «boîte noire».
+Ce protocole permet à un client, disposant de ressources uniquement classiques, de certifier que des «boîtes noires», interconnectées, effectuent exactement des mesures spécifiques sur un état quantique particulier, partagé entre ces boîtes. 
+Pour ce faire, le client choisit librement une entrée pour chacune de ces boîtes, puis enregistre les résultats en sortie.
+En répétant cette étape plusieurs fois, le client obtient des statistiques de mesures ou \textit{correlations} entrées-sorties, à partir desquelles la certification peut être stipulée.
+En effet, il existe des conditions sur ces corrélations qui ne peuvent être satisfaites que pour un unique modèle quantique -- un ensemble de mesures et d'un état.
+Autrement dit, il est possible de certifier la présence d'un modèle quantique si des conditions adéquates sont remplies par les statistiques de mesures,
+Dans cette thèse, nous nous intéressons à la certification d'un état quantique particulier, l'état de deux qubits maximalement intriqués, une ressource clé pour de nombreuses technologies quantiques.
+La certification de cet état quantique est réalisée à partir de la saturation d'une inégalité de Bell, l'inégalité \acrfull{chsh}.
+Nous présentons ce protocole ainsi qu'une preuve de cette certification dans le Chap.~\ref{chap:selftesting}.
 
 \medbreak
 
+La réalisation expérimentale du self-testing apporte de nombreuses problématiques.
+Dans un cas pratique, les statistiques de mesures diffèrent inévitablement de celles nécessaires à la certification de ressources quantiques.
+Cela est dû à différents bruits et pertes, des imperfections naturellement présentes lors de la création, de la distribution et de la mesure de l'état quantique.
+De plus, la collection de statistiques en un nombre fini de répétitions de l'expérience ne permet qu'une estimation des corrélations, à un intervalle près.
+Il apparait donc comme nécessaire d'adapter les protocoles de self-testing à ces limitations ; c'est ainsi que furent proposés les protocoles de \textit{robust self-testing}.
+Cette nouvelle famille de protocole certifie une limite sur la similitude entre la ressource testée et la ressource cible.
+Après avoir défini la notion de similitude entre états quantiques, dans le Chap.~\ref{chap:robust}, nous présentons un protocole pour la certification de l'état de deux qubits maximalement intriqués en présence d'imperfections.
+Nous exposons ensuite deux de nos contributions portant respectivement sur les limites de ce protocole et sur un nouveau protocole plus robuste à certaines imperfections.
+
+\subsection{Distribution quantique de clé de type \guillemotleft boîte noire\guillemotright}
+
+Les récentes avancées en informatique quantique menacent nos systèmes de chiffrement actuels. 
+Les ordinateurs quantiques ont le potentiel de briser rapidement les algorithmes de chiffrement classiques, mettant ainsi en danger la sécurité des données sensibles. 
+Face à cette menace, deux approches sont envisagées. 
+La première approche est la cryptographie post-quantique, qui propose de nouveaux algorithmes résistants aux attaques quantiques connues. 
+Cette approche présente l'avantage de ne pas nécessiter de nouvelles infrastructures, mais simplement une mise à jour de nos normes de chiffrement. 
+Cependant, elle comporte des risques à long terme. 
+Par exemple, un attaquant pourrait enregistrer des messages chiffrés avec ces nouveaux algorithmes en attendant une future avancée technologique ou mathématique permettant de nouvelles attaques.
+La seconde approche est la distribution quantique de clés (QKD), une famille de protocoles de communication quantique permettant à deux utilisateurs reliés par un canal quantique de communication, de créer et partager une clé symétrique de chiffrement.
+Dans ce cas, la sécurité ne dépend pas des ressources dont dispose un attaquant, mais repose sur les lois de la physique. 
+Cette approche offre ainsi une solution aux risques à long terme.
+
+\medbreak
+
+Si la distribution quantique de clé apparait comme une approche prometteuse, son application pratique comporte des risques.
+La preuve de sécurité d'une implémentation de QKD repose sur un modèle physique spécifique à cette réalisation.
+Or, des imperfections dans les systèmes utilisés pour cette implémentation peuvent entrainer des divergences au modèle physique pris en compte, rendant ainsi la preuve de sécurité caduque.
+Exploitant ces imperfections, des attaques ont déjà été menées avec succès contre des systèmes de QKD.
+
+
+\medbreak
+
+La distribution quantique de clé de type «boîte noire» (DIQKD) offre une solution pour éliminer la dépendance de la preuve de sécurité en l'hypothèse que l'implémentation soit conforme à un modèle physique spécifique.
+En effet, les protocoles de DIQKD permettent d'obtenir une preuve de sécurité dérivée uniquement à partir de statistiques de mesures.
+Ces protocoles sont de type «boîte noire» car ils ne nécessitent aucune hypothèse sur les systèmes quantiques à l'origine de ces statistiques -- ces systèmes peuvent être donc vus comme des boîtes noires.
+
+\medbreak
+
+Dans le Chap.~\ref{chap:diqkd}, nous présentons les ressources nécessaires à l'implémentation d'un protocole de DIQKD, puis nous détaillons les différentes étapes d'un protocole type, de l'obtention des statistiques de mesures à la production de la clé de chiffrement.
+Les preuves de sécurité sous forme de taux de clé sont ensuite exposées dans le Chap.~\ref{chap:entropybound}. 
+Nous revenons sur l'expression fondamentale de ce taux de clé, ainsi que sur son expression pour différents protocoles.
+Au sein de ce même chapitre, nous commentons une de nos contributions sur la DIQKD ; un nouveau protocole offrant un taux de clé avec une meilleure résistance aux pertes.
+Finalement, dans le Chap.~\ref{chap:implementing_diqkd} nous nous intéressons à la réalisation expérimentale de la DIQKD.
+Nous comparons d'abord les différentes plateformes privilégiées pour les expé\-riences de DIQKD, avant d'exposer une expérience photonique servant de modèle de référence.
+Enfin, nous présentons la dernière de nos contributions, une nouvelle méthode permettant de générer automatiquement des designs d'expériences photoniques.
+Avec cette méthode appliquée à la DIQKD, nous mettons en avant deux nouveaux schémas d'expériences photoniques de DIQKD, facilitant la réalisation d'expériences de DIQKD.
+
+
+\section{Résumé des contributions}
+
+\paragraph{Certification «boîte noire» de ressources quantiques} \mbox{}\\
+
 \textbf{Article 1~\cite{Valcarce2020}:} 
 Nous quantifions les ressources nécessaires pour appliquer des protocoles de self-testing en présence d'imperfections.
-Nous nous concentrons sur le self-testing basé sur une seule condition que doivent respecter les statistiques de mesures ; la violation de l'inégalité CHSH.
+Nous nous concentrons sur le self-testing basé sur une seule condition que doivent respecter les statistiques de mesures ; la violation de l'inégalité \acrshort{chsh}.
 Ce travail conduit à la découverte d'une condition nécessaire : une violation minimale en dessous de laquelle le robust self-testing échoue.
 Cette limite fondamentale améliore notre compréhension du self-testing, définit des exigences expérimentales claires et suggère des orientations pour de futurs protocoles.
+
+\medbreak
 
 \textbf{Article 2~\cite{Valcarce2022}:} 
 À partir d'une analyse affinée des statistiques de mesure, nous dérivons de nouveaux self-tests robustes pour le singlet.
 Le nouveau protocole que nous proposons offre une meilleure robustesse aux pertes et facilite ainsi la réalisation expérimentale du self-testing du singlet.
 
-\paragraph{Distribution quantique de clé de type \guillemotleft boîte noire\guillemotright}
 
-La distribution quantique de clé de type \guillemotleft boîte noire\guillemotright permet à deux parties de partager une clé de manière sûre.
-La sécurité de ce protocole repose sur des conditions que doivent satisfaire les statistiques de mesures.
+\paragraph{Distribution quantique de clé de type \guillemotleft boîte noire\guillemotright}\mbox{}\\
 
-\medbreak
 
 \textbf{Article 3~\cite{Sekatski2021}:}
-Nous formulons une nouvelle preuve de sécurité qui limite plus justement l'information qu'un adversaire peut obtenir sur la clé.
+Nous formulons une nouvelle preuve de sécurité d'un protocole DIQKD, qui limite plus justement l'information qu'un adversaire peut obtenir sur la clé distribuée.
 Notre preuve est basée sur deux fonctions de corrélation au lieu d'une seule combinaison linéaire de toutes les statistiques.
 Le taux de clé qui en découle est plus élevé pour les implémentations réalistes basées sur l'optique quantique et pour les états partiellement intriqués. 
-Cependant notre approche ne fournit pas une meilleure efficacité critique.
+Cependant, notre approche ne fournit pas une meilleure efficacité critique.
+
+\medbreak
 
 \textbf{Article 4~\cite{Valcarce2022b}:} 
 En combinant l'apprentissage machine et un framework de simulation de circuits photoniques~\cite{Valcarce2021}, nous automatisons la conception d'expériences photoniques.
 Appliquée à la distribution quantique de clé de type \guillemotleft boîte noire\guillemotright, notre méthode propose de nouveaux designs d'expériences réalistes, offrant à la fois un taux de clé plus élevé et une tolérance plus élevée aux pertes par rapport aux propositions photoniques précédemment connues.
-
